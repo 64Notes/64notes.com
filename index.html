@@ -76,7 +76,7 @@
     <div id='social_area'>
       <div class='area' id='social'>
         <div class='gw'>
-          <ul class='nav' id='socialshare'>
+          <ul class='nav--fit one-whole' id='socialshare'>
             <li class='twitter'>
               <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>
             </li>
@@ -89,13 +89,26 @@
             </li>
           </ul>
           <!-- #socialshare -->
+          <hr />
+          <ul class='nav--fit one-whole' id='socialfollow'>
+            <li class='twitter'>
+              <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false">Follow @kingsidharth</a>
+            </li>
+            <li class='fb'>
+              <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-colorscheme="dark" data-font="lucida grande" data-width="450"></div>
+            </li>
+          </ul>
         </div>
       </div>
       <!-- #social.area -->
     </div>
     <!-- #social_area -->
     <div id='footer_area'>
-      <div class='area' id='footer'></div>
+      <div class='area' id='footer'>
+        <p>
+          by <a href="http://www.kingsidharth.com" rel="author">King Sidharth</a> | &copy; 2012 | <a href="">Colophon</a>
+        </p>
+      </div>
       <!-- #footer -->
     </div>
     <!-- #footer_area -->
@@ -103,6 +116,7 @@
   <!-- body -->
   <script type='text/javascript'>
     //<![CDATA[
+      //Async Social Sharing Button JS
       (function(doc, script) {
         var js, 
             fjs = doc.getElementsByTagName(script)[0],

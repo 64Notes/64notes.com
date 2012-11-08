@@ -69,7 +69,7 @@
     #social_area
       #social.area
         .gw
-          %ul.nav#socialshare
+          %ul.nav--fit.one-whole#socialshare
             %li.twitter
               <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>       
             %li.fb
@@ -78,15 +78,25 @@
             %li.gplus
               <div class="g-plusone" data-size="medium" data-count="true"></div>              
           /#socialshare
+          %hr
+          %ul.nav--fit.one-whole#socialfollow
+            %li.twitter
+              <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false">Follow @kingsidharth</a> 
+            %li.fb
+              <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-colorscheme="dark" data-font="lucida grande" data-width="450"></div>
       /#social.area
     /#social_area
 
     #footer_area
       #footer.area
+        %p 
+          by <a href="http://www.kingsidharth.com" rel="author">King Sidharth</a> | &copy; 2012 | <a href="">Colophon</a>
+
       /#footer
     /#footer_area
   /body
   :javascript  
+    //Async Social Sharing Button JS
     (function(doc, script) {
       var js, 
           fjs = doc.getElementsByTagName(script)[0],

@@ -1,0 +1,81 @@
+/*
+  Welcome to Compass.
+  In this file you should write your main styles. (or centralize your imports)
+  Import this file using the following HTML or equivalent:
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+@import compass/reset
+@import vars
+@import inuit.css/inuit
+@import compass
+
+/* Colors
+$grey: #EEE
+$blue: #0c1f24
+$green: #063848
+
+/* Generic Rules
+
+h1, h2, h3, h4, h5, h6
+  font-family: "Adelle", "Droid Serif", Georgia, serif
+  +text-shadow(rgba(255,255,255,0.9) 0 1px 1px)
+
+body
+  font-family: "Vera Sans", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif
+  background: url('../images/background.jpg') #EEE top center repeat-x
+  border-top: 3px solid $blue
+  +box-shadow(rgba(255,255,255,0.6) 0 1px 0px inset)
+  a
+    color: $green 
+    border-bottom: 1px dotted $green
+    &:hover
+      text-decoration: none
+      border-bottom: 1px solid $green
+
+.area
+  max-width: 650px
+  width: auto
+  margin: 0 auto 0 auto
+  padding: 2em 2em 2em 2em
+  overflow: hidden
+
+.headline_area
+  text-align: center
+  h1
+    font-size: 3.4em
+    letter-spacing: -1px
+
+
+/* Header Area
+#header_area
+  text-align: center
+  .area
+    max-width: 900px
+    padding-bottom: 0
+  .nav
+    li
+      margin-right: 0.5em
+      a
+        padding: 0.5em 0.6em
+        &.active
+          color: #999
+          border-bottom: 1px solid $blue
+
+#logo
+  text-indent: -9999px
+  background: url('../images/logo-inner.png') top left no-repeat
+  width: 208px
+  height: 50px
+  border: none
+  padding: 0
+  &:hover
+    border: none
+
+/* Content Area
+#content_area
+  .area
+    padding-top: 0
+
+/* Social Area
+#social_area
+  background: $green

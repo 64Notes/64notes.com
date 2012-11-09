@@ -1,0 +1,132 @@
+!!!
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en", :lang => "en"}
+  %head
+    %title 64 Notes
+
+    /stylesheets
+    <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+    /scripts
+    <script type="text/javascript" src="http://use.typekit.net/qwv5oql.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>    
+
+    /meta
+
+    /others
+
+  %body.home
+    #header_area
+      #header.area
+        .gw
+          %ul.nav.g.one-whole
+            %li.name
+              %a#logo{:href=>""} 64 Notes
+            %li
+              %a{:href=>""} Home
+            %li
+              %a{:href=>"/about"} About 
+            %li
+              %a.active{:href=>"/start"} Start Here
+            %li
+              %a{:href=>"/speaking"} Speaking
+            %li
+              %a{:href=>"/archives"} Archives
+          /.nav
+    /#header_area
+
+    #content_area
+      #content.area
+        .gw
+
+          #sidebar.g.one-half
+            .headline_area
+              %h1#logo 64 Notes
+            /.headline_area
+            %p
+              :markdown
+                This website is collection of personal notes of Sidharth on **startups, business, entrepreneurship & life.** 
+                
+                _King_ Sidharth he calls himself! Meh!
+                
+                You can:
+                * [Start Here](/start) if you're new.
+                * Read more [about this site](/about) or [him](http://www.kingsidharth.com)
+                * See his [where he is speaking next](/speaking).
+                * Dig the [graveyard of this blog](/archive).
+                * But **DO NOT** [follow him on twitter](http://twitter.com/kingsidharth).
+
+          /#sidebar
+          #content_box.g.one-half
+            %h2 Latest Notes:
+            %ul.post_list.nav.nav--stacked
+              %li.post
+                %a{:href=>""} Business vs. App
+              %li.post
+                %a{:href=>""} Stealing is Not Copying
+              %li.post
+                %a{:href=>""} College - Should you go?
+              %li.post
+                %a{:href=>""} Cost of being a Corporate
+
+          /#content_box
+
+    /#content_area
+
+    #social_area
+      #social.area
+        .gw
+          %ul.nav--fit.one-whole#socialshare
+            %li.name
+              Liked what you read?
+            %li.twitter
+              <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>       
+            %li.fb
+              #fb-root
+              <div class="fb-like" data-send="false" data-layout="button_count" data-width="1" data-show-faces="false" data-action="recommend"></div>
+            %li.gplus
+              <div class="g-plusone" data-size="medium" data-count="true"></div>              
+          /#socialshare
+          %hr
+          %ul.nav--fit.one-whole#socialfollow
+            %li.name
+              Loved what you read?
+            %li.twitter
+              <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false">Follow @kingsidharth</a> 
+            %li.fb
+              <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-colorscheme="dark" data-font="lucida grande" data-width="450"></div>
+      /#social.area
+    /#social_area
+
+    #footer_area
+      #footer.area
+        %p 
+          by <a href="http://www.kingsidharth.com" rel="author">King Sidharth</a> | &copy; 2012 | <a href="">Colophon</a>
+
+      /#footer
+    /#footer_area
+  /body
+  :javascript  
+    //Async Social Sharing Button JS
+    (function(doc, script) {
+      var js, 
+          fjs = doc.getElementsByTagName(script)[0],
+          frag = doc.createDocumentFragment(),
+          add = function(url, id) {
+              if (doc.getElementById(id)) {return;}
+              js = doc.createElement(script);
+              js.src = url;
+              id && (js.id = id);
+              frag.appendChild( js );
+          };
+          
+        // Google+ button
+        add('http://apis.google.com/js/plusone.js');
+        // Facebook SDK
+        add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=200103733347528', 'facebook-jssdk');
+        // Twitter SDK
+        add('http://platform.twitter.com/widgets.js');
+
+        fjs.parentNode.insertBefore(frag, fjs);
+    }(document, 'script'));
+  
+

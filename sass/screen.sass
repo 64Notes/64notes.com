@@ -118,3 +118,41 @@ body
   border-top: 1px solid #FAFAFA
   text-align: center
   font-size: 0.8em
+
+/* Home Specific
+.home
+  #header
+    display: none
+  #content_area
+    .area
+      padding-top: 2em
+  #sidebar
+    ul
+      margin-left: 0
+  #content_box
+    .post_list 
+      list-style-type: none
+      list-style-position: inside
+      margin-left: 0
+      .post
+        margin-bottom: 0.4em
+        font-weight: bold
+        a
+          border: none
+          padding: 0.3em 0.2em
+          &:hover
+            background: $green
+            color: $grey
+            border: none
+
+@media screen and (max-width: 655px)
+  .home
+    #sidebar, #content_box
+      width: 100%
+    #sidebar
+      ul
+        li
+          margin-bottom: 20px
+    #logo
+      background-position: top center
+      width: 100%

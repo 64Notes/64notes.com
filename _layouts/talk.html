@@ -1,6 +1,7 @@
 ---
 layout: base
 ---
+        <div class="talk-details">
           <div class='g one-whole'>
             <div class='headline_area'>
               <span>On</span>
@@ -10,7 +11,8 @@ layout: base
               <span>at</span>
               <h2>{{ page.event }}</h2>
               <p class='place'>{{ page.place }}</p>
-              <p class='date'> {{ page.date | date: "%d %b, %y" }}</p>
+              <span>on</span>
+              <p class='date'> {{ page.date | date: "%d %b, %Y" }}</p>
             </div>
           </div>
           <!-- .headline_area -->
@@ -18,4 +20,5 @@ layout: base
             {{ content }}            
           </div>
           <!--post_content-->
+        </div><!--talk-details-->
 

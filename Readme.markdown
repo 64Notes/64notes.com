@@ -14,8 +14,8 @@ Following things are copyrighted:
 * Content
 
 
-* Anything other than that can be used for learning and re-used **with credit**.
-* All other code bases and tech like Jekyll, HAML etc. follow their own license.
+Anything other than that can be used for learning and re-used **with credit**.
+All other code bases and tech like Jekyll, HAML etc. follow their own license.
 
 --------
 

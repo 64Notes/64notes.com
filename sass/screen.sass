@@ -31,6 +31,10 @@ body
     &:hover
       text-decoration: none
       border-bottom: 1px solid $green
+  p, ul, ol
+    line-height: 1.61em
+  ul
+    list-style-type: square
 
 .area
   max-width: 650px
@@ -42,9 +46,26 @@ body
 .headline_area
   text-align: center
   h1
-    font-size: 3.4em
-    letter-spacing: -1px
+    font-size: 3em
+    letter-spacing: -2px
 
+// All navigations need to expand full on small size screens
+@media screen and (max-width: 655px)
+  .nav, .nav--fit
+    li
+      display: block
+      width: 95%
+      a
+        width: 100%
+  .nav--fit
+    li
+      padding-top: 0.5em
+      &.fb
+        top: 0
+  #logo
+    background-position: top center
+  .headline_area h1
+    font-size: 2em
 
 /* Header Area
 #header_area
@@ -74,6 +95,7 @@ body
 
 /* Content Area
 #content_area
+  border-bottom: 1px solid #FAFAFA
   .area
     padding-top: 0
 
@@ -85,6 +107,14 @@ body
   .area
     max-width: 900px  
 
+  //Coz facebook is nuts
+  .fb
+    position: relative
+    top: -4px
+  
+
 /* Footer Area
 #footer_area
   border-top: 1px solid #FAFAFA
+  text-align: center
+  font-size: 0.8em

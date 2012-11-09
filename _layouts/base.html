@@ -56,7 +56,7 @@
     <div id='social_area'>
       <div class='area' id='social'>
         <div class='gw'>
-          {% if page.slug != 'home' %}          
+          {% if page.slug != 'home' && page.type != 'page' %}          
           <ul class='nav--fit one-whole' id='socialshare'>
             <li class='name'>
               Liked what you read?
@@ -67,9 +67,6 @@
             <li class='fb'>
               <div id='fb-root'></div>
               <div class="fb-like" data-send="false" data-layout="button_count" data-width="1" data-show-faces="false" data-action="recommend"></div>
-            </li>
-            <li class='gplus'>
-              <div class="g-plusone" data-size="medium" data-count="true"></div>
             </li>
           </ul>
           <!-- #socialshare -->
@@ -129,8 +126,6 @@
                 frag.appendChild( js );
             };
             
-          // Google+ button
-          add('http://apis.google.com/js/plusone.js');
           // Facebook SDK
           add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=200103733347528', 'facebook-jssdk');
           // Twitter SDK

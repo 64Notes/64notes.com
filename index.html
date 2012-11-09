@@ -33,9 +33,11 @@ slug: "home"
             <h2>Latest Notes:</h2>
             <ul class='post_list nav nav--stacked'>
               {% for post in site.posts limit:7 %}
+              {% if post.category != 'talks' %}
               <li class="post">
                 <a href="{{ post.url }}">{{ post.title }}</a>
               </li>
+              {% endif %}
               {% endfor %}
               <li class="post last serif">
                 <a href="/archives">Archives &rarr;</a>

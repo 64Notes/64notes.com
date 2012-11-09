@@ -1,0 +1,23 @@
+---
+layout: post
+title: Speaking
+category: talks
+---
+<ul class="talk_list nav  nav--stacked">
+{% for post in site.posts %}
+{% if post.category == 'talks' %}
+  <li class="talk">
+    <div class='stat-group'>
+      <dl class='stat'>
+        <dt class='stat__title'>{{ post.date | date:  "%d %b" }}</dt>
+        <dd class='stat__value'>{{ post.date | date:  "%Y"    }}</dd>
+      </dl>
+    </div>
+    <a href="{{ post.url }}" class="talk-link">
+      <span class="talk-title"><em>On</em> {{ post.title }}</span>
+      <span class="talk-meta"><em>@</em> {{ post.event }}, {{ post.place }}</span>
+    </a>
+  </li>
+{% endif %}
+{% endfor %}
+</ul>

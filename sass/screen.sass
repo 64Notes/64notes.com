@@ -35,6 +35,8 @@ body
     line-height: 1.61em
   ul
     list-style-type: square
+  ol
+    list-style-type: decimal
 
 .area
   max-width: 650px
@@ -134,6 +136,9 @@ body
       list-style-type: none
       list-style-position: inside
       margin-left: 0
+      .last
+        text-align: center
+        font-weight: normal
       .post
         margin-bottom: 0.4em
         font-weight: bold
@@ -156,3 +161,9 @@ body
     #logo
       background-position: top center
       width: 100%
+    #content_box
+      .post_list
+        text-align: center
+        .post
+          margin: 0.4em 0
+          border-bottom: 1px dotted $green

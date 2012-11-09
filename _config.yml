@@ -1,3 +1,4 @@
 permalink: /:title
 exclude: sass, config.rb, CNAME, Rakefile, index.haml, _layout/dedault.haml, home.haml, Readme.markdown
 auto: true
+url: http://64notes.com

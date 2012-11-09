@@ -3,17 +3,17 @@
   <head>
     <title>{{ page.title }}</title>
     <!-- stylesheets -->
-    <link href="css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="{{ site.url}}/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <!-- scripts -->
     <script type="text/javascript" src="http://use.typekit.net/qwv5oql.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <!-- meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />    
+    <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" />    
     
     <!-- others -->
   </head>
-  <body class="{{ page.slug}}">
+  <body class="{{ page.slug }}">
     <div id='header_area'>
       <div class='area' id='header'>
         <div class='gw'>
@@ -27,16 +27,16 @@
               <a href=''>Home</a>
             </li>
             <li>
-              <a href='/about'>About</a>
+              <a href='{{ site.url }}/about'>About</a>
             </li>
             <li>
-              <a class='active' href='/start'>Start Here</a>
+              <a class='active' href='{{ site.url }}/start'>Start Here</a>
             </li>
             <li>
-              <a href='/speaking'>Speaking</a>
+              <a href='{{ site.url }}/speaking'>Speaking</a>
             </li>
             <li>
-              <a href='/archives'>Archives</a>
+              <a href='{{ site.url }}/archives'>Archives</a>
             </li>
           </ul>
           <!-- .nav-bar -->

@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-        <div class="talk-details">
+        <div class="talk-details" itemscope itemtype="http://data-vocabulary.org/Event">
           <div class='g one-whole'>
             <div class='headline_area'>
               <span>On</span>
@@ -9,10 +9,10 @@ layout: base
                 {{ page.title }}
               </h1>
               <span>at</span>
-              <h2>{{ page.event }}</h2>
-              <p class='place'>{{ page.place }}</p>
+              <h2 itemprop="summary">{{ page.event }}</h2>
+              <p class='place' itemprop='location'>{{ page.place }}</p>
               <span>on</span>
-              <p class='date'> {{ page.date | date: "%d %b, %Y" }}</p>
+              <p itemprop="startDate" datetime="{{ page.date }}" class='date'> {{ page.date | date: "%d %b, %Y" }}</p>
             </div>
           </div>
           <!-- .headline_area -->

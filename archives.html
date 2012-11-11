@@ -13,3 +13,15 @@ title: Archives of 64 Notes
 {% endif %}
 {% endfor %}
 </ol>
+
+<h2>2010</h2>
+<ul class="post_list">
+{% for post in site.posts %}
+{% if post.category != 'talks' && post.date | date: "%Y" == 2010 %}
+  <li class="post">
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+{% endif %}
+{% endfor %}
+</ul>
+

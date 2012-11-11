@@ -1,4 +1,3 @@
 permalink: /:categories/:title
-exclude: sass, config.rb, CNAME, Rakefile, index.haml, _layout/dedault.haml, home.haml, Readme.markdown
-auto: true
+exclude: sass, config.rb, CNAME, Rakefile, Readme.markdown
 url: http://www.64notes.com

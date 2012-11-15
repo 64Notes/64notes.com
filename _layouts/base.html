@@ -1,16 +1,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
-  <head>
+  <head 
+    {% if page.type == 'post' %}
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# 
+    article: http://ogp.me/ns/article#"
+    {% endif %} >
     <title>{{ page.title }}</title>
     <!-- stylesheets -->
     <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <!-- scripts -->
-    <script type="text/javascript" src="http://use.typekit.net/qwv5oql.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
     <!-- meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-    <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" />    
-    
+    <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" /> 
+      <!-- Open Graph Data -->
+      <meta property="fb:app_id"               content="171634969647127">     
+      <meta property="og:image"                content="http://www.64notes.com/images/64notes-logo.png">
+    {% if page.type == 'post' %}
+      <meta property="og:type"                 content="article"> 
+      <meta property="og:url"                  content="http://www.64notes.com{{ page.url }}">
+      <meta property="og:site_name"            content="64 Notes">
+      <meta property="og:title"                content="{{ page.title }}">
+      <meta property="article:author"          content="http://www.kingsidharth.com">
+    {% else %}
+      <meta property="og:type"                 content="blog"> 
+      <meta property="og:url"                  content="http://www.64notes.com"> 
+      <meta property="og:image"                content="URL to an image">
+      <meta property="og:title"                content="64 Notes">
+    {% endif %}
     <!-- others -->
   </head>
   <body class="{{ page.slug }}">
@@ -28,9 +44,6 @@
             </li>
             <li>
               <a href='{{ site.url }}/about'>About</a>
-            </li>
-            <li>
-              <a class='iactive' href='{{ site.url }}/start'>Start Here</a>
             </li>
             <li>
               <a href='{{ site.url }}/speaking'>Speaking</a>
@@ -56,18 +69,18 @@
     <div id='social_area'>
       <div class='area' id='social'>
         <div class='gw'>
-          {% if page.slug != 'home' && page.type != 'page' %}          
+          {% if page.type == 'post' %}          
           <ul class='nav--fit one-whole' id='socialshare'>
             <li class='name'>
               Liked what you read?
             </li>
-            <li class='twitter'>
-              <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>
-            </li>
             <li class='fb'>
               <div id='fb-root'></div>
-              <div class="fb-like" data-send="false" data-layout="button_count" data-width="1" data-show-faces="false" data-action="recommend"></div>
+              <div class="fb-like" data-send="false" data-layout="button_count"  data-show-faces="false" data-action="recommend" data-href="http://www.64notes.com{{ page.url }}"></div>
             </li>
+            <li class='twitter'>
+              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.64notes.com{{ page.url }}" data-via="kingsidharth" data-related="kingsidharth">Tweet</a>
+            </li>  
           </ul>
           <!-- #socialshare -->
           <hr />
@@ -76,12 +89,12 @@
             <li class='name'>
               Loved what you read?
             </li>
-            <li class='twitter'>
-              <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false">Follow @kingsidharth</a>
-            </li>
             <li class='fb'>
               <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-colorscheme="dark" data-font="lucida grande" data-width="450"></div>
             </li>
+            <li class='twitter'>
+              <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false">Follow @kingsidharth</a>
+            </li>      
           </ul>
         </div>
       </div>
@@ -109,6 +122,8 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
+    <script type="text/javascript" src="http://use.typekit.net/qwv5oql.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>    
   </body>
   <!-- body -->
   <script type='text/javascript'>

@@ -2,14 +2,46 @@
 layout: post
 title: Archives of 64 Notes
 ---
-<strong>The Graveyard</strong>
-
+<h2>2012</h2>
 <ol class="post_list">
   {% for post in site.posts %}
   {% if post.category != 'talks' %}
+    {% capture post_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+  {% if post_year == '2012' %}
   <li class="post">
     <a href="{{ post.url }}">{{ post.title }}</a>
   </li>
+  {% endif %}
 {% endif %}
 {% endfor %}
 </ol>
+
+<h2>2011</h2>
+<ol class="post_list">
+  {% for post in site.posts %}
+  {% if post.category != 'talks' %}
+    {% capture post_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+  {% if post_year == '2011' %}
+  <li class="post">
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+  {% endif %}
+{% endif %}
+{% endfor %}
+</ol>
+
+<h2>2010</h2>
+<ol class="post_list">
+  {% for post in site.posts %}
+  {% if post.category != 'talks' %}
+    {% capture post_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+  {% if post_year == '2010' %}
+  <li class="post">
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
+  {% endif %}
+{% endif %}
+{% endfor %}
+</ol>
+
+<!-- Find better loop to automate this -->

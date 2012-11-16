@@ -1,24 +1,34 @@
 ---
 layout: post
-title: Secret to The Path of Your Life
+title:  the Secret Path
 type: post
 ---
 
-> Daiju visited the master Baso in China. Baso asked: "What do you seek?"
+Daiju visited the master Baso in China. Baso asked: 
+> What do you seek?
 
-> "Enlightenment," replied Daiju.
+> Enlightenment 
+replied Daiju.
 
-> "You have your own treasure house. Why do you search outside?" Baso asked.
+> You have your own treasure house. Why do you search outside? 
 
-> Daiju inquired: "Where is my treasure house?"
+Baso asked. Daiju inquired: 
 
-> Baso answered: "What you are asking is your treasure house."
+> Where is my treasure house?
 
-> Daiju was enlightened! Ever after he urged his friends: "Open your own tresure house and use those treasures."
+Baso answered: 
+
+> What you are asking is your treasure house.
+
+Daiju was enlightened! Ever after he urged his friends: 
+
+> Open your own treasure house and use those treasures.
+
+--------
 
 That's one of my favourite Zen Koans. And this a rare and one of my favorite question from students. (Mostly from college students since they've the career sword on their head):
 
-> "I am good at this, this, this and this. But I don't know where to go form here."
+> I am good at this, this, this and this. But I don't know where to go form here.
 
 Welcome to the Club! And it's likely that your membership is permanent because you might never know 'the path'. I guess there is no path - you are to carve one out for yourself!
 

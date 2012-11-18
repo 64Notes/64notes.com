@@ -16,15 +16,14 @@ slug: "home"
               <p>You can:</p>
               
               <ul>
-              <li><a href='/start'>Start Here</a> if you&#8217;re new.</li>
+                <!--<li><a href='/start'>Start Here</a> if you&#8217;re new.</li>-->
+                <li>Dig the <strong><a href='/archive'>graveyard of this blog</a></strong>.</li>                
               
-              <li>Read more <a href='/about'>about this site</a> or <a href='http://www.kingsidharth.com'>him</a></li>
-              
-              <li>See his <a href='/speaking'>where he is speaking next</a>.</li>
-              
-              <li>Dig the <a href='/archive'>graveyard of this blog</a>.</li>
-              
-              <li>But <strong>DO NOT</strong> <a href='http://twitter.com/kingsidharth'>follow him on twitter</a>.</li>
+                <li>Read more <a href='/about'>about this site</a> or <a href='http://www.kingsidharth.com'>him</a></li>
+                
+                <li>See his <strong><a href='/speaking'>where he is speaking next</a></strong>.</li>
+                
+                <li>But do <strong>NOT</strong> <a href='http://twitter.com/kingsidharth'>follow him on twitter</a>.</li>
               </ul>
             </p>
           </div>
@@ -32,7 +31,7 @@ slug: "home"
           <div class='g one-half' id='content_box'>
             <h2>Latest Notes:</h2>
             <ul class='post_list nav nav--stacked'>
-              {% for post in site.posts limit:10 %}
+              {% for post in site.posts limit:15 %}
               {% if post.category != 'talks' %}
               <li class="post">
                 <a href="{{ post.url }}">{{ post.title }}</a>

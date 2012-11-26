@@ -48,13 +48,22 @@
               <a href='{{ site.url }}'>Home</a>
             </li>
             <li>
-              <a href='{{ site.url }}/about'>About</a>
+              <a {% if page.slug == 'about' %}
+                class="active"
+                {% endif %}
+                href='{{ site.url }}/about'>About</a>
             </li>
             <li>
-              <a href='{{ site.url }}/speaking'>Speaking</a>
+            <a {% if page.category == 'talks' %}
+              class="active"
+              {% endif %}
+              href='{{ site.url }}/speaking'>Speaking</a>
             </li>
             <li>
-              <a href='{{ site.url }}/archives'>Archives</a>
+              <a {% if page.slug == 'archives' %}
+                class="active"
+                 {% endif %}
+                href='{{ site.url }}/archives'>Archives</a>
             </li>
           </ul>
           <!-- .nav-bar -->

@@ -46,7 +46,7 @@ No, seriously! Even I don't know where I am going. I just like the direction. Do
 
 **The more you know, the more you know that you don't know.**
 
-I find it funny when my friends doing MBA ask me for that 5 years plan for [my business](http://webmutiny.in). Business don't work that ways - [you can't tell about next 5 days let alone 5 years!](link to talk)
+I find it funny when my friends doing MBA ask me for that 5 years plan for [my business](http://webmutiny.in). Business don't work that ways - [you cannot tell about next 5 days let alone 5 years](http://ecorner.stanford.edu/authorMaterialInfo.html?mid=2334)!
 
 Oh and that's true for life as well - 
 

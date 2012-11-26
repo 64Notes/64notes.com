@@ -13,6 +13,7 @@
 $grey: #EEE
 $blue: #0c1f24
 $green: #063848
+$dgrey: #CCC
 
 /* Generic Rules
 
@@ -152,14 +153,19 @@ body
         font-weight: normal
       .post
         margin-bottom: 0.4em
-        font-weight: bold
+        border-bottom: 1px solid $dgrey
+        text-transform: uppercase
+        font-size: 14px
         a
           border: none
           padding: 0.3em 0.2em
+          +transition(0.3s)
           &:hover
             background: $green
             color: $grey
             border: none
+            padding-left: 0.4em
+
 // Responsive Home
 @media screen and (max-width: 655px)
   .home

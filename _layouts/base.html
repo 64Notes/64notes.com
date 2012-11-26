@@ -17,14 +17,14 @@
       <meta property="og:image"                content="http://www.64notes.com/images/64notes-logo.png">
     {% if page.type == 'post' %}
       <meta property="og:type"                 content="article"> 
-      <meta property="og:url"                  content="http://www.64notes.com{{ page.url }}">
-      <meta property="og:site_name"            content="64 Notes">
+      <meta property="og:url"                  content="{{ site.url}}/{{ page.url }}">
+      <meta property="og:site_name"            content="{{ site. name }}">
       <meta property="og:title"                content="{{ page.title }}">
       <meta property="article:author"          content="http://www.kingsidharth.com">
     {% else %}
       <meta property="og:type"                 content="blog"> 
-      <meta property="og:url"                  content="http://www.64notes.com"> 
-      <meta property="og:title"                content="64 Notes">
+      <meta property="og:url"                  content="{{ site.url   }}"> 
+      <meta property="og:title"                content="{{ site.title }}">
     {% endif %}
     <!-- others -->
     {% if page.category == 'talks' %}

@@ -27,7 +27,12 @@
       <meta property="og:title"                content="64 Notes">
     {% endif %}
     <!-- others -->
-    <meta name="google-site-verification" content="K9OQiuncypaFig7doDL5AXVteG8pLNyWmumfkcCj3qA" />
+    {% if page.category == 'talks' %}
+      <link rel="alternate" type="application/rss+xml" href="http://www.64notes.com/speaking/feed.xml" />            
+    {% else %}
+      <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/64Notes" />        
+    {% endif %}
+    <meta name="google-site-verification" content="K9OQiuncypaFig7doDL5AXVteG8pLNyWmumfkcCj3qA" />    
   </head>
   <body class="{{ page.slug }}">
     <div id='header_area'>

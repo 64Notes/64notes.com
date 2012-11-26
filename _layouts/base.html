@@ -18,13 +18,13 @@
     {% if page.type == 'post' %}
       <meta property="og:type"                 content="article"> 
       <meta property="og:url"                  content="{{ site.url}}/{{ page.url }}">
-      <meta property="og:site_name"            content="{{ site. name }}">
+      <meta property="og:site_name"            content="{{ site.name }}">
       <meta property="og:title"                content="{{ page.title }}">
       <meta property="article:author"          content="http://www.kingsidharth.com">
     {% else %}
       <meta property="og:type"                 content="blog"> 
       <meta property="og:url"                  content="{{ site.url   }}"> 
-      <meta property="og:title"                content="{{ site.title }}">
+      <meta property="og:title"                content="{{ site.name }}">
     {% endif %}
     <!-- others -->
     {% if page.category == 'talks' %}

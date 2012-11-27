@@ -9,14 +9,22 @@ layout: base
                 {{ page.title }}
               </h1>
               <span>at</span>
-              <h2 itemprop="summary">{{ page.event }}</h2>
+              <h2 itemprop="summary">
+                {% if page.evlink %}
+                <a href="{{ page.evlink }}" itemprop="link">
+                {% endif %}
+                {{ page.event }}
+                {% if page.evlink %}
+                </a>
+                {% endif %}
+              </h2>
               <p class='place' itemprop='location'>{{ page.place }}</p>
               <span>on</span>
               <p itemprop="startDate" datetime="{{ page.date }}" class='date'> {{ page.date | date: "%d %b, %Y" }}</p>
             </div>
           </div>
           <!-- .headline_area -->
-          <div class='post_contentg one-whole'>
+          <div class='post_content g one-whole'>
             {{ content }}            
           </div>
           <!--post_content-->

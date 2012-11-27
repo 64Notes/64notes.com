@@ -9,6 +9,7 @@
     <!-- stylesheets -->
     <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <!-- scripts -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>    
     <!-- meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
     <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" /> 
@@ -86,7 +87,7 @@
           {% if page.type == 'post' %}          
           <ul class='nav--fit one-whole' id='socialshare'>
             <li class='name'>
-              Liked what you read?
+            <h4>Liked what you read?</h4>
             </li>
             <li class='fb'>
               <div id='fb-root'></div>
@@ -98,10 +99,15 @@
           </ul>
           <!-- #socialshare -->
           <hr />
+          <div class='one-whole g' id='boastful'>
+            <h4>C'mon tweet it and get your pretty picture here:</h4>
+          </div>
+          <!-- #boastful -->          
+          <hr />
           {% endif %}          
           <ul class='nav--fit one-whole' id='socialfollow'>
             <li class='name'>
-              Loved what you read?
+            <h4>Loved what you read?</h4>
             </li>
             <li class='fb'>
               <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-font="lucida grande" data-width="450"></div>
@@ -125,6 +131,14 @@
     </div>
     <!-- #footer_area -->
     <!-- Google Analytics Code -->
+    <script type="text/javascript" src="/js/jquery.boastful.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('#boastful').boastful({
+          location: '{{site.url}}{{ page.url}}'
+        });
+      });      
+    </script>
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-4910697-16']);

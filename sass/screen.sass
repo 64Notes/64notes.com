@@ -125,6 +125,61 @@ body
   .fb
     position: relative
     top: -4px
+ 
+  h4
+    text-shadow: none
+    letter-spacing: 1px 
+    text-transform: uppercase
+    font-size: 14px
+
+
+#boastful
+  text-align: center
+  padding-bottom: 20px
+
+.boastful
+  display: inline
+
+  img
+    width: 48px
+    height: 48px
+    margin: 3px
+    border: 0
+    +border-radius(24px)
+
+  .boastful_pointer
+    position: absolute 
+    z-index: 999 
+    left: -9999px 
+    opacity: .7 
+    display: none 
+    width: 0 
+    height: 0 
+    border-left: 10px solid transparent  
+    border-right: 10px solid transparent 
+    border-bottom: 10px solid #000 
+    border-top: 0 
+  
+  .boastful_tweet
+    position: absolute 
+    z-index: 999 
+    left: -9999px 
+    background-color: #222 
+    opacity: .8 
+    padding: 5px 
+    width: 250px 
+    font-size: 11px 
+    text-shadow: 1px 1px 0 #000 
+    color: #eee 
+    border-radius: 7px 
+    -webkit-border-radius: 7px 
+    -moz-border-radius: 7px 
+  
+  .boastful_handle
+    font-size: 13px 
+    font-weight: bold 
+  
+
   
 
 /* Footer Area

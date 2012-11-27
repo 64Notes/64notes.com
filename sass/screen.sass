@@ -246,7 +246,9 @@ body
   margin: 0
   .talk
     clear: both
-    margin-bottom: 1.6em
+    margin-bottom:  0.8em
+    padding-bottom: 0.8em
+    border-bottom: 1px solid #CCC
     float: left
     width: 100%
     .talk-date
@@ -262,14 +264,21 @@ body
       float: right
       width: 79%
       .talk-title
+        em
+          font-size: 0.9em
         span
           font-weight: bold
           color: $blue
       .talk-meta
         color: #999
-        text-transform: uppercase
+        font-size: 0.9em
+        em
+          text-transform: lowercase
+          padding-right: 0.3em
         span
-          color: $green
+          text-transform: uppercase        
+          letter-spacing: 1px
+          color: $blue
 
 .talk-details
   .headline_area
@@ -288,6 +297,9 @@ body
 .talks
   .area
     max-width: 860px
+.speaking
+  .area
+    max-width: 700px !important
 
 #event-main
   text-align: center

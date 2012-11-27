@@ -2,24 +2,46 @@
 layout: post
 title: Speaking
 category: talks
+slug: speaking
 ---
 <p>I talk a lot. Really a lot. No, Seriously!</p>
 <p>I am usually found traveling around the country to give talks on <strong>Entrepreneurship, Design & Philosophy</strong>. Usually they turn out to be <strike>motivational</strike> inspirational talks. If you want to invite me to one of your events, just mail me at: king@kingsidharth.com</p>
 
-<h2>I'll / I've spoken here:</h2>
-
-<ul class='talk-list nav  nav--stacked'>
+<h2>Upcoming:</h2>
+<ul class='talk-list nav nav--stacked'>
 {% for post in site.posts %}
-{% if post.category == 'talks' %}
-  <li class='talk' itemscope itemtype="http://data-vocabulary.org/Event">
+{% if post.category == 'talks' and post.future %}
+<li class='talk {% if post.future %} upcoming {% endif %}' itemscope itemtype="http://data-vocabulary.org/Event">
     <div itemprop="startDate" datetime="{{ post.date }}" class='talk-date'>
         <div class='month'>{{ post.date | date:  "%d %b" }}</div>
         <div class='year'>{{ post.date | date:  "%Y"    }}</div>
     </div>
-    <a itemprop="url" href="{{ post.url }}" class="talk-link">
-      <div class="talk-title"><em>On</em> <span>{{ post.title }}</span></div>
-      <div class="talk-meta"><em>@</em> <span itemprop="summary">{{ post.event }}</span>, {{ post.place }}</div>
-    </a>
+     <div class="talk-link">
+       <div class="talk-title">
+         <a itemprop="url" href="{{ post.url }}"><em>On</em> <span>{{ post.title }}</span></a>
+       </div>
+      <div class="talk-meta"><em>at</em> <span itemprop="summary">{{ post.event }}</span>, {{ post.place }}</div>
+    </div>
+  </li>
+{% endif %}
+{% endfor %}
+</ul>
+
+<h2>Past:</h2>
+<ul class='talk-list nav past nav--stacked'>
+{% for post in site.posts %}
+{% if post.category == 'talks' and post.future != true %}
+<li class='talk' itemscope itemtype="http://data-vocabulary.org/Event">
+    <div itemprop="startDate" datetime="{{ post.date }}" class='talk-date'>
+        <div class='month'>{{ post.date | date:  "%d %b" }}</div>
+        <div class='year'>{{ post.date | date:  "%Y"    }}</div>
+    </div>
+     <div class="talk-link">
+       <div class="talk-title">
+         <a itemprop="url" href="{{ post.url }}"><em>On</em> <span>{{ post.title }}</span></a>
+       </div>
+      <div class="talk-meta"><em>at</em> <span itemprop="summary">{{ post.event }}</span>, {{ post.place }}</div>
+    </div>
   </li>
 {% endif %}
 {% endfor %}

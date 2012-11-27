@@ -135,7 +135,8 @@
     <script>
       $(document).ready(function() {
         $('#boastful').boastful({
-          location: '{{site.url}}{{ page.url}}'
+          location: '{{site.url}}{{ page.url}}',
+          empty_message: '<p>What? No one tweeted this one? Gah! No one appreciates my genius!</p>'
         });
       });      
     </script>

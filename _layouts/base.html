@@ -96,6 +96,9 @@
             <li class='twitter'>
               <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.64notes.com{{ page.url }}" data-via="kingsidharth" data-related="kingsidharth">Tweet</a>
             </li>  
+            <li class='buffer'>
+            <a href="http://bufferapp.com/add" class="buffer-add-button" data-text="{{post.title}}" data-url="http://www.64notes.com{{ page.url }}" data-count="horizontal" data-via="kingsidharth"  data-picture="http://www.64notes.com/images/64notes-logo.png">Buffer This</a>
+            </li>
           </ul>
           <!-- #socialshare -->
           <hr />
@@ -180,6 +183,8 @@
           add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=200103733347528', 'facebook-jssdk');
           // Twitter SDK
           add('http://platform.twitter.com/widgets.js');
+          // Buffer App
+          add('http://static.bufferapp.com/js/button.js');
       
           fjs.parentNode.insertBefore(frag, fjs);
       }(document, 'script'));

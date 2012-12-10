@@ -22,7 +22,8 @@
       <meta property="og:site_name"            content="{{ site.name }}">
       <meta property="og:title"                content="{{ page.title }}">
       <meta property="article:author"          content="http://www.kingsidharth.com">
-    {% else %}
+    {% endif %}
+    {% if page.slug == 'home' %}
       <meta property="og:type"                 content="blog"> 
       <meta property="og:url"                  content="{{ site.url   }}"> 
       <meta property="og:title"                content="{{ site.name }}">

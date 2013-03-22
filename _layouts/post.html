@@ -1,16 +1,22 @@
 ---
 layout: base
 ---
-          <div class='g one-whole'>
-            <div class='headline_area'>
-              <h1>
-                {{ page.title }}
-              </h1>
-            </div>
-          </div>
-          <!-- .headline_area -->
-          <div class='post_contentg one-whole'>
-            {{ content }}            
-          </div>
-          <!--post_content-->
-
+<div id='headline_area'>
+  <div class='area' id='headline'>
+    <div class='grid'>
+      <h1>{{page.title}}</h1>
+    </div>
+  </div>
+</div><!-- #headline_area -->
+<div id="content_area">
+  <div class="area" id="content">
+    <div class=grid>
+      {{content}}
+      {%if page.date %}
+      <small class="meta">
+        <i class="icon icon-calendar"></i> This piece was published on {{ page.date | date: "%b %d, %Y" }}.
+      </small>
+      {%endif%}
+    </div>
+  </div>
+</div><!-- #content_area -->

@@ -3,46 +3,17 @@ layout: post
 title: Archives of 64 Notes
 slug: archives
 ---
-<h2>2012</h2>
 <ol class="post_list">
   {% for post in site.posts %}
   {% if post.category != 'talks' %}
-    {% capture post_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-  {% if post_year == '2012' %}
   <li class="post">
-    <a href="{{ post.url }}">{{ post.title }}</a>
+  <a href="{{ post.url }}" class="entry-title">{{ post.title }}</a>
+  <div class="post_meta">
+    <date class=""><i class="icon icon-calendar"></i>{{ post.date | date: "%d %b %Y" }}</date>
+    {% if post.category == 'design' %}<span class="design-post"><i class="icon icon-beaker"></i>Design</span>{%endif%}
+  </div>
   </li>
   {% endif %}
-{% endif %}
-{% endfor %}
+  {% endfor %}
 </ol>
 
-<h2>2011</h2>
-<ol class="post_list">
-  {% for post in site.posts %}
-  {% if post.category != 'talks' %}
-    {% capture post_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-  {% if post_year == '2011' %}
-  <li class="post">
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
-  {% endif %}
-{% endif %}
-{% endfor %}
-</ol>
-
-<h2>2010</h2>
-<ol class="post_list">
-  {% for post in site.posts %}
-  {% if post.category != 'talks' %}
-    {% capture post_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-  {% if post_year == '2010' %}
-  <li class="post">
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
-  {% endif %}
-{% endif %}
-{% endfor %}
-</ol>
-
-<!-- Find better loop to automate this -->

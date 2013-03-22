@@ -40,33 +40,33 @@
   <body class="{{ page.slug }} {{ page.category }}"> 
     <div id='header_area'>
       <div class='area' id='header'>
-        <div class='gw'>
+        <div class=grid>
           {% if page.slug != 'home' %}
           <!-- Display this menu only if NOT on Home Page -->
-          <ul class='nav g one-whole'>
+          <ul class='nav grid__item one-whole'>
             <li class='name'>
               <a href='{{ site.url }}' id='logo'>64 Notes</a>
             </li>
             <li>
-              <a href='{{ site.url }}'>Home</a>
+              <a href='{{ site.url }}'><i class="icon icon-off"></i> Home</a>
             </li>
             <li>
               <a {% if page.slug == 'about' %}
                 class="active"
                 {% endif %}
-                href='{{ site.url }}/about'>About</a>
+                href='{{ site.url }}/about'><i class="icon icon-question-sign"></i> About</a>
             </li>
             <li>
             <a {% if page.category == 'talks' %}
               class="active"
               {% endif %}
-              href='{{ site.url }}/speaking'>Speaking</a>
+              href='{{ site.url }}/speaking'><i class="icon icon-bullhorn"></i> Speaking</a>
             </li>
             <li>
               <a {% if page.slug == 'archives' %}
                 class="active"
                  {% endif %}
-                href='{{ site.url }}/archives'>Archives</a>
+                 href='{{ site.url }}/archives'><i class="icon icon-tasks"></i> Archives</a>
             </li>
           </ul>
           <!-- .nav-bar -->
@@ -75,21 +75,15 @@
       </div>
     </div>
     <!-- #header_area -->
-    <div id='content_area'>
-      <div class='area' id='content'>
-        <div class='gw'>
-          {{ content }}
-        </div>
-      </div>
-    </div>
+    {{ content }}
     <!-- #content_area -->
     <div id='social_area'>
       <div class='area' id='social'>
-        <div class='gw'>
+        <div class='grid'>
           {% if page.type == 'post' %}          
-          <ul class='nav--fit one-whole' id='socialshare'>
+          <ul class='nav--fit grid__item one-whole' id='socialshare'>
             <li class='name'>
-            <h4>Liked what you read?</h4>
+            <h4><i class="icon icon-share-alt"></i> Do Not Click<h4>
             </li>
             <li class='fb'>
               <div id='fb-root'></div>
@@ -103,11 +97,10 @@
             </li>
           </ul>
           <!-- #socialshare -->
-          <hr />
           {% endif %}          
           <ul class='nav--fit grid__item one-whole' id='socialfollow'>
             <li class='name'>
-            <h4>Loved what you read?</h4>
+            <h4><i class="icon icon-heart"></i> Loved It?</h4>
             </li>
             <li class='fb'>
               <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-font="lucida grande" data-width="450"></div>

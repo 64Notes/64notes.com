@@ -12,7 +12,13 @@
 @import "../vendor/inuit.css/inuit"
 @import compass
 
-/* Colors
+@mixin sans
+  font-family: "soleil", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif
+
+@mixin serif
+  font-family: "Adelle", "Droid Serif", Georgia, serif  
+
+/*--- Colors
 $grey: #EEE
 $blue: #0c1f24
 $green: #063848
@@ -21,12 +27,12 @@ $dgrey: #CCC
 /* Generic Rules
 
 h1, h2, h3, h4, h5, h6
-  font-family: "soleil", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif
+  +sans
 
 body
-  font-family: "Adelle", "Droid Serif", Georgia, serif  
   background: $grey 
   border-top: 3px solid $green
+  +serif
   a
     color: $green 
     border-bottom: 1px dotted $green
@@ -95,8 +101,8 @@ body
       a
         padding: 0.5em 0.6em
         letter-spacing: 1px
-        font-size: 0.65em
-        font-family: "soleil", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif
+        font-size: 0.7em
+        +sans
         text-transform: uppercase
         font-weight: 100
         color: $grey
@@ -232,6 +238,7 @@ body
       .talk-meta
         color: #999
         font-size: 0.9em
+        +sans
         em
           text-transform: lowercase
           padding-right: 0.3em

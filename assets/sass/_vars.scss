@@ -1,0 +1,62 @@
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+/**
+ * Base stuff
+ */
+$base-font-size:    18px;
+$base-line-height:  1.61*$base-font-size;
+
+/**
+ * Base font-family. 
+ */
+$base-font-family:  sans-serif!default;
+
+/**
+ * Default colour for objects’ borders etc.
+ */
+$base-ui-color:     #ccc!default;
+
+/**
+ * Tell inuit.css when breakpoints start.
+ */
+$lap-start:         481px!default;
+$desk-start:        1024px!default;
+$desk-wide-start:   1200px!default;
+
+
+
+/*------------------------------------*\
+    $BRAND
+\*------------------------------------*/
+/**
+ * Brand stuff
+ */
+$brand-color:       #4a8ec2!default;
+
+/**
+ * How big would you like round corners to be by default?
+ */
+$brand-round:        3px;
+
+
+
+/*------------------------------------*\
+    $OBJECTS AND ABSTRACTIONS
+\*------------------------------------*/
+/**
+ * Which objects and abstractions would you like to use?
+ */
+$use-grids:         true;
+$use-columns:       true;
+$use-nav:           true;
+$use-options:       true;
+$use-media:         true;
+$use-marginalia:    false!default;
+$use-island:        false!default;
+$use-block-list:    true;
+$use-rules:         true;
+
+

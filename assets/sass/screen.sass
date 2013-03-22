@@ -1,12 +1,15 @@
 /*
-  Welcome to Compass.
-  In this file you should write your main styles. (or centralize your imports)
-  Import this file using the following HTML or equivalent:
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * Includes all of Inuit as standard
+ */
 
-@import compass/reset
+/*----:[IMPORTS]:----*/
+
+/* inuit.css [http://inuitcss.com]
+ * Initialize inuit.css framework
+
+@import "../vendor/inuit.css/defaults"
 @import vars
-@import inuit.css/inuit
+@import "../vendor/inuit.css/inuit"
 @import compass
 
 /* Colors
@@ -18,17 +21,16 @@ $dgrey: #CCC
 /* Generic Rules
 
 h1, h2, h3, h4, h5, h6
-  font-family: "Adelle", "Droid Serif", Georgia, serif
-  +text-shadow(rgba(255,255,255,0.9) 0 1px 1px)
+  font-family: "soleil", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif
 
 body
-  font-family: "DejaRip", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif
-  background: url('../images/background.jpg') #EEE top center repeat-x
-  border-top: 3px solid $blue
-  +box-shadow(rgba(255,255,255,0.6) 0 1px 0px inset)
+  font-family: "Adelle", "Droid Serif", Georgia, serif  
+  background: $grey 
+  border-top: 3px solid $green
   a
     color: $green 
     border-bottom: 1px dotted $green
+    text-decoration: none
     &:hover
       text-decoration: none
       border-bottom: 1px solid $green
@@ -45,7 +47,6 @@ body
     padding-left: 1em
     color: #555
     margin-top: 10px
-      
 
 .area
   max-width: 650px
@@ -83,6 +84,7 @@ body
 
 /* Header Area
 #header_area
+  background: $green
   text-align: center
   .area
     max-width: 900px
@@ -93,31 +95,39 @@ body
       a
         padding: 0.5em 0.6em
         letter-spacing: 1px
+        font-size: 0.65em
+        font-family: "soleil", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif
+        text-transform: uppercase
+        font-weight: 100
+        color: $grey
+        border-color: $dgrey
+        &:hover
+          border-bottom: 1px solid $grey
         &.active
-          color: #999
-          border-bottom: 1px solid $blue
+          color: $dgrey 
+          border-bottom: 1px solid $dgrey
 
 #logo
   text-indent: -9999px
-  background: url('../images/logo-inner.png') top left no-repeat
+  background-image: url('../images/logo-inner.png') 
+  background-size: contain
+  background-repeat: no-repeat 
   width: 208px
   height: 50px
   border: none
   padding: 0
   &:hover
-    border: none
+    border: none!important
 
 /* Content Area
 #content_area
-  border-bottom: 1px solid #FAFAFA
   .area
     padding-top: 0
 
 /* Social Area
 #social_area
-  background: $green
+  background: $blue
   color: $grey
-  +box-shadow(rgba(0,0,0,0.4) 0 1px 3px 2px inset)
   .area
     max-width: 900px  
 
@@ -133,58 +143,8 @@ body
     font-size: 14px
 
 
-#boastful
-  text-align: center
-  padding-bottom: 20px
-
-.boastful
-  display: inline
-
-  img
-    width: 48px
-    height: 48px
-    margin: 3px
-    border: 0
-    +border-radius(24px)
-
-  .boastful_pointer
-    position: absolute 
-    z-index: 999 
-    left: -9999px 
-    opacity: .7 
-    display: none 
-    width: 0 
-    height: 0 
-    border-left: 10px solid transparent  
-    border-right: 10px solid transparent 
-    border-bottom: 10px solid #000 
-    border-top: 0 
-  
-  .boastful_tweet
-    position: absolute 
-    z-index: 999 
-    left: -9999px 
-    background-color: #222 
-    opacity: .8 
-    padding: 5px 
-    width: 250px 
-    font-size: 11px 
-    text-shadow: 1px 1px 0 #000 
-    color: #eee 
-    border-radius: 7px 
-    -webkit-border-radius: 7px 
-    -moz-border-radius: 7px 
-  
-  .boastful_handle
-    font-size: 13px 
-    font-weight: bold 
-  
-
-  
-
 /* Footer Area
 #footer_area
-  border-top: 1px solid #FAFAFA
   text-align: center
   font-size: 0.8em
 

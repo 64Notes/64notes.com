@@ -41,14 +41,18 @@
     <div id='header_area'>
       <div class='area' id='header'>
         <div class=grid>
-          {% if page.slug != 'home' %}
           <!-- Display this menu only if NOT on Home Page -->
+          {% if page.slug == 'home' %}
+          <h1 id=logo class="grid__unit one-whole">64 Notes</h1>
+          {% else %}
+          <a href='{{ site.url }}' class="grid__unit one-whole" id='logo'>64 Notes</a>
+          {% endif %}   
           <ul class='nav grid__item one-whole'>
-            <li class='name'>
-              <a href='{{ site.url }}' id='logo'>64 Notes</a>
-            </li>
             <li>
-              <a href='{{ site.url }}'><i class="icon icon-off"></i> Home</a>
+              <a {% if page.slug == 'home' %}
+                class="active"
+                {%endif%}
+                href='{{ site.url }}'><i class="icon icon-off"></i> Home</a>
             </li>
             <li>
               <a {% if page.slug == 'about' %}

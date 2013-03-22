@@ -86,6 +86,7 @@ body
 #header_area
   background: $green
   text-align: center
+  color: $grey
   .area
     max-width: 900px
     padding-bottom: 0
@@ -109,15 +110,19 @@ body
 
 #logo
   text-indent: -9999px
+  display: block 
   background-image: url('../images/logo-inner.png') 
   background-size: contain
   background-repeat: no-repeat 
-  width: 208px
+  background-position: center
   height: 50px
   border: none
   padding: 0
+  margin-bottom: 0
   &:hover
     border: none!important
+h1#logo
+  line-height: 0.6em
 
 /*----:[Headline Area]:----*/
 #headline_area
@@ -212,9 +217,6 @@ body
       ul
         li
           margin-bottom: 20px
-    #logo
-      background-position: top center
-      width: 100%
     #content_box
       .post_list
         text-align: center

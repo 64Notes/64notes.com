@@ -1,0 +1,346 @@
+/*
+ * Includes all of Inuit as standard
+ */
+
+/*----:[IMPORTS]:----*/
+
+/* inuit.css [http://inuitcss.com]
+ * Initialize inuit.css framework
+
+@import "../vendor/inuit.css/defaults"
+@import vars
+@import "../vendor/inuit.css/inuit"
+@import compass
+
+@mixin sans
+  font-family: "soleil", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif
+
+@mixin serif
+  font-family: "Adelle", "Droid Serif", Georgia, serif  
+
+/*--- Colors
+$grey: #EEE
+$blue: #0c1f24
+$green: #063848
+$dgrey: #CCC
+
+/* Generic Rules
+
+h1, h2, h3, h4, h5, h6
+  +sans
+
+body
+  background: $grey 
+  border-top: 3px solid $green
+  +serif
+  a
+    color: $green 
+    border-bottom: 1px dotted $green
+    text-decoration: none
+    &:hover
+      text-decoration: none
+      border-bottom: 1px solid $green
+  p, ul, ol
+    line-height: 1.61em
+  ul
+    list-style-type: square
+  ol
+    list-style-type: decimal
+  blockquote
+    display: block
+    clear: both
+    border-left: 2px solid #CCC
+    padding-left: 1em
+    color: #555
+    margin-top: 10px
+
+.area
+  max-width: 650px
+  width: auto
+  margin: 0 auto 0 auto
+  padding: 2em 2em 2em 2em
+  overflow: hidden
+
+.center
+  text-align: center
+
+::selection, ::-moz-selection
+  color: $grey
+  background: $green
+
+// All navigations need to expand full on small size screens
+@media screen and (max-width: 655px)
+  .nav, .nav--fit
+    li
+      display: block
+      width: 95%
+      a
+        width: 100%
+  .nav--fit
+    li
+      padding-top: 0.5em
+      &.fb
+        top: 0
+  #logo
+    background-position: top center
+  .headline_area h1
+    font-size: 2em
+
+/* Header Area
+#header_area
+  background: $green
+  text-align: center
+  color: $grey
+  .area
+    max-width: 900px
+    padding-bottom: 0
+  .nav
+    li
+      margin-right: 0.5em
+      a
+        padding: 0.5em 0.6em
+        letter-spacing: 1px
+        font-size: 0.7em
+        +sans
+        text-transform: uppercase
+        font-weight: 100
+        color: $grey
+        border-color: $dgrey
+        &:hover
+          border-bottom: 1px solid $grey
+        &.active
+          color: $dgrey 
+          border-bottom: 1px solid $dgrey
+  p
+    max-width: 600px
+    margin: 0 auto 25px auto
+    color: $dgrey
+    letter-spacing: 1px
+    border-top: 2px solid $blue
+    padding-top: 15px
+    strong
+      font-weight: normal
+      color: #FFF
+    a
+      color: #FFF
+      border-color: $dgrey
+
+#logo
+  text-indent: -9999px
+  display: block 
+  background-image: url('../images/logo-inner.png') 
+  background-size: contain
+  background-repeat: no-repeat 
+  background-position: center
+  height: 50px
+  border: none
+  padding: 0
+  margin-bottom: 0
+  &:hover
+    border: none!important
+h1#logo
+  line-height: 0.6em
+
+/*----:[Headline Area]:----*/
+#headline_area
+  .area
+    padding: 0
+    max-width: 900px
+    text-align: center
+    h1
+      font-size: 3em
+      letter-spacing: -2px
+
+/*----:[Content Area]:----*/
+#content_area
+  .area
+    padding-top: 0
+  .meta
+    border-top: 1px dashed #999
+    padding-top: 1em
+    color: #666
+    .icon
+      font-size: 1.3em
+      padding-right: 5px
+
+/* Social Area
+#social_area
+  background: $blue
+  color: $grey
+  text-align: center
+  .area
+    max-width: 900px  
+    padding-bottom: 0px
+
+  .fb
+    position: relative
+    top: -4px
+ 
+  h4
+    text-shadow: none
+    letter-spacing: 1px 
+    text-transform: uppercase
+    font-size: 14px
+
+/* Footer Area
+#footer_area
+  background: $green
+  color: $grey
+  text-align: center
+  font-size: 0.8em
+  font-weight: 100
+  +sans
+  a
+    color: $grey
+    border-color: $grey
+
+/* Home Specific
+.home
+  #header
+  h1
+    margin-bottom: 0
+  #content_area
+    .area
+      padding-top: 2em
+      max-width: 900px
+  #sidebar
+    ul
+      margin-left: 0
+  #content_box
+  .post_list
+    float: left
+    clear: none
+    h2
+      margin-bottom: 0
+    .block-list
+      font-size: 0.9em
+      .date
+        font-size: 0.8em
+        color: $dgrey
+        +sans
+    .icon
+      color: $green
+      margin-right: 10px
+
+// Responsive Home
+@media screen and (max-width: 655px)
+  .home
+    #sidebar, #content_box
+      width: 100%
+    #sidebar
+      ul
+        li
+          margin-bottom: 20px
+    #content_box
+      .post_list
+        text-align: center
+        .post
+          margin: 0.4em 0
+          border-bottom: 1px dotted $green
+
+/* Speaking
+// Index of Speaking
+.talks
+  #headline_area
+    border-bottom: 1px dotted #999
+    padding-top: 2em
+.talk-list
+  margin: 0
+  .talk
+    clear: both
+    margin-bottom:  0.8em
+    padding-bottom: 0.8em
+    border-bottom: 1px solid #CCC
+    float: left
+    width: 100%
+    .talk-date
+      text-align: right
+      .month
+        font-size: 18px
+      .year
+        color: #999
+    .talk-link
+      .talk-title
+        em
+          font-size: 0.9em
+        span
+          color: $blue
+      .talk-meta
+        color: #999
+        font-size: 0.8em
+        text-transform: uppercase                
+        +sans
+        em
+          padding-right: 0.3em
+        span
+          letter-spacing: 1px
+          color: #666
+
+.talk-details
+  .headline_area
+    span
+      font-style: italic
+      font-size: 1.3em      
+      color: #999
+    h1
+      line-height: 1.2em
+      margin-bottom: 0
+    h2
+      margin-bottom: 0em
+    .place
+      text-transform: uppercase
+      font-size: 15px
+      color: $green
+      letter-spacing: 2px
+      margin: 0
+      .icon
+        padding-right: 5px
+    .date
+      color: #999
+      text-transform: uppercase
+
+.talks
+  #content_area
+    .area
+      max-width: 860px
+
+.speaking
+  #conteant_area
+    .area
+      max-width: 700px !important
+    h2
+      text-align: center
+
+#event-main
+  text-align: center
+#event-sidebar
+  text-align: right 
+  font-size: 0.9em
+  ul
+    list-style: none 
+
+/*----:[Archives]:----*/
+.archives
+  #content_area
+    .area
+      max-width: 860px
+.post_list
+  list-style-position: inside
+  color: #666
+  .post
+    border-bottom: 1px solid #666
+    padding: 1em 0
+    font-style: italic
+    a
+      font-style: normal
+      display: inline-block
+      width: 80%
+    .post_meta
+      text-align: right
+      float: right
+      font-style: normal
+      font-size: 0.6em
+      color: #666
+      +sans
+@import responsive
+

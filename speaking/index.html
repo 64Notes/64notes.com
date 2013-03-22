@@ -12,15 +12,16 @@ slug: speaking
 {% for post in site.posts %}
 {% if post.category == 'talks' and post.future %}
 <li class='talk {% if post.future %} upcoming {% endif %}' itemscope itemtype="http://data-vocabulary.org/Event">
-    <div itemprop="startDate" datetime="{{ post.date }}" class='talk-date'>
-        <div class='month'>{{ post.date | date:  "%d %b" }}</div>
-        <div class='year'>{{ post.date | date:  "%Y"    }}</div>
+  <div itemprop="startDate" datetime="{{ post.date }}" class='talk-date'>
+      <div class='month'>{{ post.date | date:  "%d %b" }}</div>
+      <div class='year'><i class="icon icon-calendar"></i>{{ post.date | date:  "%Y"    }}</div>
     </div>
-     <div class="talk-link">
-       <div class="talk-title">
-         <a itemprop="url" href="{{ post.url }}"><em>On</em> <span>{{ post.title }}</span></a>
-       </div>
-      <div class="talk-meta"><em>at</em> <span itemprop="summary">{{ post.event }}</span>, {{ post.place }}</div>
+   <div class="talk-link">
+   <div class="talk-title">
+     <a itemprop="url" href="{{ post.url }}"><em>On</em> <span>{{ post.title }}</span></a>
+   </div>
+   <div class="talk-meta"><i class="icon icon-bullhorn"></i> <span itemprop="summary">{{ post.event }}</span>
+     <i class="icon icon-map-marker"></i>{{ post.place }}</div>
     </div>
   </li>
 {% endif %}
@@ -31,16 +32,19 @@ slug: speaking
 <ul class='talk-list nav past nav--stacked'>
 {% for post in site.posts %}
 {% if post.category == 'talks' and post.future != true %}
-<li class='talk' itemscope itemtype="http://data-vocabulary.org/Event">
-    <div itemprop="startDate" datetime="{{ post.date }}" class='talk-date'>
-        <div class='month'>{{ post.date | date:  "%d %b" }}</div>
-        <div class='year'>{{ post.date | date:  "%Y"    }}</div>
+  <li class='talk' itemscope itemtype="http://data-vocabulary.org/Event">
+    <div itemprop="startDate" datetime="{{ post.date }}" class='talk-date grid__item two-tenths palm-one-whole'>
+      <div class='month'>{{ post.date | date:  "%d %b" }}</div>
+      <div class='year'><i class="icon icon-calendar"></i>{{ post.date | date:  "%Y"    }}</div>
     </div>
-     <div class="talk-link">
-       <div class="talk-title">
-         <a itemprop="url" href="{{ post.url }}"><em>On</em> <span>{{ post.title }}</span></a>
-       </div>
-      <div class="talk-meta"><em>at</em> <span itemprop="summary">{{ post.event }}</span>, {{ post.place }}</div>
+   <div class="talk-link grid__item seven-tenths palm-one-whole">
+     <div class="talk-title">
+       <a itemprop="url" href="{{ post.url }}"><em>On</em> <span>{{ post.title }}</span></a>
+     </div>
+     <div class="talk-meta">
+       <span class="event-name" itemprop="summary"><i class="icon icon-bullhorn"></i> {{ post.event }}</span>
+       <i class="icon icon-map-marker"></i>{{ post.place }}
+     </div>
     </div>
   </li>
 {% endif %}

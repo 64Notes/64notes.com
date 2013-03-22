@@ -7,7 +7,8 @@
     {% endif %} >
     <title>{{ page.title }}</title>
     <!-- stylesheets -->
-    <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css"/>
     <!-- scripts -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>    
     <!-- meta -->
@@ -39,56 +40,58 @@
   <body class="{{ page.slug }} {{ page.category }}"> 
     <div id='header_area'>
       <div class='area' id='header'>
-        <div class='gw'>
-          {% if page.slug != 'home' %}
+        <div class=grid>
           <!-- Display this menu only if NOT on Home Page -->
-          <ul class='nav g one-whole'>
-            <li class='name'>
-              <a href='{{ site.url }}' id='logo'>64 Notes</a>
-            </li>
+          {% if page.slug == 'home' %}
+          <h1 id=logo class="grid__unit one-whole">64 Notes</h1>
+          {% else %}
+          <a href='{{ site.url }}' class="grid__unit one-whole" id='logo'>64 Notes</a>
+          {% endif %}   
+          <ul class='nav grid__item one-whole'>
             <li>
-              <a href='{{ site.url }}'>Home</a>
+              <a {% if page.slug == 'home' %}
+                class="active"
+                {%endif%}
+                href='{{ site.url }}'><i class="icon icon-off"></i> Home</a>
             </li>
             <li>
               <a {% if page.slug == 'about' %}
                 class="active"
                 {% endif %}
-                href='{{ site.url }}/about'>About</a>
+                href='{{ site.url }}/about'><i class="icon icon-question-sign"></i> About</a>
             </li>
             <li>
             <a {% if page.category == 'talks' %}
               class="active"
               {% endif %}
-              href='{{ site.url }}/speaking'>Speaking</a>
+              href='{{ site.url }}/speaking'><i class="icon icon-bullhorn"></i> Speaking</a>
             </li>
             <li>
               <a {% if page.slug == 'archives' %}
                 class="active"
                  {% endif %}
-                href='{{ site.url }}/archives'>Archives</a>
+                 href='{{ site.url }}/archives'><i class="icon icon-tasks"></i> Archives</a>
             </li>
           </ul>
           <!-- .nav-bar -->
+          {% if page.slug == 'home' %}
+          <p class="grid__unit one-whole">
+          A collection of personal notes of Sidharth on <strong>startups, business, entrepreneurship & life</strong>. <em>King Sidharth</em> he calls himself! Meh! Guess he <a href="/design">designs &amp; stuff</a>. Do <strong>NOT</strong> <a href="http://twitter.com/kingsidharth"><i class="icon icon-twitter"></i> him on twitter</a>. 
+          </p>
           {% endif %}
         </div>
       </div>
     </div>
     <!-- #header_area -->
-    <div id='content_area'>
-      <div class='area' id='content'>
-        <div class='gw'>
-          {{ content }}
-        </div>
-      </div>
-    </div>
+    {{ content }}
     <!-- #content_area -->
     <div id='social_area'>
       <div class='area' id='social'>
-        <div class='gw'>
+        <div class='grid'>
           {% if page.type == 'post' %}          
-          <ul class='nav--fit one-whole' id='socialshare'>
+          <ul class='nav--fit grid__item one-whole' id='socialshare'>
             <li class='name'>
-            <h4>Liked what you read?</h4>
+            <h4><i class="icon icon-share-alt"></i> Do Not Click<h4>
             </li>
             <li class='fb'>
               <div id='fb-root'></div>
@@ -102,16 +105,10 @@
             </li>
           </ul>
           <!-- #socialshare -->
-          <hr />
-          <div class='one-whole g' id='boastful'>
-            <h4>C'mon tweet it and get your pretty picture here:</h4>
-          </div>
-          <!-- #boastful -->          
-          <hr />
           {% endif %}          
-          <ul class='nav--fit one-whole' id='socialfollow'>
+          <ul class='nav--fit grid__item one-whole' id='socialfollow'>
             <li class='name'>
-            <h4>Loved what you read?</h4>
+            <h4><i class="icon icon-heart"></i> Loved It?</h4>
             </li>
             <li class='fb'>
               <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-font="lucida grande" data-width="450"></div>
@@ -135,37 +132,15 @@
     </div>
     <!-- #footer_area -->
     <!-- Google Analytics Code -->
-    <script type="text/javascript" src="/js/jquery.boastful.js"></script>
-    <script>
-      $(document).ready(function() {
-        $('#boastful').boastful({
-          location: '{{site.url}}{{ page.url}}',
-          empty_message: '<p>What? No one tweeted this one? Gah! No one appreciates my genius!</p>'
-        });
-      });      
-    </script>
     <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-4910697-16']);
-      _gaq.push(['_setDomainName', '64notes.com']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
-  </body>
-  <!-- body -->
-  <script type='text/javascript'>
-  (function() {
-    var config = {
-      kitId: 'qwv5oql',
-      scriptTimeout: 3000
-    };
-    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
-    })();
-    
+    (function() {
+      var config = {
+        kitId: 'kxv2hzq',
+        scriptTimeout: 3000
+      };
+      var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+  })();
+
     //<![CDATA[
       //Async Social Sharing Button JS
       (function(doc, script) {
@@ -191,4 +166,18 @@
       }(document, 'script'));
     //]]>
   </script>
-</html>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-4910697-16']);
+      _gaq.push(['_setDomainName', '64notes.com']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </body>
+  <!-- body -->
+  </html>

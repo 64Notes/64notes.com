@@ -3,44 +3,36 @@ layout: base
 title: "64 Notes"
 slug: "home"
 ---
-          <div class='g one-half' id='sidebar'>
-            <div class='headline_area'>
-              <h1 id='logo'>64 Notes</h1>
-            </div>
-            <!-- .headline_area -->
-            <p>
-              <p>This website is collection of personal notes of Sidharth on <strong>startups, business, entrepreneurship &amp; life.</strong></p>
-              
-              <p><em>King</em> Sidharth he calls himself! Meh!</p>
-              
-              <p>You can:</p>
-              
-              <ul>
-                <!--<li><a href='/start'>Start Here</a> if you&#8217;re new.</li>-->
-                <li>Dig the <strong><a href='/archives'>graveyard of this blog</a></strong>.</li>                
-              
-                <li>Read more <a href='/about'>about this site</a> or <a href='http://www.kingsidharth.com'>him</a></li>
-                
-                <li>See his <strong><a href='/speaking'>where he is speaking next</a></strong>.</li>
-                
-                <li>But do <strong>NOT</strong> <a href='http://twitter.com/kingsidharth'>follow him on twitter</a>.</li>
-              </ul>
-            </p>
-          </div>
-          <!-- #sidebar -->
-          <div class='g one-half' id='content_box'>
-            <h2>Latest Notes:</h2>
-            <ul class='post_list nav nav--stacked'>
-              {% for post in site.posts limit:15 %}
-              {% if post.category != 'talks' %}
-              <li class="post">
-                <a href="{{ post.url }}">{{ post.title }}</a>
-              </li>
-              {% endif %}
-              {% endfor %}
-              <li class="post last serif">
-                <a href="/archives">Archives &rarr;</a>
-              </li>
-            </ul>
-          </div>
+<div id=content_area>
+  <div class=area id=content>
+    <div class=grid>
+      <div id="best" class="post_list grid__item one-half palm-one-whole">
+        <h2><i class="icon icon-beer"></i>Greatest</h2>
+        <ul class="block-list">
+          <li><a href="/app-vs-business">App vs. Business</a></li>
+          <li><a href="/early-adopters-essay">Early Adopters</a></li>
+          <li><a href="/design/design-and-subsets-essay">The Subsets of Design</a></li>
+          <li><a href="/steal-copy">Stealing is not Copying</a></li>
+          <li><a href="/to-college-or-not-to-college">To College or Not to College</a></li>
+          <li><a href="/ideas-startups-in-betweens">Ideas, Startups & In-Betweens</a></li>
+          <li><a href="/focus">Focus, will you?</a></li>
+          <li><a href="/mistakes-failures">Please Let them Fail &amp; Make Mistakes</a></li>
+        </ul>
+      </div>
+      <div id="latest" class="post_list grid__item one-half palm-one-whole">
+        <h2><i class="icon icon-coffee"></i>Latest</h2>
+        <ul class='block-list'>
+          {% for post in site.posts limit:20 %}
+          {% if post.category != 'talks' %}
+          <li class="post">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <p class="grid__unit one-whole center">Want More? <a href="/archives">Dig the Graveyards &rarr;</a></p>
+    </div>
+  </div>
+</div><!-- #content_area -->
 

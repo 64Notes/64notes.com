@@ -208,6 +208,10 @@ body
 
 /* Speaking
 // Index of Speaking
+.talks
+  #headline_area
+    border-bottom: 1px dotted #999
+    padding-top: 2em
 .talk-list
   margin: 0
   .talk
@@ -218,55 +222,60 @@ body
     float: left
     width: 100%
     .talk-date
-      float: left
       text-align: right
-      width: 20%
       .month
-        font-weight: bold
         font-size: 18px
       .year
         color: #999
     .talk-link
-      float: right
-      width: 79%
       .talk-title
         em
           font-size: 0.9em
         span
-          font-weight: bold
           color: $blue
       .talk-meta
         color: #999
-        font-size: 0.9em
+        font-size: 0.8em
+        text-transform: uppercase                
         +sans
         em
-          text-transform: lowercase
           padding-right: 0.3em
         span
-          text-transform: uppercase        
           letter-spacing: 1px
-          color: $blue
+          color: #666
 
 .talk-details
   .headline_area
     span
       font-style: italic
+      font-size: 1.3em      
       color: #999
+    h1
+      line-height: 1.2em
+      margin-bottom: 0
     h2
       margin-bottom: 0em
     .place
       text-transform: uppercase
       font-size: 15px
       color: $green
-      letter-spacing: 1px
+      letter-spacing: 2px
       margin: 0
+      .icon
+        padding-right: 5px
+    .date
+      color: #999
+      text-transform: uppercase
 
 .talks
-  .area
-    max-width: 860px
+  #content_area
+    .area
+      max-width: 860px
+
 .speaking
-  .area
-    max-width: 700px !important
+  #conteant_area
+    .area
+      max-width: 700px !important
     h2
       text-align: center
 

@@ -64,6 +64,10 @@ body
 .center
   text-align: center
 
+::selection, ::-moz-selection
+  color: $grey
+  background: $green
+
 // All navigations need to expand full on small size screens
 @media screen and (max-width: 655px)
   .nav, .nav--fit
@@ -107,6 +111,19 @@ body
         &.active
           color: $dgrey 
           border-bottom: 1px solid $dgrey
+  p
+    max-width: 600px
+    margin: 0 auto 25px auto
+    color: $dgrey
+    letter-spacing: 1px
+    border-top: 2px solid $blue
+    padding-top: 15px
+    strong
+      font-weight: normal
+      color: #FFF
+    a
+      color: #FFF
+      border-color: $dgrey
 
 #logo
   text-indent: -9999px
@@ -171,6 +188,8 @@ h1#logo
   color: $grey
   text-align: center
   font-size: 0.8em
+  font-weight: 100
+  +sans
   a
     color: $grey
     border-color: $grey
@@ -178,35 +197,30 @@ h1#logo
 /* Home Specific
 .home
   #header
-    display: none
+  h1
+    margin-bottom: 0
   #content_area
     .area
       padding-top: 2em
+      max-width: 900px
   #sidebar
     ul
       margin-left: 0
   #content_box
-    .post_list 
-      list-style-type: none
-      list-style-position: inside
-      margin-left: 0
-      .last
-        text-align: center
-        font-weight: normal
-      .post
-        margin-bottom: 0.4em
-        border-bottom: 1px solid $dgrey
-        text-transform: uppercase
-        font-size: 14px
-        a
-          border: none
-          padding: 0.3em 0.2em
-          +transition(0.3s)
-          &:hover
-            background: $green
-            color: $grey
-            border: none
-            padding-left: 0.4em
+  .post_list
+    float: left
+    clear: none
+    h2
+      margin-bottom: 0
+    .block-list
+      font-size: 0.9em
+      .date
+        font-size: 0.8em
+        color: $dgrey
+        +sans
+    .icon
+      color: $green
+      margin-right: 10px
 
 // Responsive Home
 @media screen and (max-width: 655px)

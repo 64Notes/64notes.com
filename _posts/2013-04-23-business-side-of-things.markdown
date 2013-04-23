@@ -21,7 +21,7 @@ Then there are people who run the money and people part of the show - the busine
 
 These two worlds, in a startup, are intertwined yet run parallel. They affect each other and yet they are often isolated in deep details. And like any two god-fearing nations, they often clash.
 
-It's not new to see business people having hard time earning respect and empathy from the geeks (and vice versa). And more than often it affects the startup and culture. Obviously it's so wrong to throw a blanket on everyone and call it so. But for sake of clarity and making a point let's assume that everyone is so.
+It's not new to see business people having hard time earning respect and empathy from the geeks (and vice versa). And more than often it affects the startup and culture. Obviously it'd be wrong to throw a blanket on everyone and stereotype. But for sake of clarity and making a point let's assume that everyone is so.
 
 For now let's see what the business people do. How valuable is it? How real is it? Now these things are ideal situation sorts. Not all will be true but just go get an idea:
 
@@ -40,14 +40,14 @@ Financial wisdom is one of the crucial qualities startup founders need to have /
 ## More Financial Planning
 The buck doesn't stop there, apart from day-to-day, month-to-month planning. Then there is often fund-raising, equity munching, and soul-selling-to-Satan things to deal with.
 
-Often looked upon as a waste of time by Sherlocks. They'd rather fix an IE bug than sit through a meeting with investor.
+Often looked upon as a waste of time by Sherlock(s). They'd rather fix an IE bug than sit through a meeting with investor.
 
 While for business people, this is a natural thing.
 
-## Non-Tech Outlook for Startup (Product or Service)
-Whatever it is that you provide - there is technical outlook of it (Google is just a database that needs to query very fast with some magic) and then there is business side of it (people looking for things, people want to get looked at, money!).
+## Non-Tech Side of the Startup (Product or Service)
+Whatever it is that you provide - there is technical side of it (Google is just a database that needs to query very fast with some magic) and then there is business side of it (people looking for things, people want to get looked at, money!).
 
-Having that extra eye that has a different view-point puts thing into 3D. Suddenly you can see much more. 
+Having that extra eye that has a different way of thinking puts thing into 3D. Suddenly you can see much more. 
 
 ## Get Customers
 This one might sound like - oh the sales guy. But it isn't. Getting more customers should be everyone's deal (and keeping customers more than that). 

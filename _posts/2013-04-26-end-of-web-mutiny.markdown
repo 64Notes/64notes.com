@@ -4,6 +4,10 @@ title: The End of Web Mutiny
 type: post
 --- 
 
+**Note:** In recent development, Web Mutiny has not ended (technically). The legal entity lives on with only Aditya (my co-founder) from the original team.
+
+---
+
 Opinions expressed here are no way neutral. These are biased from my personal experience and perspective. Everyone will have their own version.
 
 > **Symbiosis** A mutually beneficial relationship between different people or groups.

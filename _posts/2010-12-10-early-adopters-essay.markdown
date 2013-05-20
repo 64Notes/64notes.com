@@ -79,7 +79,7 @@ Get talking!
 
 Any parallel that you see will help you rethink, redefine and recreate.
 
-After collecting all the feedback and going through it - you will see patterns of opinion / suggestions. Those are your "first thing first" and rest can be a gold mine too, but should be taken with a pinch of salt. Now just don't do what the crowd says - if they knew what they wanted they'd have built it.[Remind me to write about that - a mail will do, thanks!]
+After collecting all the feedback and going through it - you will see patterns of opinion / suggestions. Those are your "first thing first" and rest can be a gold mine too, but should be taken with a pinch of salt. Now just don't do what the crowd says - if they knew what they wanted they'd have built it.(Remind me to write about that - a mail will do, thanks!)
 
 You need to compare 'what they are experiencing' with 'what you wanted them to experience'.
 

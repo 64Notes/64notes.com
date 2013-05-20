@@ -321,9 +321,10 @@ h1#logo
 .archives
   #content_area
     .area
-      max-width: 860px
+      max-width: 600px
   .post_list
-    list-style-position: inside
+    margin: 0
+    list-style-type: none
     color: #666
     .post
       border-bottom: 1px solid #666
@@ -332,10 +333,14 @@ h1#logo
       a
         font-style: normal
         display: inline-block
-        width: 80%
+        border-bottom: none
+        border-left: 3px solid $dgrey 
+        padding-left: 0.5em
+        +transition(0.3s)
+        &:hover
+          border-left-color: $green
+          color: $green
       .post_meta
-        text-align: right
-        float: right
         font-style: normal
         font-size: 0.6em
         color: #666

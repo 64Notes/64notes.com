@@ -1,20 +1,23 @@
 ---
 layout: post
-title: Archives of 64 Notes
+title: Notes on Design 
 slug: archives
 ---
+<p>I've been designing since I was in high-school. That'd be around seven years of designing. But I started writing about it recently. Here are some:</p>
+
 <ul class="post_list">
   {% for post in site.posts %}
   {% if post.category != 'talks' %}
+  {% if post.category == 'design' %}
   <li class="post">
   <a href="{{ post.url }}" class="entry-title">
-  <div class="post_meta">
+    <div class="post_meta">
     <date class=""><i class="icon icon-calendar"></i>{{ post.date | date: "%d %b %Y" }}</date>
-    {% if post.category == 'design' %}<span class="design-post"><i class="icon icon-beaker"></i>Design</span>{%endif%}
-  </div>
-  {{ post.title }}
+    </div>
+    {{ post.title }}
   </a>
   </li>
+  {% endif %}
   {% endif %}
   {% endfor %}
 </ul>

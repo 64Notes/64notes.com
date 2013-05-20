@@ -67,6 +67,12 @@
               href='{{ site.url }}/speaking'><i class="icon icon-bullhorn"></i> Speaking</a>
             </li>
             <li>
+            <a {% if page.category == 'design' %}
+              class="active"
+              {% endif %}
+              href='/design'><i class="icon icon-beaker"></i> Design</a>
+            </li>
+            <li>
               <a {% if page.slug == 'archives' %}
                 class="active"
                  {% endif %}

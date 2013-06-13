@@ -6,32 +6,39 @@ slug: "home"
 <div id=content_area>
   <div class=area id=content>
     <div class=grid>
-      <div id="best" class="post_list grid__item one-half palm-one-whole">
-        <h2><i class="icon icon-beer"></i>Greatest</h2>
-        <ul class="block-list">
-          <li><a href="/app-vs-business">App vs. Business</a></li>
-          <li><a href="/early-adopters-essay">Early Adopters</a></li>
-          <li><a href="/design/design-and-subsets-essay">The Subsets of Design</a></li>
-          <li><a href="/steal-copy">Stealing is not Copying</a></li>
-          <li><a href="/to-college-or-not-to-college">To College or Not to College</a></li>
-          <li><a href="/ideas-startups-in-betweens">Ideas, Startups & In-Betweens</a></li>
-          <li><a href="/focus">Focus, will you?</a></li>
-          <li><a href="/mistakes-failures">Please Let them Fail &amp; Make Mistakes</a></li>
-        </ul>
-      </div>
-      <div id="latest" class="post_list grid__item one-half palm-one-whole">
-        <h2><i class="icon icon-coffee"></i>Latest</h2>
-        <ul class='block-list'>
-          {% for post in site.posts limit:20 %}
+      <div id="latest" class="grid__item one-half palm-one-whole">
+        <h2>Latest</h2>
+        <ul class='post_list'>
+          {% for post in site.posts limit:15 %}
           {% if post.category != 'talks' %}
           <li class="post">
-            <a href="{{ post.url }}">{{ post.title }}</a>
+          <a href="{{ post.url }}" class="entry-title">
+            <div class="post_meta">
+              <date class="">{{ post.date | date: "%d %b %Y" }}</date>
+              {% if post.category == 'design' %}<span class="design-post">Design</span>{%endif%}
+            </div>
+            {{ post.title }}
+          </a>
           </li>
           {% endif %}
           {% endfor %}
         </ul>
+      </div><!--
+
+      --><div id="best" class="grid__item one-half palm-one-whole">
+        <h2>Greatest</h2>
+        <ul class="post_list">
+          <li class="post"><a href="/app-vs-business">App vs. Business</a></li>
+          <li class="post"><a href="/early-adopters-essay">Early Adopters</a></li>
+          <li class="post"><a href="/design/design-and-subsets-essay">The Subsets of Design</a></li>
+          <li class="post"><a href="/steal-copy">Stealing is not Copying</a></li>
+          <li class="post"><a href="/to-college-or-not-to-college">To College or Not to College</a></li>
+          <li class="post"><a href="/ideas-startups-in-betweens">Ideas, Startups & In-Betweens</a></li>
+          <li class="post"><a href="/focus">Focus, will you?</a></li>
+          <li class="post"><a href="/mistakes-failures">Please Let them Fail &amp; Make Mistakes</a></li>
+        </ul>
       </div>
-      <p class="grid__unit one-whole center">Want More? <a href="/archives">Dig the Graveyards &rarr;</a></p>
+            <p class="grid__unit one-whole center">Want More? <a href="/archives">Dig the Graveyards &rarr;</a></p>
     </div>
   </div>
 </div><!-- #content_area -->

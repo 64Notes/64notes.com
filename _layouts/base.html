@@ -95,10 +95,7 @@
       <div class='area' id='social'>
         <div class='grid'>
           {% if page.type == 'post' %}          
-          <ul class='nav--fit grid__item one-whole' id='socialshare'>
-            <li class='name'>
-            <h4><i class="icon icon-share-alt"></i> Do Not Click<h4>
-            </li>
+          <ul class='nav nav--blocked grid__item one-whole' id='socialshare'>
             <li class='fb'>
               <div id='fb-root'></div>
               <div class="fb-like" data-href="http://www.64notes.com{{ page.url }}" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-font="lucida grande"></div>
@@ -112,10 +109,7 @@
           </ul>
           <!-- #socialshare -->
           {% endif %}          
-          <ul class='nav--fit grid__item one-whole' id='socialfollow'>
-            <li class='name'>
-            <h4><i class="icon icon-heart"></i> Loved It?</h4>
-            </li>
+          <ul class='nav nav--blocked grid__item one-whole' id='socialfollow'>
             <li class='fb'>
               <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-font="lucida grande" data-width="450"></div>
             </li>

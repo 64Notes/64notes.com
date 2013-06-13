@@ -14,7 +14,7 @@ layout: base
       {{content}}
       {%if page.date %}
       <small class="meta">
-        This piece was published on {{ page.date | date: "%b %d, %Y" }}.
+        This was published on {{ page.date | date: "%b %d, %Y" }} and has {{ page.content | number_of_words }} words.
       </small>
       {%endif%}
     </div>

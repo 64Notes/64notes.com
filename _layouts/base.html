@@ -8,38 +8,36 @@
     <title>{{ page.title }}</title>
     <!-- stylesheets -->
     <link href="/assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <link href="/assets/css/font-awesome.min.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>      
     <!-- scripts -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>    
     <!-- meta -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
-    <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" /> 
-      <!-- Open Graph Data -->
-      <meta property="fb:app_id"               content="171634969647127" />       
-      {% if page.image %}
-      <meta property="og:image"                content="{{ page.image }}">
-      {% else %}
-      <meta property="og:image"                content="http://www.64notes.com/assets/images/64notes-logo.png">
-      {% endif %}
+    <meta name="google-site-verification" content="K9OQiuncypaFig7doDL5AXVteG8pLNyWmumfkcCj3qA" />        
+
+    <meta property="fb:app_id"               content="171634969647127" />       
+    {% if page.image %}
+    <meta property="og:image"                content="{{ page.image }}">
+    {% endif %}      
+    <meta property="og:image"                content="http://www.64notes.com/assets/images/64notes-logo.png">
     {% if page.type == 'post' %}
-      <meta property="og:type"                 content="article"> 
-      <meta property="og:url"                  content="http://www.64notes.com{{ page.url }}">
-      <meta property="og:site_name"            content="{{ site.name }}">
-      <meta property="og:title"                content="{{ page.title }}">
-      <meta property="article:author"          content="http://www.kingsidharth.com">
+    <meta property="og:type"                 content="article"> 
+    <meta property="og:url"                  content="http://www.64notes.com{{ page.url }}/">
+    <meta property="og:site_name"            content="{{ site.name }}">
+    <meta property="og:title"                content="{{ page.title }}">
+    <meta property="article:author"          content="http://www.kingsidharth.com">
     {% endif %}
     {% if page.slug == 'home' %}
-      <meta property="og:type"                 content="blog"> 
-      <meta property="og:url"                  content="{{ site.url   }}"> 
-      <meta property="og:title"                content="{{ site.name }}">
+    <meta property="og:type"                 content="website"> 
+    <meta property="og:url"                  content="{{ site.url   }}"> 
+    <meta property="og:title"                content="{{ site.name }}">
     {% endif %}
     <!-- others -->
     {% if page.category == 'talks' %}
-      <link rel="alternate" type="application/rss+xml" href="http://www.64notes.com/speaking/feed.xml" />            
+    <link rel="alternate" type="application/rss+xml" href="http://www.64notes.com/speaking/feed.xml" />            
     {% else %}
-      <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/64Notes" />        
+    <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/64Notes" />        
     {% endif %}
-    <meta name="google-site-verification" content="K9OQiuncypaFig7doDL5AXVteG8pLNyWmumfkcCj3qA" />    
   </head>
   <body class="{{ page.slug }} {{ page.category }}"> 
     <div id='header_area'>
@@ -56,38 +54,36 @@
               <a {% if page.slug == 'home' %}
                 class="active"
                 {%endif%}
-                href='{{ site.url }}'><i class="icon icon-off"></i> Home</a>
+                href='{{ site.url }}'>Home</a>
             </li>
             <li>
               <a {% if page.slug == 'about' %}
                 class="active"
                 {% endif %}
-                href='{{ site.url }}/about'><i class="icon icon-question-sign"></i> About</a>
+                href='{{ site.url }}/about'>About</a>
             </li>
             <li>
             <a {% if page.category == 'talks' %}
               class="active"
               {% endif %}
-              href='{{ site.url }}/speaking'><i class="icon icon-bullhorn"></i> Speaking</a>
+              href='{{ site.url }}/speaking'>Speaking</a>
             </li>
             <li>
             <a {% if page.category == 'design' %}
               class="active"
               {% endif %}
-              href='/design'><i class="icon icon-beaker"></i> Design</a>
+              href='/design'>Design</a>
             </li>
             <li>
               <a {% if page.slug == 'archives' %}
                 class="active"
                  {% endif %}
-                 href='{{ site.url }}/archives'><i class="icon icon-tasks"></i> Archives</a>
+                 href='{{ site.url }}/archives'>Archives</a>
             </li>
           </ul>
           <!-- .nav-bar -->
           {% if page.slug == 'home' %}
-          <p class="grid__unit one-whole">
-          This is a collection of personal notes of Sidharth on <strong>startups, business, entrepreneurship & life</strong>. Guess he <a href="/design">designs &amp; stuff</a> and is Partner-in-Crime at <a href="http://instamojo.com">instamojo</a>. <br/><em>King Sidharth</em> he calls himself! Meh! 
-          </p>
+          <p class="grid__unit one-whole">These are personal notes of Sidharth on <strong>startups, business, entrepreneurship &amp; design</strong>. He <a href="/design">designs &amp; stuff</a> for <a href="http://instamojo.com">Instamojo</a>. <br/><strong>King Sidharth</strong> he calls himself. Meh.</p>
           {% endif %}
         </div>
       </div>

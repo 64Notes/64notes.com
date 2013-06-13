@@ -15,16 +15,15 @@ layout: base
             {% if page.evlink %}
             <a href="{{ page.evlink }}" itemprop="link">
             {% endif %}
-            <i class="icon icon-bullhorn"></i>            
             {{ page.event }}
             {% if page.evlink %}
             </a>
             {% endif %}
           </h2>
-          <p class='place' itemprop='location'><i class="icon icon-map-marker"></i>{{ page.place }}</p>
+          <p class='place' itemprop='location'>{{ page.place }}</p>
           <span>on</span>
           <p itemprop="startDate" datetime="{{ page.date }}" class='date'>
-          <i class="icon icon-calendar"></i> {{ page.date | date: "%d %b, %Y" }}
+          {{ page.date | date: "%d %b, %Y" }}
           </p>
         </div><!-- .headline_area -->
       </div><!-- .talk_details -->

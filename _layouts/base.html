@@ -128,6 +128,7 @@
       <!-- #social.area -->
     </div>
     <!-- #social_area -->
+
     <div id='footer_area'>
       <div class='area' id='footer'>
         <p>
@@ -137,29 +138,20 @@
       <!-- #footer -->
     </div>
     <!-- #footer_area -->
-    <!-- Google Analytics Code -->
     <script type="text/javascript">
-    (function() {
-      var config = {
-        kitId: 'kxv2hzq',
-        scriptTimeout: 3000
-      };
-      var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
-  })();
-
     //<![CDATA[
       //Async Social Sharing Button JS
       (function(doc, script) {
         var js, 
-            fjs = doc.getElementsByTagName(script)[0],
-            frag = doc.createDocumentFragment(),
-            add = function(url, id) {
-                if (doc.getElementById(id)) {return;}
-                js = doc.createElement(script);
-                js.src = url;
-                id && (js.id = id);
-                frag.appendChild( js );
-            };
+          fjs = doc.getElementsByTagName(script)[0],
+          frag = doc.createDocumentFragment(),
+          add = function(url, id) {
+            if (doc.getElementById(id)) {return;}
+            js = doc.createElement(script);
+            js.src = url;
+            id && (js.id = id);
+            frag.appendChild( js );
+          };
             
           // Facebook SDK
           add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=200103733347528', 'facebook-jssdk');
@@ -171,8 +163,9 @@
           fjs.parentNode.insertBefore(frag, fjs);
       }(document, 'script'));
     //]]>
-  </script>
+    </script>
 
+    <!-- Google Analytics Code -->
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-4910697-16']);
@@ -185,5 +178,4 @@
       })();
     </script>
   </body>
-  <!-- body -->
-  </html>
+</html>

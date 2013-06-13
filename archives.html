@@ -9,8 +9,8 @@ slug: archives
   <li class="post">
   <a href="{{ post.url }}" class="entry-title">
   <div class="post_meta">
-    <date class=""><i class="icon icon-calendar"></i>{{ post.date | date: "%d %b %Y" }}</date>
-    {% if post.category == 'design' %}<span class="design-post"><i class="icon icon-beaker"></i>Design</span>{%endif%}
+    <date class="">{{ post.date | date: "%d %b %Y" }}</date>
+    {% if post.category == 'design' %}<span class="design-post">Design</span>{%endif%}
   </div>
   {{ post.title }}
   </a>

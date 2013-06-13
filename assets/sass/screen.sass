@@ -13,26 +13,23 @@
 @import compass
 
 @mixin sans
-  font-family: "soleil", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif
+  font-family: "Ubuntu", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif
 
-@mixin serif
-  font-family: "Adelle", "Droid Serif", Georgia, serif  
+//@mixin serif
+  font-family: "Avenir Next", "Droid Serif", Georgia, serif  
 
 /*--- Colors
-$grey: #EEE
-$blue: #0c1f24
-$green: #063848
-$dgrey: #CCC
+$grey:      #F2F2F2
+$blue:      #0c1f24
+$green:     #063848
+$dgrey:     #CCC
 
 /* Generic Rules
-
-h1, h2, h3, h4, h5, h6
-  +sans
 
 body
   background: $grey 
   border-top: 3px solid $green
-  +serif
+  +sans
   a
     color: $green 
     border-bottom: 1px dotted $green
@@ -150,6 +147,7 @@ h1#logo
     h1
       font-size: 3em
       letter-spacing: -2px
+      font-weight: 300
 
 /*----:[Content Area]:----*/
 #content_area
@@ -163,12 +161,15 @@ h1#logo
       font-size: 1.3em
       padding-right: 5px
   h2, h3, h4, h5, h6
-    margin-bottom: 5px
+    margin-bottom: 0.7em
+    margin-top: 1.7em
     line-height: 1.3em
+  h3, h4
+    font-weight: 300
 
 /* Social Area
 #social_area
-  background: $blue
+  background: $green
   color: $grey
   text-align: center
   .area

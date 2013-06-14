@@ -228,7 +228,7 @@ h1#logo
 .talks
   #headline_area
     padding-top: 2em
-.talk-list
+//.talk-list
   margin: 0
   .talk
     clear: both
@@ -292,7 +292,7 @@ h1#logo
 .speaking
   #conteant_area
     .area
-      max-width: 700px !important
+      max-width: 600px!important
     h2
       text-align: center
 
@@ -331,8 +331,18 @@ h1#logo
       font-size: 0.6em
       text-transform: uppercase
       color: #666
+      em
+        text-transform: none
+      .event-place
+        font-weight: 500 
+      &.event-meta
+        color: $green
+        font-size: 0.7em
     .design-post
       color: $green
       font-weight: normal
+    .talk-title
+      font-weight: 500
+    
 @import responsive
 

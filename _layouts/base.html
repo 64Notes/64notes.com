@@ -63,7 +63,7 @@
                 href='/about'>About</a>
             </li>
             <li>
-            <a {% if page.category == 'talks' %}
+            <a {% if page.category == 'talks' or page.slug == 'speaking' %}
               class="active"
               {% endif %}
               href='/speaking'>Speaking</a>

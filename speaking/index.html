@@ -1,51 +1,47 @@
 ---
 layout: post
 title: King Sidharth is Speaking
-category: talks
 slug: speaking
 ---
-<p>I talk a lot. Really a lot. No, Seriously!</p>
-<p>I am usually found traveling around the country to give talks on <strong>Entrepreneurship, Design & Philosophy</strong>. Usually they turn out to be <strike>motivational</strike> inspirational talks. If you want to invite me to one of your events, just mail me at: king@kingsidharth.com</p>
+<p>I talk a lot. Really a lot. No, seriously!</p>
+<p>I am usually found traveling around the country to give talks on <strong>Entrepreneurship, Design & Philosophy</strong>. You can invite me to one of your events as well: king@kingsidharth.com</p>
 
-<h2>Upcoming:</h2>
-<ul class='talk-list nav nav--stacked'>
+<h2 class="center">Upcoming:</h2>
+<p class="center">Yikes! Looks like I am not speaking anywhere. Mom? MOMMY?!</p>
+<ul class='post_list nav past nav--stacked'>
 {% for post in site.posts %}
 {% if post.category == 'talks' and post.future %}
-<li class='talk {% if post.future %} upcoming {% endif %}' itemscope itemtype="http://data-vocabulary.org/Event">
-  <div itemprop="startDate" datetime="{{ post.date }}" class='talk-date'>
-      <div class='month'>{{ post.date | date:  "%d %b" }}</div>
-      <div class='year'><i class="icon icon-calendar"></i>{{ post.date | date:  "%Y"    }}</div>
+  <li class='talk post' itemscope itemtype="http://data-vocabulary.org/Event">
+  <a href="{{ post.url }}" itemprop="url">
+    <div itemprop="startDate" datetime="{{ post.date }}" class='post_meta'>
+      {{ post.date | date: "%d %b %Y" }}
     </div>
-   <div class="talk-link">
-   <div class="talk-title">
-     <a itemprop="url" href="{{ post.url }}"><em>On</em> <span>{{ post.title }}</span></a>
-   </div>
-   <div class="talk-meta"><i class="icon icon-bullhorn"></i> <span itemprop="summary">{{ post.event }}</span>
-     <i class="icon icon-map-marker"></i>{{ post.place }}</div>
+    <div class="talk-title" itemprop="name">{{ post.title }}</span></div>
+    <div class="post_meta event-meta">
+      <span class="event-name" itemprop="summary">{{ post.event }}</span><em> at </em>
+      <span class="event-place">{{ post.place }}</span>
     </div>
+  </a>
   </li>
 {% endif %}
 {% endfor %}
 </ul>
 
-<h2>Past:</h2>
-<ul class='talk-list nav past nav--stacked'>
+<h2 class="center">Past:</h2>
+<ul class='post_list nav past nav--stacked'>
 {% for post in site.posts %}
 {% if post.category == 'talks' and post.future != true %}
-  <li class='talk' itemscope itemtype="http://data-vocabulary.org/Event">
-    <div itemprop="startDate" datetime="{{ post.date }}" class='talk-date grid__item two-tenths palm-one-whole'>
-      <div class='month'>{{ post.date | date:  "%d %b" }}</div>
-      <div class='year'><i class="icon icon-calendar"></i>{{ post.date | date:  "%Y"    }}</div>
+  <li class='talk post' itemscope itemtype="http://data-vocabulary.org/Event">
+  <a href="{{ post.url }}" itemprop="url">
+    <div itemprop="startDate" datetime="{{ post.date }}" class='post_meta'>
+      {{ post.date | date: "%d %b %Y" }}
     </div>
-   <div class="talk-link grid__item seven-tenths palm-one-whole">
-     <div class="talk-title">
-       <a itemprop="url" href="{{ post.url }}"><em>On</em> <span>{{ post.title }}</span></a>
-     </div>
-     <div class="talk-meta">
-       <span class="event-name" itemprop="summary"><i class="icon icon-bullhorn"></i> {{ post.event }}</span>
-       <i class="icon icon-map-marker"></i>{{ post.place }}
-     </div>
+    <div class="talk-title" itemprop="name">{{ post.title }}</span></div>
+    <div class="post_meta event-meta">
+      <span class="event-name" itemprop="summary">{{ post.event }}</span><em> at </em>
+      <span class="event-place">{{ post.place }}</span>
     </div>
+  </a>
   </li>
 {% endif %}
 {% endfor %}

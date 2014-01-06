@@ -23,7 +23,8 @@ layout: base
           <p class='place' itemprop='location'>{{ page.place }}</p>
           <span>on</span>
           <p itemprop="startDate" datetime="{{ page.date }}" class='date'>
-          {{ page.date | date: "%d %b, %Y" }}
+          {{ page.date | date: "%d %b" }},
+          <strong>{{ page.date | date: "%Y" }}</strong>
           </p>
         </div><!-- .headline_area -->
       </div><!-- .talk_details -->

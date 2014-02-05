@@ -41,6 +41,13 @@ body
       border-bottom: 1px solid $green
   p, ul, ol
     line-height: 1.61em
+  ul, ol
+    @include media-query(palm)
+      margin-left: 10px
+      list-style-position: inside
+    li
+      @include media-query(palm)
+        margin-bottom: 0.5em 
   ul
     list-style-type: square
   ol
@@ -147,6 +154,10 @@ h1#logo
       font-size: 3em
       letter-spacing: -2px
       font-weight: 300
+      @include media-query(palm)
+        font-size: 2.2em
+        line-height: 1.3em
+      
 
 /*----:[Content Area]:----*/
 #content_area
@@ -242,16 +253,23 @@ h1#logo
       font-style: italic
       font-size: 1.3em      
       color: #999
+      @include media-query(palm)
+        font-size: 0.8em 
     h1
       line-height: 1.2em
       margin-bottom: 0
     h2
       margin-bottom: 0em
+      letter-spacing: -1px
+      @include media-query(palm)
+        font-size: 1.8em
     .place
       text-transform: uppercase
       font-size: 15px
       color: $green
       letter-spacing: 2px
+      @include media-query(palm)
+        font-size: 13px
       margin: 0
       .icon
         padding-right: 5px

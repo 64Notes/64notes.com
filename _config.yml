@@ -3,3 +3,6 @@ exclude: [sass, config.rb, CNAME, Rakefile, Readme.markdown]
 url: http://www.64notes.com
 name: 64 Notes
 description: Notes of a Young Entrepreneur
+
+safe: true
+lsi: false

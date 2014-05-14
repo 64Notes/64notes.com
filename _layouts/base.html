@@ -1,10 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
-  <head 
-    {% if page.type == 'post' %}
-    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# 
-    article: http://ogp.me/ns/article#"
-    {% endif %} >
+  <head {% if page.type == 'post' %} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"{% endif %}>
     <title>{{ page.title }}</title>
     <!-- stylesheets -->
     <link href="/assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
@@ -52,34 +48,19 @@
           {% endif %}   
           <ul class='nav grid__item one-whole'>
             <li>
-              <a {% if page.slug == 'home' %}
-                class="active"
-                {%endif%}
-                href='/'>Home</a>
+              <a {% if page.slug == 'home' %}class="active"{%endif%} href='/'>Home</a>
             </li>
             <li>
-              <a {% if page.slug == 'about' %}
-                class="active"
-                {% endif %}
-                href='/about'>About</a>
+              <a {% if page.slug == 'about' %}class="active"{% endif %} href='/about'>About</a>
             </li>
             <li>
-            <a {% if page.category == 'talks' or page.slug == 'speaking' %}
-              class="active"
-              {% endif %}
-              href='/speaking'>Speaking</a>
+            <a {% if page.category == 'talks' or page.slug == 'speaking' %}class="active"{% endif %} href='/speaking'>Speaking</a>
             </li>
             <li>
-            <a {% if page.category == 'design' or page.slug == 'design_archives' %}
-              class="active"
-              {% endif %}
-              href='/design'>Design</a>
+            <a {% if page.category == 'design' or page.slug == 'design_archives' %}class="active"{% endif %} href='/design'>Design</a>
             </li>
             <li>
-              <a {% if page.slug == 'archives' %}
-                class="active"
-                 {% endif %}
-                 href='/archives'>Archives</a>
+              <a {% if page.slug == 'archives' %}class="active"{% endif %} href='/archives'>Archives</a>
             </li>
           </ul>
           <!-- .nav-bar -->

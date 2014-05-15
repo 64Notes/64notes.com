@@ -1,8 +1,18 @@
-permalink: /:categories/:title
-exclude: [sass, config.rb, Readme.markdown, Gemfile, Gemfile.lock]
-destination: ./dist
+# 64notes.com — Jekyll Configuration File
+
+# Site Settings
 url: http://www.64notes.com
 name: 64 Notes
 description: Notes of a Young Entrepreneur
 encoding: utf-8
+permalink: /:categories/:title
+
+
+# Development Settings
+exclude: [sass, config.rb, Readme.markdown, Gemfile, Gemfile.lock]
+destination: ./dist
 gems: [jekyll-minify-html]
+
+# MODULES
+# Jekyll Environment Variables
+env: development # For production: $ export JEKYLL_ENV=production

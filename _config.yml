@@ -6,3 +6,7 @@ name: 64 Notes
 description: Notes of a Young Entrepreneur
 encoding: utf-8
 gems: [jekyll-minify-html]
+
+# MODULES
+# Jekyll Environment Variables
+env: development # For production: $ export JEKYLL_ENV=production

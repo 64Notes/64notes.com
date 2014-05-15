@@ -77,26 +77,22 @@
       <div class='area' id='social'>
         <div class='grid'>
           {% if page.type == 'post' %}          
-          <ul class='nav nav--blocked grid__item one-whole' id='socialshare'>
+          <ul class='nav nav--block grid__item one-whole' id='socialshare'>
             <li class='fb'>
-              <div id='fb-root'></div>
-              <div class="fb-like" data-href="http://www.64notes.com{{ page.url }}" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-font="lucida grande"></div>
+              <a class="fb_link" onclick="return fbs_click()" href="#">Share on Facebook</a>
             </li>
             <li class='twitter'>
-              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.64notes.com{{ page.url }}" data-via="kingsidharth" data-related="kingsidharth">Tweet</a>
+              <a class="twitter_share" href="#">Share on Twitter</a>
             </li>  
-            <li class='buffer'>
-            <a href="http://bufferapp.com/add" class="buffer-add-button" data-text="{{post.title}}" data-url="http://www.64notes.com{{ page.url }}" data-count="horizontal" data-via="kingsidharth"  data-picture="http://www.64notes.com/images/64notes-logo.png">Buffer This</a>
-            </li>
           </ul>
           <!-- #socialshare -->
           {% endif %}          
-          <ul class='nav nav--blocked grid__item one-whole' id='socialfollow'>
+          <ul class='nav nav--block grid__item one-whole' id='socialfollow'>
             <li class='fb'>
-              <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-font="lucida grande" data-width="450"></div>
+              <a href="https://www.facebook.com/kingsidharth" onClick="">Follow on Facebook</a>
             </li>
             <li class='twitter'>
-              <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false">Follow @kingsidharth</a>
+              <a href="https://twitter.com/kingsidharth">@kingsidharth</a>
             </li>      
           </ul>
         </div>
@@ -107,40 +103,20 @@
 
     <div id='footer_area'>
       <div class='area' id='footer'>
-        <p>
-        by <a href="http://www.kingsidharth.com" rel="author">King Sidharth</a><a href="https://plus.google.com/100630005600562803456/" rel="author">.</a> | &copy; 2010-14 | <a href="/colophon">Colophon</a>
-        </p>
+        <p>&copy; 2010-14 <a href="http://www.kingsidharth.com" rel="author">King Sidharth</a><a href="https://plus.google.com/100630005600562803456/" rel="author">.</a> | <a href="/colophon">Colophon</a></p>
       </div>
       <!-- #footer -->
     </div>
     <!-- #footer_area -->
-    <script type="text/javascript">
-    //<![CDATA[
-      //Async Social Sharing Button JS
-      (function(doc, script) {
-        var js, 
-          fjs = doc.getElementsByTagName(script)[0],
-          frag = doc.createDocumentFragment(),
-          add = function(url, id) {
-            if (doc.getElementById(id)) {return;}
-            js = doc.createElement(script);
-            js.src = url;
-            id && (js.id = id);
-            frag.appendChild( js );
-          };
-            
-          // Facebook SDK
-          add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=200103733347528', 'facebook-jssdk');
-          // Twitter SDK
-          add('http://platform.twitter.com/widgets.js');
-          // Buffer App
-          add('http://static.bufferapp.com/js/button.js');
-      
-          fjs.parentNode.insertBefore(frag, fjs);
-      }(document, 'script'));
-    //]]>
-    </script>
 
+    <script>
+      function fbs_click() {
+        var u="{{ page.url }}";
+        var t="{{ page.title }}";
+        window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');
+        return false;
+      }
+    </script>
     <!-- Google Analytics Code -->
     <script type="text/javascript">
       var _gaq = _gaq || [];

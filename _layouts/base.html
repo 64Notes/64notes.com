@@ -73,29 +73,18 @@
     <!-- #header_area -->
     {{ content }}
     <!-- #content_area -->
-    <div id='social_area'>
+    <div id='social_area' class="grid">
       <div class='area' id='social'>
-        <div class='grid'>
-          {% if page.type == 'post' %}          
-          <ul class='nav nav--block grid__item one-whole' id='socialshare'>
-            <li class='fb'>
-              <a class="fb_link" onclick="return fbs_click()" href="#">Share on Facebook</a>
-            </li>
-            <li class='twitter'>
-              <a class="twitter_share" href="#">Share on Twitter</a>
-            </li>  
-          </ul>
-          <!-- #socialshare -->
-          {% endif %}          
           <ul class='nav nav--block grid__item one-whole' id='socialfollow'>
-            <li class='fb'>
-              <a href="https://www.facebook.com/kingsidharth" onClick="">Follow on Facebook</a>
-            </li>
+            <li>Follow on </li>
             <li class='twitter'>
               <a href="https://twitter.com/kingsidharth">@kingsidharth</a>
-            </li>      
+            </li>
+            <li><em> or </em></li>
+            <li class='fb'>
+              <a href="https://www.facebook.com/kingsidharth" onClick="">facebook</a>
+            </li>
           </ul>
-        </div>
       </div>
       <!-- #social.area -->
     </div>

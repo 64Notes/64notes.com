@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page 
 title: Note not Found - Error 404
 type: page
 slug: four-o-four

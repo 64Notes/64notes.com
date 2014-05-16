@@ -11,11 +11,19 @@ layout: base
 </div><!-- #headline_area -->
 <div id="content_area" class="grid">
   <div class="area" id="content">
-    <div class="grid__item one-whole post_content">
-      <section class="post__meta">
-        {{ page.date | date: "%b %d, %Y" }} &middot; {{ page.content | number_of_words }}
-      </section>
+    <section class="post__meta">
+      <div class="grid__item one-half palm-one-whole">
+        {{ page.date | date: "%b %d, %Y" }} &middot; {{ page.content | number_of_words }} words
+      </div><!--
+      --><ul class="grid__item one-half right nav desk-show no-bottom-margin">
+        <li><a href="">Tweet</a></li>
+        <li> &middot; </li>
+        <li><a href="">Share</a></li>
+      </ul>
+    </section>
+    <section class="grid__item one-whole">
       {{content}}
+    </section>
       {%if page.date %}
       <footer class="post__meta">
       </footer>

@@ -30,6 +30,7 @@ $dgrey:     #CCC
 
 body
   background: $grey
+  border-top: 3px solid $blue
   +sans
   a
     color: $green
@@ -69,8 +70,8 @@ body
   padding: 1.2em 0.6em
   overflow: hidden
 
-.center
-  text-align: center
+.no-bottom-margin
+  margin-bottom: 0px
 
 ::selection
   color: $grey
@@ -100,11 +101,14 @@ body
 
 /* Header Area
 #header_area
-  text-align: center
   .area
     max-width: 900px
-    padding-bottom: 0
-    padding-top: 1.5em
+    text-align: center
+    padding-top: $base-spacing-unit*2
+    padding-bottom: $base-spacing-unit*2
+    @include media-query(desk)
+      padding-top: $base-spacing-unit*4
+      padding-bottom: $base-spacing-unit*4
   .nav
     li
       margin-right: 0.5em
@@ -151,6 +155,7 @@ h1#logo
   .area
     padding: 0
     max-width: 900px
+    text-align: center
 
 /*----:[Content Area]:----*/
 #content_area
@@ -191,29 +196,29 @@ h1#logo
 
 .post__meta
   color: $dgrey
-  border: solid $dgrey
-  border-width: 1px 0px
   margin-bottom: 1em
+  a
+    color: $dgrey
+    border-color: $dgrey
+    &:hover
+      color: $blue
   @include font-size($h5-size)
+  @include media-query(desk)
+    @include font-size($h6-size)
 
 /* Social Area
 #social_area
   background: $green
   color: $dgrey
   text-align: center
+  font-size: 0.9em
   .area
-    max-width: 900px
     padding-bottom: 0px
   a
     color: $grey
     border-bottom: 1px dotted $dgrey
     &:hover
       border-bottom-style: solid
-  h4
-    text-shadow: none
-    letter-spacing: 1px
-    text-transform: uppercase
-    font-size: 14px
 
 /* Footer Area
 #footer_area

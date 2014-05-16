@@ -66,7 +66,7 @@ body
   max-width: 650px
   width: auto
   margin: 0 auto 0 auto
-  padding: 2em 2em 2em 2em
+  padding: 1.2em 0.6em
   overflow: hidden
 
 .center
@@ -151,33 +151,50 @@ h1#logo
   .area
     padding: 0
     max-width: 900px
-    text-align: center
-    h1
-      font-size: 3em
-      letter-spacing: -2px
-      font-weight: 300
-      @include media-query(palm)
-        font-size: 2.2em
-        line-height: 1.3em
-
 
 /*----:[Content Area]:----*/
 #content_area
   .area
     padding-top: 0
-  .meta
-    border-top: 1px dashed #999
-    padding-top: 1em
-    color: #666
-    .icon
-      font-size: 1.3em
-      padding-right: 5px
   h2, h3, h4, h5, h6
     margin-bottom: 0.7em
     margin-top: 1.7em
     line-height: 1.3em
   h3, h4
     font-weight: 300
+
+
+// Mixins
+@mixin title
+  font-size: 3em
+  letter-spacing: -2px
+  font-weight: 300
+  @include media-query(palm)
+    font-size: 2.2em
+    line-height: 1.3em
+
+// POST
+.post__title
+  @include title
+  text-align: center
+  margin-bottom: $base-spacing-unit/2
+
+.post__content
+  h2, h3, h4, h5, h6
+    margin-top: 2.1em
+    margin-bottom: 0.5em
+  h2
+    font-weight: normal
+    letter-spacing: -1px
+    @include media-query(palm)
+      line-height: 1.3em
+
+.post__meta
+  color: $dgrey
+  border: solid $dgrey
+  border-width: 1px 0px
+  margin-bottom: 1em
+  @include font-size($h5-size)
 
 /* Social Area
 #social_area
@@ -345,16 +362,3 @@ h1#logo
       font-weight: 500
 
 @import responsive
-
-
-// Headlines
-.post_content
-  h2, h3, h4, h5, h6
-    margin-top: 2.1em
-    margin-bottom: 0.5em
-
-  h2
-    font-weight: normal
-    letter-spacing: -1px
-    @include media-query(palm)
-      line-height: 1.3em

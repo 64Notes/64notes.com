@@ -10,7 +10,7 @@ $base-font-size:    18px;
 $base-line-height:  1.61*$base-font-size;
 
 /**
- * Base font-family. 
+ * Base font-family.
  */
 $base-font-family:  sans-serif!default;
 
@@ -60,3 +60,8 @@ $use-block-list:    true;
 $use-rules:         true;
 
 
+$default-transition-function: ease-in;
+
+$directions: -top -right -bottom -left;
+$resolutions: palm lap portable desk;
+$subres: palm lap desk;

@@ -13,10 +13,10 @@ slug: "home"
           <li class="post">
           <a href="{{ post.url }}" class="entry-title">
             <div class="post__meta">
-              <date class="">{{ post.date | date: "%d %b %Y" }}</date>
-              {% if post.category == 'design' %}<span class="design-post">Design</span>{%endif%}
+              <date class="">{{ post.date | date: "%d %b, %Y" }}</date>
+              {% if post.category == 'design' %} &middot; Design{%endif%}
             </div>
-            {{ post.title }}
+            <span class="post__title">{{ post.title }}</span>
           </a>
           </li>
           {% endif %}
@@ -26,14 +26,14 @@ slug: "home"
       --><div id="best" class="grid__item one-half palm-one-whole">
         <h2>Greatest</h2>
         <ul class="post_list">
-          <li class="post"><a href="/app-vs-business">App vs. Business</a></li>
-          <li class="post"><a href="/early-adopters-essay">Early Adopters</a></li>
-          <li class="post"><a href="/design/design-and-subsets-essay">The Subsets of Design</a></li>
-          <li class="post"><a href="/steal-copy">Stealing is not Copying</a></li>
-          <li class="post"><a href="/to-college-or-not-to-college">To College or Not to College</a></li>
-          <li class="post"><a href="/ideas-startups-in-betweens">Ideas, Startups & In-Betweens</a></li>
-          <li class="post"><a href="/focus">Focus, will you?</a></li>
-          <li class="post"><a href="/mistakes-failures">Please Let them Fail &amp; Make Mistakes</a></li>
+          <li class="post"><a href="/app-vs-business" class="post__title">App vs. Business</a></li>
+          <li class="post"><a href="/early-adopters-essay" class="post__title">Early Adopters</a></li>
+          <li class="post"><a href="/design/design-and-subsets-essay" class="post__title">The Subsets of Design</a></li>
+          <li class="post"><a href="/steal-copy" class="post__title">Stealing is not Copying</a></li>
+          <li class="post"><a href="/to-college-or-not-to-college" class="post__title">To College or Not to College</a></li>
+          <li class="post"><a href="/ideas-startups-in-betweens" class="post__title">Ideas, Startups & In-Betweens</a></li>
+          <li class="post"><a href="/focus" class="post__title">Focus, will you?</a></li>
+          <li class="post"><a href="/mistakes-failures" class="post__title">Please Let them Fail &amp; Make Mistakes</a></li>
         </ul>
       </div>
             <p class="grid__unit one-whole center">Want More? <a href="/archives">Dig the Graveyards &rarr;</a></p>

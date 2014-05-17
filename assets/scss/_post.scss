@@ -2,6 +2,7 @@
 
 @mixin title {
   font-size: 3em;
+  text-align: center;
   letter-spacing: -2px;
   font-weight: 300;
   @include media-query(palm) {
@@ -11,9 +12,10 @@
 }
 
 .post__title {
-  @include title;
-  text-align: center;
   margin-bottom: $base-spacing-unit / 2;
+}
+h1.post__title {
+  @include title;
 }
 
 .post__content {
@@ -50,9 +52,6 @@
   em {
     text-transform: none;
   }
-  .event-place {
-    font-weight: 500;
-  }
   &.event-meta {
     color: $green;
     font-size: 0.7em;
@@ -62,7 +61,6 @@
 .post_list {
   margin-left: 0;
   list-style-type: none;
-  color: $dgrey;
 
   .post {
     border-bottom: 1px solid $dgrey;
@@ -83,13 +81,10 @@
       font-size: 0.7em;
       margin-bottom: 0px;
     }
-    .design-post {
-      color: $dgrey;
-      font-weight: normal;
-    }
-    .talk-title {
-      font-weight: 500;
-    }
+  }
+  .post__title {
+    font-weight: 500;
+    margin-bottom: 0px;
   }
 }
 

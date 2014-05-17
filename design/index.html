@@ -12,9 +12,9 @@ slug: design_archives
   <li class="post">
   <a href="{{ post.url }}" class="entry-title">
     <div class="post__meta">
-    <date>{{ post.date | date: "%d %b %Y" }}</date>
+    <date>{{ post.date | date: "%d %b, %Y" }}</date>
     </div>
-    {{ post.title }}
+    <span class="post__title">{{ post.title }}</span>
   </a>
   </li>
   {% endif %}

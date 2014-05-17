@@ -3,8 +3,7 @@ layout: page
 title: Talks by King Sidharth 
 slug: speaking
 ---
-<p>I talk a lot. Really a lot. No, seriously!</p>
-<p>I am usually found traveling around the country to give <strong>inspirational talks on entrepreneurship &amp; life philosophy</strong> or <strong>technical talks on design</strong>.</p>
+<p>I am often found traveling around to give <strong>inspirational talks on entrepreneurship &amp; life philosophy</strong> or <strong>technical talks on design</strong>.</p>
 <p>I've given talks at events like <strong>TEDx, Startup Saturday &amp; WordCamps</strong> and in colleges like <strong>BITS Pilani Goa, Kamla Nehru College, &amp; NITs</strong>.</p> 
 <p>You can invite me to one of your events as well: king@kingsidharth.com</p>
 
@@ -12,18 +11,23 @@ slug: speaking
 <ul class='post_list nav past nav--stacked'>
 {% for post in site.posts %}
 {% if post.category == 'talks' %}
-  <li class='talk post' itemscope itemtype="http://data-vocabulary.org/Event">
+  <li class='talk post post--talk' itemscope itemtype="http://data-vocabulary.org/Event">
   <a href="{{ post.url }}" itemprop="url">
+
     <div itemprop="startDate" datetime="{{ post.date }}" class='post__meta'>
-      {{ post.date | date: "%d %b" }}, <strong>{{ post.date | date: "%Y" }}</strong>
+      <date>{{ post.date | date: "%d %b" }}, <span class="normal">{{ post.date | date: "%Y" }}</span></date>
       {% if post.future %} &middot;<strong> Upcoming</strong> 
       {% else %} &middot; Past{% endif %}
     </div>
-    <div class="talk-title" itemprop="name">{{ post.title }}</span></div>
-    <div class="post__meta event-meta">
-      <span class="event-name" itemprop="summary">{{ post.event }}</span><em> at </em>
-      <span class="event-place">{{ post.place }}</span>
+
+    <div class="post__title talk__title" itemprop="name">{{ post.title }}</span></div>
+
+    <div class="post__meta">
+      <span class="normal talk__event" itemprop="summary">{{ post.event }}</span>
+      &nbsp;&middot;&nbsp;
+      <span class="normal talk__location">{{ post.place }}</span>
     </div>
+
   </a>
   </li>
 {% endif %}

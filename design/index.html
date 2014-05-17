@@ -6,9 +6,7 @@ slug: design_archives
 <p>I started designing when I was in high-school. That's 7+ years of designing! Took me a long while to get started on writing about design.</p>
 
 <ul class="post_list">
-  {% for post in site.posts %}
-  {% if post.category != 'talks' %}
-  {% if post.category == 'design' %}
+  {% for post in site.categories.design %}
   <li class="post">
   <a href="{{ post.url }}" class="entry-title">
     <div class="post__meta">
@@ -17,8 +15,6 @@ slug: design_archives
     <span class="post__title">{{ post.title }}</span>
   </a>
   </li>
-  {% endif %}
-  {% endif %}
   {% endfor %}
 </ul>
 

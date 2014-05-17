@@ -13,11 +13,11 @@ slug: speaking
 {% if post.category == 'talks' and post.future %}
   <li class='talk post' itemscope itemtype="http://data-vocabulary.org/Event">
   <a href="{{ post.url }}" itemprop="url">
-    <div itemprop="startDate" datetime="{{ post.date }}" class='post_meta'>
+    <div itemprop="startDate" datetime="{{ post.date }}" class='post__meta'>
       {{ post.date | date: "%d %b" }}, <strong>{{ post.date | date: "%Y" }}</strong>
     </div>
     <div class="talk-title" itemprop="name">{{ post.title }}</span></div>
-    <div class="post_meta event-meta">
+    <div class="post__meta event-meta">
       <span class="event-name" itemprop="summary">{{ post.event }}</span><em> at </em>
       <span class="event-place">{{ post.place }}</span>
     </div>
@@ -33,11 +33,11 @@ slug: speaking
 {% if post.category == 'talks' and post.future != true %}
   <li class='talk post' itemscope itemtype="http://data-vocabulary.org/Event">
   <a href="{{ post.url }}" itemprop="url">
-    <div itemprop="startDate" datetime="{{ post.date }}" class='post_meta'>
+    <div itemprop="startDate" datetime="{{ post.date }}" class='post__meta'>
       {{ post.date | date: "%d %b" }}, <strong>{{ post.date | date: "%Y" }}</strong>
     </div>
     <div class="talk-title" itemprop="name">{{ post.title }}</span></div>
-    <div class="post_meta event-meta">
+    <div class="post__meta event-meta">
       <span class="event-name" itemprop="summary">{{ post.event }}</span><em> at </em>
       <span class="event-place">{{ post.place }}</span>
     </div>

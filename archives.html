@@ -8,8 +8,8 @@ slug: archives
   {% if post.category != 'talks' %}
   <li class="post">
   <a href="{{ post.url }}" class="entry-title">
-  <div class="post_meta">
-    <date class="">{{ post.date | date: "%d %b %Y" }}</date>
+  <div class="post__meta">
+    <date>{{ post.date | date: "%d %b %Y" }}</date>
     {% if post.category == 'design' %}<span class="design-post">Design</span>{%endif%}
   </div>
   {{ post.title }}

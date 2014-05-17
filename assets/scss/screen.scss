@@ -195,6 +195,10 @@ body {
   &:hover {
     border: none !important;
   }
+
+  @include media-query(palm) {
+    background-position: center;
+  }
 }
 
 h1#logo {
@@ -261,6 +265,13 @@ h1#logo {
 .post__meta {
   color: $dgrey;
   margin-bottom: 1em;
+  font-weight: 300;
+  text-transform: uppercase;
+  @include font-size($h5-size);
+  @include media-query(desk) {
+    @include font-size($h6-size);
+  }
+
   a {
     color: $dgrey;
     border-color: $dgrey;
@@ -268,9 +279,15 @@ h1#logo {
       color: $blue;
     }
   }
-  @include font-size($h5-size);
-  @include media-query(desk) {
-    @include font-size($h6-size);
+  em {
+    text-transform: none;
+  }
+  .event-place {
+    font-weight: 500;
+  }
+  &.event-meta {
+    color: $green;
+    font-size: 0.7em;
   }
 }
 
@@ -472,21 +489,9 @@ h1#logo {
         color: $blue;
       }
     }
-    .post_meta {
-      font-style: 300;
-      font-size: 0.6em;
-      text-transform: uppercase;
-      color: $dgrey;
-      em {
-        text-transform: none;
-      }
-      .event-place {
-        font-weight: 500;
-      }
-      &.event-meta {
-        color: $green;
-        font-size: 0.7em;
-      }
+    .post__meta {
+      font-size: 0.7em;
+      margin-bottom: 0px;
     }
     .design-post {
       color: $dgrey;

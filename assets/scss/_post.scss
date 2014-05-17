@@ -1,4 +1,15 @@
 // POST
+
+@mixin title {
+  font-size: 3em;
+  letter-spacing: -2px;
+  font-weight: 300;
+  @include media-query(palm) {
+    font-size: 2.2em;
+    line-height: 1.3em;
+  }
+}
+
 .post__title {
   @include title;
   text-align: center;
@@ -47,6 +58,7 @@
     font-size: 0.7em;
   }
 }
+
 .post_list {
   margin-left: 0;
   list-style-type: none;

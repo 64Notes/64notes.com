@@ -73,7 +73,7 @@ body {
 .area {
   max-width: 650px;
   width: 100%;
-  margin: 0 auto 0 auto;
+  margin: 0 auto;
   overflow: hidden;
   padding-top: $base-spacing-unit;
   padding-bottom: $base-spacing-unit;
@@ -229,18 +229,6 @@ h1#logo {
     font-weight: 300;
   }
 }
-
-// Mixins
-@mixin title {
-  font-size: 3em;
-  letter-spacing: -2px;
-  font-weight: 300;
-  @include media-query(palm) {
-    font-size: 2.2em;
-    line-height: 1.3em;
-  }
-}
-
 
 /* Social Area */
 #social_area {

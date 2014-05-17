@@ -135,6 +135,9 @@ body {
   .nav {
     li {
       margin-right: 0.5em;
+      &:last-child {
+        margin-right: 0px;
+      }
       a {
         padding: 0.5em 0.6em;
         letter-spacing: 1px;
@@ -169,15 +172,11 @@ body {
     position: absolute;
     top: 0;
     left: 1em;
-    border: 1px solid $blue;
+    border: 1px solid $lblue;
     width: 4em;
   }
   strong {
     font-weight: normal;
-  }
-  a {
-    color: $blue;
-    border-color: $green;
   }
 }
 
@@ -187,11 +186,12 @@ body {
   background-image: url("../images/64-notes-logo-dark.png");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left center;
   height: 50px;
   border: none;
   padding: 0;
   margin-bottom: 1em;
+  width: 100%;
   &:hover {
     border: none !important;
   }

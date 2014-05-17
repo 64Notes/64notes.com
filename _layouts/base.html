@@ -37,44 +37,7 @@
     {% endif %}
   </head>
   <body class="{{ page.slug }} {{ page.category }}"> 
-    <div id='header_area' class="grid">
-      <div class='area' id='header'>
-        {% if page.slug == 'home' %}
-        <h1 id=logo class="grid__item one-whole">64 Notes</h1>
-        {% else %}
-        <a href='{{ site.url }}' class="grid__unit one-whole" id='logo'>64 Notes</a>
-        {% endif %}   
-
-        <nav class="grid__item one-whole">
-          <ul class='nav no-bottom-margin'>
-            <li>
-              <a {% if page.slug == 'home' %}class="active"{%endif%} href='/'>Home</a>
-            </li>
-            <li>
-              <a {% if page.slug == 'about' %}class="active"{% endif %} href='/about'>About</a>
-            </li>
-            <li>
-            <a {% if page.category == 'talks' or page.slug == 'speaking' %}class="active"{% endif %} href='/speaking'>Speaking</a>
-            </li>
-            <li>
-            <a {% if page.category == 'design' or page.slug == 'design_archives' %}class="active"{% endif %} href='/design'>Design</a>
-            </li>
-            <li>
-              <a {% if page.slug == 'archives' %}class="active"{% endif %} href='/archives'>Archives</a>
-            </li>
-          </ul>
-        </nav>
-        <!-- .nav-bar -->
-
-        {% if page.slug == 'home' %}
-        <div class="grid__item one-whole" id="introduction">
-          <p>These are personal notes of Sidharth on <strong>startups, business, entrepreneurship &amp; design</strong>. He <a href="/design">designs &amp; stuff</a> for <a href="http://instamojo.com">Instamojo</a>.</p>
-          <p><strong>King Sidharth</strong> he calls himself. <strong>Meh</strong>.</p>
-        </div><!-- #introduction -->
-        {% endif %}
-      </div>
-    </div>
-    <!-- #header_area -->
+    {% include header.html %}
     {{ content }}
     <!-- #content_area -->
     <div id='social_area' class="grid">

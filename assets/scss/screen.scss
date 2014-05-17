@@ -85,12 +85,12 @@ body {
 
 ::selection {
   color: $grey;
-  background: $blue;
+  background: $lblue;
 }
 
 ::-moz-selection {
   color: $grey;
-  background: $blue;
+  background: $lblue;
 }
 
 // All navigations need to expand full on small size screens

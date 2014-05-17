@@ -18,19 +18,6 @@
   font-family: "Ubuntu", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
 }
 
-//@mixin serif
-// font-family: "Avenir Next", "Droid Serif", Georgia, serif
-
-/*--- Color Scheme */
-// https://kuler.adobe.com/Felicia_Simon-color-theme-3800845/
-$blue: rgb(8, 27, 35);
-$lblue: rgb(56, 123, 140);
-
-$grey: rgb(239, 232, 208);
-
-$dgrey: rgb(152, 191, 183);
-$green: rgb(114, 167, 161);
-
 /* Generic Rules */
 
 body {
@@ -289,14 +276,10 @@ h1#logo {
 
 /* Social Area */
 #social_area {
-  background: $green;
+  background: $lblue;
   color: $dgrey;
   text-align: center;
   font-size: 0.9em;
-  .area {
-    //padding-bottom: 0px
-
-  }
   a {
     color: $grey;
     border-bottom: 1px dotted $dgrey;
@@ -311,9 +294,8 @@ h1#logo {
   background: $blue;
   color: $grey;
   text-align: center;
-  font-size: 0.8em;
-  font-weight: 100;
-  @include sans;
+  font-size: 0.75em;
+  font-weight: 300;
   p {
     margin-bottom: 0;
   }
@@ -335,7 +317,13 @@ h1#logo {
     margin-bottom: 0;
     letter-spacing: 1px;
     font-size: 1em;
-    text-transform: uppercase;
+  }
+  #header_area {
+    .area {
+      @include media-query(desk) {
+        padding-bottom: $base-spacing-unit*2;
+      }
+    }
   }
   #content_area {
     .area {
@@ -467,16 +455,17 @@ h1#logo {
 .post_list {
   margin-left: 0;
   list-style-type: none;
-  color: #666666;
+  color: $dgrey;
+
   .post {
-    border-bottom: 1px solid #666666;
+    border-bottom: 1px solid $dgrey;
     padding: 1em 0;
     a {
       display: inline-block;
       border-bottom: none;
       border-left: 3px solid $dgrey;
       padding-left: 0.5em;
-      color: $green;
+      color: $lblue;
       @include transition(0.3s);
       &:hover {
         border-left-color: $green;
@@ -487,7 +476,7 @@ h1#logo {
       font-style: 300;
       font-size: 0.6em;
       text-transform: uppercase;
-      color: #666666;
+      color: $dgrey;
       em {
         text-transform: none;
       }
@@ -500,7 +489,7 @@ h1#logo {
       }
     }
     .design-post {
-      color: $green;
+      color: $dgrey;
       font-weight: normal;
     }
     .talk-title {

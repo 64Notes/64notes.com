@@ -1,40 +1,21 @@
 ---
 layout: page 
-title: King Sidharth is Speaking
+title: Talks by King Sidharth 
 slug: speaking
 ---
 <p>I talk a lot. Really a lot. No, seriously!</p>
 <p>I am usually found traveling around the country to give talks on <strong>Entrepreneurship, Design & Philosophy</strong>. You can invite me to one of your events as well: king@kingsidharth.com</p>
 
-<h2 class="center">Upcoming:</h2>
 <!--<p class="center">Yikes! Looks like I am not speaking anywhere. Mom? MOMMY?!</p>-->
 <ul class='post_list nav past nav--stacked'>
 {% for post in site.posts %}
-{% if post.category == 'talks' and post.future %}
+{% if post.category == 'talks' %}
   <li class='talk post' itemscope itemtype="http://data-vocabulary.org/Event">
   <a href="{{ post.url }}" itemprop="url">
     <div itemprop="startDate" datetime="{{ post.date }}" class='post__meta'>
       {{ post.date | date: "%d %b" }}, <strong>{{ post.date | date: "%Y" }}</strong>
-    </div>
-    <div class="talk-title" itemprop="name">{{ post.title }}</span></div>
-    <div class="post__meta event-meta">
-      <span class="event-name" itemprop="summary">{{ post.event }}</span><em> at </em>
-      <span class="event-place">{{ post.place }}</span>
-    </div>
-  </a>
-  </li>
-{% endif %}
-{% endfor %}
-</ul>
-
-<h2 class="center">Past:</h2>
-<ul class='post_list nav past nav--stacked'>
-{% for post in site.posts %}
-{% if post.category == 'talks' and post.future != true %}
-  <li class='talk post' itemscope itemtype="http://data-vocabulary.org/Event">
-  <a href="{{ post.url }}" itemprop="url">
-    <div itemprop="startDate" datetime="{{ post.date }}" class='post__meta'>
-      {{ post.date | date: "%d %b" }}, <strong>{{ post.date | date: "%Y" }}</strong>
+      {% if post.future %} &middot;<strong> Upcoming</strong> 
+      {% else %} &middot; Past{% endif %}
     </div>
     <div class="talk-title" itemprop="name">{{ post.title }}</span></div>
     <div class="post__meta event-meta">

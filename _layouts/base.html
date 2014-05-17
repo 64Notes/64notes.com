@@ -26,7 +26,7 @@
     {% endif %}
     {% if page.slug == 'home' %}
     <meta property="og:type"                 content="website"> 
-    <meta property="og:url"                  content="{{ site.url   }}"> 
+    <meta property="og:url"                  content="{{ site.url  }}"> 
     <meta property="og:title"                content="{{ site.name }}">
     {% endif %}
     <!-- others -->
@@ -67,7 +67,10 @@
         <!-- .nav-bar -->
 
         {% if page.slug == 'home' %}
-        <p class="grid__item one-whole" id="introduction">These are personal notes of Sidharth on <strong>startups, business, entrepreneurship &amp; design</strong>. He <a href="/design">designs &amp; stuff</a> for <a href="http://instamojo.com">Instamojo</a>. <br/><strong>King Sidharth</strong> he calls himself. <strong>Meh</strong>.</p>
+        <div class="grid__item one-whole" id="introduction">
+          <p>These are personal notes of Sidharth on <strong>startups, business, entrepreneurship &amp; design</strong>. He <a href="/design">designs &amp; stuff</a> for <a href="http://instamojo.com">Instamojo</a>.</p>
+          <p><strong>King Sidharth</strong> he calls himself. <strong>Meh</strong>.</p>
+        </div><!-- #introduction -->
         {% endif %}
       </div>
     </div>
@@ -76,7 +79,7 @@
     <!-- #content_area -->
     <div id='social_area' class="grid">
       <div class='area' id='social'>
-          <ul class='nav nav--block grid__item one-whole' id='socialfollow'>
+          <ul class='nav nav--block grid__item one-whole no-bottom-margin' id='socialfollow'>
             <li>Follow on </li>
             <li class='twitter'>
               <a href="https://twitter.com/kingsidharth">@kingsidharth</a>
@@ -100,10 +103,19 @@
     <!-- #footer_area -->
 
     <script>
-      function fbs_click() {
-        var u="{{ page.url }}";
-        var t="{{ page.title }}";
+      var u="{{ page.url }}";
+      var t="{{ page.title }}";
+      function fb_click() {
         window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');
+        return false;
+      }
+      function tweet_click() {
+        var target;
+        target = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(t) +
+          '&url=' + encodeURIComponent(u) +
+          '&via=' + 'kingsidharth' + '&related=kingsidharth';
+
+        window.open(target, 'tweet', 'toolbar=0,status=0,width=626,height=436');
         return false;
       }
     </script>

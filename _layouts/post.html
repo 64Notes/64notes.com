@@ -16,9 +16,9 @@ layout: base
         {{ page.date | date: "%b %d, %Y" }} &middot; {{ page.content | number_of_words }} words
       </div><!--
       --><ul class="grid__item one-half right nav desk-show no-bottom-margin">
-        <li><a href="">Tweet</a></li>
+        <li><a onclick="return tweet_click()" href="#">Tweet</a></li>
         <li> &middot; </li>
-        <li><a href="">Share</a></li>
+        <li><a onclick="return fb_click()" href="#">Share</a></li>
       </ul>
     </section>
     <section class="grid__item one-whole">

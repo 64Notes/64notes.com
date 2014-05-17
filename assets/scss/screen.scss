@@ -75,8 +75,7 @@ body {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  padding-top: $base-spacing-unit;
-  padding-bottom: $base-spacing-unit;
+  padding: $base-spacing-unit;
 }
 
 .no-bottom-margin {

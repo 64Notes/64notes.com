@@ -241,55 +241,6 @@ h1#logo {
   }
 }
 
-// POST
-.post__title {
-  @include title;
-  text-align: center;
-  margin-bottom: $base-spacing-unit / 2;
-}
-
-.post__content {
-  h2, h3, h4, h5, h6 {
-    margin-top: 2.1em;
-    margin-bottom: 0.5em;
-  }
-  h2 {
-    font-weight: normal;
-    letter-spacing: -1px;
-    @include media-query(palm) {
-      line-height: 1.3em;
-    }
-  }
-}
-
-.post__meta {
-  color: $dgrey;
-  margin-bottom: 1em;
-  font-weight: 300;
-  text-transform: uppercase;
-  @include font-size($h5-size);
-  @include media-query(desk) {
-    @include font-size($h6-size);
-  }
-
-  a {
-    color: $dgrey;
-    border-color: $dgrey;
-    &:hover {
-      color: $blue;
-    }
-  }
-  em {
-    text-transform: none;
-  }
-  .event-place {
-    font-weight: 500;
-  }
-  &.event-meta {
-    color: $green;
-    font-size: 0.7em;
-  }
-}
 
 /* Social Area */
 #social_area {
@@ -469,38 +420,5 @@ h1#logo {
   }
 }
 
-.post_list {
-  margin-left: 0;
-  list-style-type: none;
-  color: $dgrey;
-
-  .post {
-    border-bottom: 1px solid $dgrey;
-    padding: 1em 0;
-    a {
-      display: inline-block;
-      border-bottom: none;
-      border-left: 3px solid $dgrey;
-      padding-left: 0.5em;
-      color: $lblue;
-      @include transition(0.3s);
-      &:hover {
-        border-left-color: $green;
-        color: $blue;
-      }
-    }
-    .post__meta {
-      font-size: 0.7em;
-      margin-bottom: 0px;
-    }
-    .design-post {
-      color: $dgrey;
-      font-weight: normal;
-    }
-    .talk-title {
-      font-weight: 500;
-    }
-  }
-}
-
+@import "post";
 @import "responsive";

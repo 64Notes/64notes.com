@@ -97,23 +97,13 @@ body {
   .nav, .nav--fit {
     li {
       display: block;
-      width: 95%;
+      width: 100%;
       a {
         width: 100%;
       }
     }
   }
-  .nav--fit {
-    li {
-      padding-top: 0.5em;
-      &.fb {
-        top: 0;
-      }
-    }
-  }
-  #logo {
-    background-position: top center;
-  }
+
   .headline_area h1 {
     font-size: 2em;
   }
@@ -133,9 +123,11 @@ body {
   }
   .nav {
     li {
-      margin-right: 0.5em;
-      &:last-child {
-        margin-right: 0px;
+      @include media-query(lap-and-up) {
+        margin-right: 0.5em;
+        &:last-child {
+          margin-right: 0px;
+        }
       }
       a {
         padding: 0.5em 0.6em;
@@ -218,14 +210,6 @@ h1#logo {
 #content_area {
   .area {
     padding-top: 0;
-  }
-  h2, h3, h4, h5, h6 {
-    margin-bottom: 0.7em;
-    margin-top: 1.7em;
-    line-height: 1.3em;
-  }
-  h3, h4 {
-    font-weight: 300;
   }
 }
 
@@ -320,54 +304,6 @@ h1#logo {
 /* Speaking */
 // Index of Speaking
 .talks {
-  #headline_area {
-    padding-top: 2em;
-  }
-}
-
-.talk-details {
-  .headline_area {
-    span {
-      font-style: italic;
-      font-size: 1.3em;
-      color: #999999;
-      @include media-query(palm) {
-        font-size: 0.8em;
-      }
-    }
-    h1 {
-      line-height: 1.2em;
-      margin-bottom: 0;
-    }
-    h2 {
-      margin-bottom: 0em;
-      letter-spacing: -1px;
-      @include media-query(palm) {
-        font-size: 1.8em;
-      }
-    }
-    .place {
-      text-transform: uppercase;
-      font-size: 15px;
-      color: $green;
-      letter-spacing: 2px;
-      @include media-query(palm) {
-        font-size: 13px;
-      }
-
-      margin: 0;
-      .icon {
-        padding-right: 5px;
-      }
-    }
-    .date {
-      color: #999999;
-      text-transform: uppercase;
-    }
-  }
-}
-
-.talks {
   #content_area {
     .area {
       max-width: 860px;
@@ -382,27 +318,6 @@ h1#logo {
     }
     h2 {
       text-align: center;
-    }
-  }
-}
-
-#event-main {
-  text-align: center;
-}
-
-#event-sidebar {
-  text-align: right;
-  font-size: 0.9em;
-  ul {
-    list-style: none;
-  }
-}
-
-/*----:[Archives]:---- */
-.archives, .design_archives {
-  #content_area {
-    .area {
-      max-width: 600px;
     }
   }
 }

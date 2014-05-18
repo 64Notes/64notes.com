@@ -93,7 +93,7 @@ body {
 }
 
 // All navigations need to expand full on small size screens
-@media screen and (max-width: 655px) {
+@include media-query(palm) {
   .nav, .nav--fit {
     li {
       display: block;
@@ -272,31 +272,6 @@ h1#logo {
   #sidebar {
     ul {
       margin-left: 0;
-    }
-  }
-}
-
-// Responsive Home
-@media screen and (max-width: 655px) {
-  .home {
-    #sidebar, #content_box {
-      width: 100%;
-    }
-    #sidebar {
-      ul {
-        li {
-          margin-bottom: 20px;
-        }
-      }
-    }
-    #content_box {
-      .post_list {
-        text-align: center;
-        .post {
-          margin: 0.4em 0;
-          border-bottom: 1px dotted $green;
-        }
-      }
     }
   }
 }

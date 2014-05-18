@@ -65,11 +65,13 @@ h1.post__title {
   .post {
     border-bottom: 1px solid $dgrey;
     padding: 1em 0;
+    width: 100%;
     a {
       display: inline-block;
       border-bottom: none;
       border-left: 3px solid $dgrey;
       padding-left: 0.5em;
+      width: 100%;
       color: $lblue;
       @include transition(0.3s);
       &:hover {

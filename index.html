@@ -6,7 +6,7 @@ slug: "home"
 <div id=content_area class="grid">
   <div class=area id=content>
     <div id="latest" class="grid__item one-half palm-one-whole">
-      <h2>Recent Notes</h2>
+      <h2 class="no-top-margin">Recent Notes</h2>
       <ul class='post_list'>
         {% assign posts = site.posts | exclude_post_category: 'speaking'%}
         {% for post in posts limit:7 %}

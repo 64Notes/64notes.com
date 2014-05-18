@@ -4,27 +4,26 @@
 var tests = {
   'run' : 0,
   'msg' : function(signal) {
-    if(documentData.environment == 'dev') {
-      var signal = "[Tests] " + signal;
-      console.log(signal);
-    }
+    var signal = "[Tests] " + signal;
+    console.log(signal);
   }
 }
 
-function run_tests() {
-  var tests = window.tests;
-  if(tests) {
-    for ( var index in tests ) {
-      if(tests[index] != tests['run'] && tests[index] != tests['msg']) {
+function _run_tests() {
+  // Run tests only on dev environment.
+  if (documentData.environment == "dev" ) {
+    var tests = window.tests; // cache
+    if(tests) {
+      for ( var index in tests ) {
         tests[index];
         tests.run += 1;
       }
+      tests.msg("All tests good. " + tests.run + " tests run.");
     }
-    tests.msg("All tests good. " + tests.run + " tests run.");
-  }
-  else {
-    console.log("Tests not defined.");
-    return false;
+    else {
+      console.log("Tests not defined.");
+      return false;
+    }
   }
 }
 

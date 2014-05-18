@@ -3,7 +3,7 @@
   <head {% if page.type == 'post' %} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"{% endif %}>
     <title>{{ page.title }}</title>
     <!-- stylesheets -->
-    <link href="/assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/assets/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8"> 
@@ -39,35 +39,5 @@
     {% include header.html %}
     {{ content }}
     {% include footer.html %}
-
-    <script>
-      var u="{{ page.url }}";
-      var t="{{ page.title }}";
-      function fb_click() {
-        window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(u)+'&t='+encodeURIComponent(t),'sharer','toolbar=0,status=0,width=626,height=436');
-        return false;
-      }
-      function tweet_click() {
-        var target;
-        target = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(t) +
-          '&url=' + encodeURIComponent(u) +
-          '&via=' + 'kingsidharth' + '&related=kingsidharth';
-
-        window.open(target, 'tweet', 'toolbar=0,status=0,width=626,height=436');
-        return false;
-      }
-    </script>
-    <!-- Google Analytics Code -->
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-4910697-16']);
-      _gaq.push(['_setDomainName', '64notes.com']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
   </body>
 </html>

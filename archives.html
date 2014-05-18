@@ -4,8 +4,8 @@ title: Archives of 64 Notes
 slug: archives
 ---
 <ul class="post_list">
-  {% for post in site.posts %}
-  {% if post.category != 'talks' %}
+  {% assign posts = site.posts | exclude_post_category: 'speaking' %}
+  {% for post in posts %}
   <li class="post">
   <a href="{{ post.url }}" class="entry-title">
   <div class="post__meta">
@@ -15,7 +15,6 @@ slug: archives
   <span class="post__title">{{ post.title }}</span>
   </a>
   </li>
-  {% endif %}
   {% endfor %}
 </ul>
 

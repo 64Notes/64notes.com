@@ -2,6 +2,7 @@
 layout: post
 title: To College or Not to College
 type: post
+top: true
 ---
 
 I finished my schooling back in 2010. As norms have it, I was supposed to join a college. But I didn't.

@@ -2,6 +2,7 @@
 layout: post
 title: Please let them Fail and Make Mistakes
 type: post
+top: true
 ---
 In October I went to [The Sanskaar Valley School in Bhopal to mentor and judge](http://www.64notes.com/speaking/ican-12-bhopal) a (sort of) business plan competition with [Aditya](https://twitter.com/AdityaNayak). A wonderful school in middle of a reserved forest. Everything about that place was just perfect! Except that the Domino's wouldn't deliver pizza there. Man, were we pizza deprived!
 

@@ -6,30 +6,20 @@
   letter-spacing: -2px;
   font-weight: 300;
   @include media-query(palm) {
-    font-size: 2.2em;
-    line-height: 1.3em;
+    font-size: 2.6em;
+    line-height: 1.4em;
   }
 }
 
 .post__title {
   margin-bottom: $base-spacing-unit / 2;
 }
-h1.post__title {
-  @include title;
-}
+  h1.post__title {
+    @include title;
+    margin-bottom: 0px;
+  }
 
 .post__content {
-  h2, h3, h4, h5, h6 {
-    margin-top: 2.1em;
-    margin-bottom: 0.5em;
-  }
-  h2 {
-    font-weight: normal;
-    letter-spacing: -1px;
-    @include media-query(palm) {
-      line-height: 1.3em;
-    }
-  }
 }
 
 .post__meta {
@@ -37,18 +27,7 @@ h1.post__title {
   margin-bottom: 1em;
   font-weight: 300;
   text-transform: uppercase;
-  @include font-size($h5-size);
-  @include media-query(desk) {
-    @include font-size($h6-size);
-  }
-
-  a {
-    color: $dgrey;
-    border-color: $dgrey;
-    &:hover {
-      color: $blue;
-    }
-  }
+  @include font-size($h6-size);
   em {
     text-transform: none;
   }
@@ -63,26 +42,39 @@ h1.post__title {
   list-style-type: none;
 
   .post {
-    border-bottom: 1px solid $dgrey;
-    padding: 1em 0;
+    padding: 0.5em 0;
+    margin: 0.5em 0 1em 0;
     width: 100%;
-    a {
-      display: inline-block;
-      border-bottom: none;
-      border-left: 3px solid $dgrey;
-      padding-left: 0.5em;
+    @include after-element;
+    &:after {
+      top: 0;
+      left: 0;
+      height: 1px;
+      width: 4em;
+      border-top: 1px solid $green;
+      @include transition(0.2s);
+    }
+    &:hover:after, &:active:after {
       width: 100%;
-      color: $lblue;
-      @include transition(0.3s);
-      &:hover {
-        border-left-color: $green;
-        color: $blue;
+    }
+  }
+  a {
+    display: inline-block;
+    border: none;
+    width: 100%;
+    color: $lblue;
+    @include transition(0.2s);
+    &:hover {
+      border: none;
+      color: $blue;
+      .post__meta {
+        color: $green;
       }
     }
-    .post__meta {
-      font-size: 0.7em;
-      margin-bottom: 0px;
-    }
+  }
+  .post__meta {
+    font-size: 0.7em;
+    margin-bottom: 0px;
   }
   .post__title {
     font-weight: 500;
@@ -90,3 +82,20 @@ h1.post__title {
   }
 }
 
+.talk--single {
+  .talk__event {
+    margin: 0;
+  }
+  .post__meta {
+    margin: 0;
+    color: $green;
+    font-size: 1em;
+    font-style: normal;
+  }
+
+  span {
+    font-style: italic;
+    font-size: 0.9em;
+    color: $dgrey;
+  }
+}

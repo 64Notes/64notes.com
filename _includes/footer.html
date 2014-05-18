@@ -26,32 +26,26 @@
 <link href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,400italic" rel="stylesheet" type="text/css">
 
 <script>
-var url="{{ page.url }}";
-var title="{{ page.title }}";
-
-function fb_click() {
-  window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(url)+'&t='+encodeURIComponent(title),'sharer','toolbar=0,status=0,width=626,height=436');
-  return false;
-}
-function tweet_click() {
-  var target;
-  target = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(title) +
-    '&url=' + encodeURIComponent(url) +
-    '&via=' + 'kingsidharth' + '&related=kingsidharth';
-
-  window.open(target, 'tweet', 'toolbar=0,status=0,width=626,height=436');
-  return false;
-}
+  var documentData = {
+    'url': document.URL,
+    'title': "{{ page.title }}",
+    'category': {% if page.category %}"{{ page.category }}" {% else %} false {% endif %},
+    'environment': "{{ site.env }}"
+  }
 </script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="/assets/scripts/payload.js"></script>
+
 <!-- Google Analytics Code -->
 <script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-4910697-16']);
-_gaq.push(['_setDomainName', '64notes.com']);
-_gaq.push(['_trackPageview']);
-(function() {
- var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
- ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
- var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
- })();
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-4910697-16']);
+  _gaq.push(['_setDomainName', '64notes.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
 </script>

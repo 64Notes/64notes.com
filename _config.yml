@@ -32,7 +32,7 @@ defaults:
 
 
 # Development Settings
-exclude: [sass, vendor, config.rb, Readme.markdown, Gemfile, Gemfile.lock, Felicia_Simon.ase, .htaccess]
+exclude: [sass, vendor, config.rb, Readme.markdown, Gemfile, Gemfile.lock, Felicia_Simon.ase, .htaccess, scss, assets/vendor]
 gems: [jekyll-minify-html]
 sass:
   sass_dir: assets/scss/

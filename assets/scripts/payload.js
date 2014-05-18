@@ -35,10 +35,16 @@ var share_settings = {
   'facebook': {
     'base_URL': 'http://www.facebook.com/sharer.php?',
     'name' : 'sharer',
+    'count_url': 'https://graph.facebook.com/?id=' 
+      + encodeURIComponent(documentData.url)
+      + '&callback=?'
   },
   'twitter': {
     'base_URL': 'https://twitter.com/intent/tweet?',
-    'name': 'tweet'
+    'name': 'tweet',
+    'count_url': 'https://cdn.api.twitter.com/1/urls/count.json?url=' 
+      + encodeURIComponent(documentData.url) 
+      + '&callback=?'
   }
 }
 
@@ -86,18 +92,20 @@ function share_click(network, window_setting) {
 
 }
 
-function get_tweet_count() {
-  var url = 'https://cdn.api.twitter.com/1/urls/count.json?url=' + encodeURIComponent(documentData.url);
-  getJSON = new XMLHttpRequest;
-  getJSON.crossDomain = "http://www.64notes.com";
-  getJSON.onreadystatechange = function() {
-    if (getJSON.readyState == 4 && getJSON.status == 200) {
-        JSON.parse(getJSON.responseText);
-    }
+function _get_share_count(network) {
+  var push_url = window.share_settings[network]['count_url'];
+  var count;
+
+  data = $.getJSON(push_url, function(data) { return data; });
+  console.log(data);
+  
+  if(network == 'twitter') {
+    count = data.count;
+  } 
+  else if (network == 'facebook') {
+    count = data.shares;
   }
-  getJSON.open("GET", url)
-  getJSON.send();
-  console.log(getJSON);
+  console.log(count);
 }
 
 

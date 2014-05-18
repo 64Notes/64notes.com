@@ -96,6 +96,8 @@ function get_tweet_count() {
   console.log(getJSON);
 }
 
+
+// ______ INITIALIZATION SCRIPTS ______ //
 function _js_classes() {
   $('.js_onload_show').show();
 
@@ -115,7 +117,14 @@ function initScripts() {
   _js_classes();
 }
 
+
+// ______ POST SCRIPTS ______ //
+function postScripts() {
+  _run_tests();
+}
+
 $(document).ready(function() {
   initScripts();
-  run_tests();
+
+  postScripts(); // The last thing to execute.
 });

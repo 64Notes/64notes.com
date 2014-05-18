@@ -5,7 +5,7 @@ http_path = "/"
 css_dir = "assets/stylesheets"
 sass_dir = "assets/scss"
 images_dir = "assets/images"
-javascripts_dir = "assets/js"
+javascripts_dir = "assets/scripts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 output_style = :compressed

@@ -31,55 +31,59 @@ function _run_tests() {
 
 
 // ______ SOCIAL MEDIA FUNCTIONS______ //
-
 var share_settings = {
   'facebook': {
     'base_URL': 'http://www.facebook.com/sharer.php?',
-    'call' : 'sharer',
-    'param': {
-      'u': documentData.url,
-      't': documentData.title
-    }
+    'name' : 'sharer',
   },
   'twitter': {
     'base_URL': 'https://twitter.com/intent/tweet?',
-    'call': 'tweet'
+    'name': 'tweet'
   }
 }
 
-function window_setting(toolbar, status, width, height) {
+function _window_setting(toolbar, status, width, height) {
   var toolbar = toolbar || '0';
   var status = status || '0';
   var width = width || '620';
   var height = height || '430';
 
   var settings = 'toolbar=' + toolbar + ',status=' + status + ',width=' + width + ',height=' + height;
+  
   return settings;
 }
+(window.tests['_window_setting'] = function(settings) {
+  if (_window_setting().match(/^toolbar=\d+,status=\d+,width=\d+,height=\d+$/)) {
+    return true;
+  } else {
+    tests.msg("_window_setting[fun] disfunctional");
+    return false;
+  }
+})();
 
-function share_click(network, window_setting, documentData) {
-  var window_setting = window_setting || window.window_setting(); 
-  var documentData = documentData || window.documentData;
+function share_click(network, window_setting) {
+  var window_setting = window_setting || window._window_setting(); 
+  var network = share_settings[network];
+  var verb;
 
-  var url = share_settings[network]['base_URL'];
-  window.open(url, share_settings[network]['call'], window_setting);
+  var page_url = documentData.url; 
+  var page_title = documentData.title;
+  var push_url = network['base_URL'];
+
+  if(network == 'facebook') {
+    push_url = push_url + 'u=' + encodeURIComponent(page_url) 
+      + '&t=' + encodeURIComponent(page_title);
+    verb = 'facebook';
+  } else {
+    push_url = push_url + 'url=' + encodeURIComponent(page_url)
+      + '&via=kingsidharth&related=kingsidharth&text='
+      + encodeURIComponent(page_title);
+    verb = 'twitter';
+  }
+
+  window.open(push_url, verb, window_setting);
   return false;
-}
 
-function fb_click() {
-  window.open('http://www.facebook.com/sharer.php?u='+encodeURIComponent(documentData.url)+'&t='+encodeURIComponent(documentData.title),'sharer','toolbar=0,status=0,width=626,height=436');
-  return false;
-}
-
-function tweet_click() {
-  var target;
-  target = 'https://twitter.com/intent/tweet?' +
-    'url=' + encodeURIComponent(documentData.url) +
-    '&via=' + 'kingsidharth' + '&related=kingsidharth' +
-    '&text=' + encodeURIComponent(documentData.title);
-
-  window.open(target, 'tweet', 'toolbar=0,status=0,width=626,height=436');
-  return false;
 }
 
 function get_tweet_count() {

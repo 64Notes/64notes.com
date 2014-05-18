@@ -1,3 +1,6 @@
+
+
+// ______ TEST FRAMEWORK ______ //
 var tests = {
   'run' : 0,
   'msg' : function(signal) {
@@ -7,6 +10,26 @@ var tests = {
     }
   }
 }
+
+function run_tests() {
+  var tests = window.tests;
+  if(tests) {
+    for ( var index in tests ) {
+      if(tests[index] != tests['run'] && tests[index] != tests['msg']) {
+        tests[index];
+        tests.run += 1;
+      }
+    }
+    tests.msg("All tests good. " + tests.run + " tests run.");
+  }
+  else {
+    console.log("Tests not defined.");
+    return false;
+  }
+}
+
+
+
 
 // ______ SOCIAL MEDIA FUNCTIONS______ //
 
@@ -85,23 +108,6 @@ function _js_classes() {
         console.log('.js_onload_show failing. On item ' + this.index);
       }
     });
-  }
-}
-
-function run_tests() {
-  var tests = window.tests;
-  if(tests) {
-    for ( var index in tests ) {
-      if(tests[index] != tests['run'] && tests[index] != tests['msg']) {
-        tests[index];
-        tests.run += 1;
-      }
-    }
-    tests.msg("All tests good. " + tests.run + " tests run.");
-  }
-  else {
-    console.log("Tests not defined.");
-    return false;
   }
 }
 

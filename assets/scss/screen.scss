@@ -14,17 +14,13 @@
 @import "compass";
 @import "../vendor/helper.inuit.css/helper.inuit.css.scss";
 
-@mixin sans {
-  font-family: "Ubuntu", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
-}
+@import "typography";
 
 /* Generic Rules */
-
 body {
   background: $grey;
   border-top: 3px solid $blue;
   color: $blue;
-  @include sans;
   a {
     color: $lblue;
     border-bottom: 1px dotted $lblue;
@@ -34,35 +30,6 @@ body {
       text-decoration: none;
       border-bottom-style: solid;
     }
-  }
-  p, ul, ol {
-    line-height: 1.61em;
-  }
-  ul, ol {
-    @include media-query(palm) {
-      margin-left: 10px;
-      list-style-position: inside;
-    }
-
-    li {
-      @include media-query(palm) {
-        margin-bottom: 0.5em;
-      }
-    }
-  }
-  ul {
-    list-style-type: square;
-  }
-  ol {
-    list-style-type: decimal;
-  }
-  blockquote {
-    display: block;
-    clear: both;
-    border-left: 2px solid $dgrey;
-    padding-left: 1em;
-    margin-top: 10px;
-    color: adjust-lightness($blue, 10%);
   }
   .nav {
     word-spacing: normal;
@@ -82,6 +49,8 @@ body {
   margin-bottom: 0px;
 }
 
+
+// Selection
 ::selection {
   color: $grey;
   background: $lblue;
@@ -103,10 +72,6 @@ body {
       }
     }
   }
-
-  .headline_area h1 {
-    font-size: 2em;
-  }
 }
 
 /* Header Area */
@@ -115,10 +80,10 @@ body {
     max-width: 900px;
     text-align: center;
     padding-top: $base-spacing-unit * 2;
-    padding-bottom: $base-spacing-unit * 2;
+    padding-bottom: $base-spacing-unit;
     @include media-query(desk) {
       padding-top: $base-spacing-unit * 4;
-      padding-bottom: $base-spacing-unit * 4;
+      padding-bottom: $base-spacing-unit * 2;
     }
   }
   .nav {
@@ -149,26 +114,35 @@ body {
   }
 }
 
+@mixin after-element {
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+  }
+}
+
+
 #introduction {
   text-align: left;
   margin-top: $base-spacing-unit;
   padding-top: $base-spacing-unit;
   margin-bottom: 0px;
   font-weight: 300;
-  @include font-size($h3-size);
   line-height: 1.65em;
-  position: relative;
+  @include font-size($h3-size);
+  @include media-query(palm) {
+    @include font-size($h4-size);
+  }
+
+  @include after-element;
   &:after {
-    content: "";
-    position: absolute;
     top: 0;
     left: 1em;
     border: 1px solid $lblue;
     width: 4em;
   }
-  strong {
-    font-weight: normal;
-  }
+  strong { font-weight: normal; }
 }
 
 #logo {
@@ -200,16 +174,8 @@ h1#logo {
 /*----:[Headline Area]:---- */
 #headline_area {
   .area {
-    padding: 0;
     max-width: 900px;
-    text-align: center;
-  }
-}
-
-/*----:[Content Area]:---- */
-#content_area {
-  .area {
-    padding-top: 0;
+    padding-bottom: 0px;
   }
 }
 
@@ -244,55 +210,29 @@ h1#logo {
   }
 }
 
-/* Home Specific */
+
+/* ______ PAGE SPECIFIC ______ */
 .home {
-  //#header
-  h1 {
-    margin-bottom: 0;
-  }
-  h2 {
-    margin-top: 0;
-    font-weight: 500;
-    margin-bottom: 0;
-    letter-spacing: 1px;
-    font-size: 1em;
-  }
-  #header_area {
-    .area {
-      @include media-query(desk) {
-        padding-bottom: $base-spacing-unit*2;
-      }
-    }
-  }
   #content_area {
     .area {
       max-width: 900px;
     }
   }
-  #sidebar {
-    ul {
-      margin-left: 0;
+}
+  #home__talks h2 {
+    @include after-element;
+    &:after {
+      width: 4em;
+      top: -0.5em;
+      left: 0;
+      border: 1px solid $lblue;
     }
   }
-}
 
-/* Speaking */
-// Index of Speaking
 .talks {
   #content_area {
     .area {
-      max-width: 860px;
-    }
-  }
-}
-
-.speaking {
-  #conteant_area {
-    .area {
-      max-width: 600px !important;
-    }
-    h2 {
-      text-align: center;
+      //max-width: 860px;
     }
   }
 }

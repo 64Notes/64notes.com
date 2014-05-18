@@ -20,10 +20,13 @@ slug: "home"
         </a>
         </li>
         {% endfor %}
+        <li class="post">
+          <a class="post__title" href="/archives">Want More? Dig the Graveyards &rarr;</a>
+        </li>
       </ul>
     </div><!--
     --><div id="best" class="grid__item one-half palm-one-whole">
-      <h2>Some Popular Ones</h2>
+      <h2 class="no-top-margin">Some Popular Ones</h2>
       <ul class="post_list">
         {% assign posts = site.posts | post_with_key_value: 'top', true %}
         {% for post in posts limit:7 %}
@@ -38,8 +41,34 @@ slug: "home"
           </li>
         {% endfor %}
       </ul>
-    </div>
-    <p class="grid__item one-whole">Want More? <a href="/archives">Dig the Graveyards &rarr;</a></p>
+    </div><!-- #best -->
+
+    <div id="home__talks" class="grid__item two-thirds palm-one-whole">
+      <h2>Recent Talks</h2>
+      <ul class="post_list">
+        {% for post in site.categories.speaking limit: 3 %}
+        <li class='talk post post--talk' itemscope itemtype="http://data-vocabulary.org/Event">
+        <a href="{{ post.url }}" itemprop="url">
+
+          <div itemprop="startDate" datetime="{{ post.date }}" class='post__meta'>
+            <date>{{ post.date | date: "%d %b" }}, <span class="normal">{{ post.date | date: "%Y" }}</span></date>
+            {% if post.future %} &middot;<strong> Upcoming</strong> 
+            {% else %} &middot; Past{% endif %}
+          </div>
+
+          <div class="post__title talk__title" itemprop="name">{{ post.title }}</div>
+
+          <div class="post__meta">
+            <span class="normal talk__event" itemprop="summary">{{ post.event }}</span>
+            &nbsp;&middot;&nbsp;
+            <span class="normal talk__location">{{ post.place }}</span>
+          </div>
+        </a>
+        </li>
+        {% endfor %}
+        <li class="talk post post--talk"><a href="/speaking" class="post__title">See All Talks &rarr;</a></li>
+      </ul>
+    </div><!-- #home__talks -->
   </div>
 </div><!-- #content_area -->
 

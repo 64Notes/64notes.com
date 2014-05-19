@@ -133,9 +133,9 @@ function _get_share_count(network) {
   var data = $.getJSON(push_url);
   data.done(function(response) {
     var count = response[count_key];
-    // Output it to dd for now
-    // TODO: Find a better & testable way to run this function.
-    window.dd[network + '_count'] = response[count_key];
+    
+    window.dd[network + '_count'] = count;
+    _set_share_count(network, count);
   });
   data.fail(function() { 
     tests.msg('JSON failed to load for _get_share_count on ' + network);
@@ -144,12 +144,12 @@ function _get_share_count(network) {
 
 // Get share count of a network
 // and set it where it's asked for.
-function _set_share_count(network) {
+function _set_share_count(network, count) {
   var ele = $('.data_' + network + '_count'); 
-  var count = window.dd[network + '_count'] || false;
-    count = count.toString();
+  var count = count; 
+  console.log(count);
 
-  if(count) {
+  if(count != 0 && count != undefined) {
     $(ele).html(count);
     $(ele).next().append('s');
 
@@ -164,9 +164,6 @@ function social_share_count() {
   if(dd.device.is_desk_wide || dd.device.is_desk) {
     _get_share_count('twitter');
     _get_share_count('facebook');
-
-    _set_share_count('facebook');
-    _set_share_count('twitter');
   }
 }
 // ______ END ______

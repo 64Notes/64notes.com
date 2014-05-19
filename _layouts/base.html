@@ -3,12 +3,11 @@
   <head {% if page.type == 'post' %} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"{% endif %}>
     <title>{{ page.title }}</title>
     <!-- stylesheets -->
-    <link href="/assets/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/assets/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8"> 
     <!-- scripts -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>    
     <!-- meta -->
     <meta name="google-site-verification" content="K9OQiuncypaFig7doDL5AXVteG8pLNyWmumfkcCj3qA" />        
 
@@ -26,7 +25,7 @@
     {% endif %}
     {% if page.slug == 'home' %}
     <meta property="og:type"                 content="website"> 
-    <meta property="og:url"                  content="{{ site.url   }}"> 
+    <meta property="og:url"                  content="{{ site.url  }}"> 
     <meta property="og:title"                content="{{ site.name }}">
     {% endif %}
     <!-- others -->
@@ -37,121 +36,8 @@
     {% endif %}
   </head>
   <body class="{{ page.slug }} {{ page.category }}"> 
-    <div id='header_area'>
-      <div class='area' id='header'>
-        <div class=grid>
-          <!-- Display this menu only if NOT on Home Page -->
-          {% if page.slug == 'home' %}
-          <h1 id=logo class="grid__unit one-whole">64 Notes</h1>
-          {% else %}
-          <a href='{{ site.url }}' class="grid__unit one-whole" id='logo'>64 Notes</a>
-          {% endif %}   
-          <ul class='nav grid__item one-whole'>
-            <li>
-              <a {% if page.slug == 'home' %}class="active"{%endif%} href='/'>Home</a>
-            </li>
-            <li>
-              <a {% if page.slug == 'about' %}class="active"{% endif %} href='/about'>About</a>
-            </li>
-            <li>
-            <a {% if page.category == 'talks' or page.slug == 'speaking' %}class="active"{% endif %} href='/speaking'>Speaking</a>
-            </li>
-            <li>
-            <a {% if page.category == 'design' or page.slug == 'design_archives' %}class="active"{% endif %} href='/design'>Design</a>
-            </li>
-            <li>
-              <a {% if page.slug == 'archives' %}class="active"{% endif %} href='/archives'>Archives</a>
-            </li>
-          </ul>
-          <!-- .nav-bar -->
-          {% if page.slug == 'home' %}
-          <p class="grid__unit one-whole">These are personal notes of Sidharth on <strong>startups, business, entrepreneurship &amp; design</strong>. He <a href="/design">designs &amp; stuff</a> for <a href="http://instamojo.com">Instamojo</a>. <br/><strong>King Sidharth</strong> he calls himself. <strong>Meh</strong>.</p>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-    <!-- #header_area -->
+    {% include header.html %}
     {{ content }}
-    <!-- #content_area -->
-    <div id='social_area'>
-      <div class='area' id='social'>
-        <div class='grid'>
-          {% if page.type == 'post' %}          
-          <ul class='nav nav--blocked grid__item one-whole' id='socialshare'>
-            <li class='fb'>
-              <div id='fb-root'></div>
-              <div class="fb-like" data-href="http://www.64notes.com{{ page.url }}" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-font="lucida grande"></div>
-            </li>
-            <li class='twitter'>
-              <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.64notes.com{{ page.url }}" data-via="kingsidharth" data-related="kingsidharth">Tweet</a>
-            </li>  
-            <li class='buffer'>
-            <a href="http://bufferapp.com/add" class="buffer-add-button" data-text="{{post.title}}" data-url="http://www.64notes.com{{ page.url }}" data-count="horizontal" data-via="kingsidharth"  data-picture="http://www.64notes.com/images/64notes-logo.png">Buffer This</a>
-            </li>
-          </ul>
-          <!-- #socialshare -->
-          {% endif %}          
-          <ul class='nav nav--blocked grid__item one-whole' id='socialfollow'>
-            <li class='fb'>
-              <div class="fb-subscribe" data-href="https://www.facebook.com/kingsidharth" data-layout="button_count" data-show-faces="false" data-colorscheme="light" data-font="lucida grande" data-width="450"></div>
-            </li>
-            <li class='twitter'>
-              <a href="https://twitter.com/kingsidharth" class="twitter-follow-button" data-show-count="false">Follow @kingsidharth</a>
-            </li>      
-          </ul>
-        </div>
-      </div>
-      <!-- #social.area -->
-    </div>
-    <!-- #social_area -->
-
-    <div id='footer_area'>
-      <div class='area' id='footer'>
-        <p>
-        by <a href="http://www.kingsidharth.com" rel="author">King Sidharth</a><a href="https://plus.google.com/100630005600562803456/" rel="author">.</a> | &copy; 2010-14 | <a href="/colophon">Colophon</a>
-        </p>
-      </div>
-      <!-- #footer -->
-    </div>
-    <!-- #footer_area -->
-    <script type="text/javascript">
-    //<![CDATA[
-      //Async Social Sharing Button JS
-      (function(doc, script) {
-        var js, 
-          fjs = doc.getElementsByTagName(script)[0],
-          frag = doc.createDocumentFragment(),
-          add = function(url, id) {
-            if (doc.getElementById(id)) {return;}
-            js = doc.createElement(script);
-            js.src = url;
-            id && (js.id = id);
-            frag.appendChild( js );
-          };
-            
-          // Facebook SDK
-          add('http://connect.facebook.net/en_US/all.js#xfbml=1&appId=200103733347528', 'facebook-jssdk');
-          // Twitter SDK
-          add('http://platform.twitter.com/widgets.js');
-          // Buffer App
-          add('http://static.bufferapp.com/js/button.js');
-      
-          fjs.parentNode.insertBefore(frag, fjs);
-      }(document, 'script'));
-    //]]>
-    </script>
-
-    <!-- Google Analytics Code -->
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-4910697-16']);
-      _gaq.push(['_setDomainName', '64notes.com']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
+    {% include footer.html %}
   </body>
 </html>

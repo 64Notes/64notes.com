@@ -3,43 +3,72 @@ layout: base
 title: "64 Notes"
 slug: "home"
 ---
-<div id=content_area>
+<div id=content_area class="grid">
   <div class=area id=content>
-    <div class=grid>
-      <div id="latest" class="grid__item one-half palm-one-whole">
-        <h2>Latest</h2>
-        <ul class='post_list'>
-          {% for post in site.posts limit:15 %}
-          {% if post.category != 'talks' %}
+    <div id="latest" class="grid__item one-half palm-one-whole">
+      <h2 class="no-top-margin">Recent Notes</h2>
+      <ul class='post_list'>
+        {% assign posts = site.posts | exclude_post_category: 'speaking'%}
+        {% for post in posts limit:7 %}
+        <li class="post">
+        <a href="{{ post.url }}">
+          <div class="post__meta">
+            <date class="">{{ post.date | date: "%d %b, %Y" }}</date>
+            {% if post.category == 'design' %} &middot; Design{%endif%}
+          </div>
+          <span class="post__title">{{ post.title }}</span>
+        </a>
+        </li>
+        {% endfor %}
+        <li class="post">
+          <a class="post__title" href="/archives">Want More? Dig the Graveyards &rarr;</a>
+        </li>
+      </ul>
+    </div><!--
+    --><div id="best" class="grid__item one-half palm-one-whole">
+      <h2 class="no-top-margin">Some Popular Ones</h2>
+      <ul class="post_list">
+        {% assign posts = site.posts | post_with_key_value: 'top', true %}
+        {% for post in posts limit:7 %}
           <li class="post">
-          <a href="{{ post.url }}" class="entry-title">
-            <div class="post_meta">
-              <date class="">{{ post.date | date: "%d %b %Y" }}</date>
-              {% if post.category == 'design' %}<span class="design-post">Design</span>{%endif%}
+          <a href="{{ post.url }}">
+            <div class="post__meta">
+              <date class="">{{ post.date | date: "%d %b, %Y" }}</date>
+              {% if post.category == 'design' %} &middot; Design{%endif%}
             </div>
-            {{ post.title }}
+            <span class="post__title">{{ post.title }}</span>
           </a>
           </li>
-          {% endif %}
-          {% endfor %}
-        </ul>
-      </div><!--
+        {% endfor %}
+      </ul>
+    </div><!-- #best -->
 
-      --><div id="best" class="grid__item one-half palm-one-whole">
-        <h2>Greatest</h2>
-        <ul class="post_list">
-          <li class="post"><a href="/app-vs-business">App vs. Business</a></li>
-          <li class="post"><a href="/early-adopters-essay">Early Adopters</a></li>
-          <li class="post"><a href="/design/design-and-subsets-essay">The Subsets of Design</a></li>
-          <li class="post"><a href="/steal-copy">Stealing is not Copying</a></li>
-          <li class="post"><a href="/to-college-or-not-to-college">To College or Not to College</a></li>
-          <li class="post"><a href="/ideas-startups-in-betweens">Ideas, Startups & In-Betweens</a></li>
-          <li class="post"><a href="/focus">Focus, will you?</a></li>
-          <li class="post"><a href="/mistakes-failures">Please Let them Fail &amp; Make Mistakes</a></li>
-        </ul>
-      </div>
-            <p class="grid__unit one-whole center">Want More? <a href="/archives">Dig the Graveyards &rarr;</a></p>
-    </div>
+    <div id="home__talks" class="grid__item two-thirds palm-one-whole">
+      <h2>Recent Talks</h2>
+      <ul class="post_list">
+        {% for post in site.categories.speaking limit: 3 %}
+        <li class='talk post post--talk' itemscope itemtype="http://data-vocabulary.org/Event">
+        <a href="{{ post.url }}" itemprop="url">
+
+          <div itemprop="startDate" datetime="{{ post.date }}" class='post__meta'>
+            <date>{{ post.date | date: "%d %b" }}, <span class="normal">{{ post.date | date: "%Y" }}</span></date>
+            {% if post.future %} &middot;<strong> Upcoming</strong> 
+            {% else %} &middot; Past{% endif %}
+          </div>
+
+          <div class="post__title talk__title" itemprop="name">{{ post.title }}</div>
+
+          <div class="post__meta">
+            <span class="normal talk__event" itemprop="summary">{{ post.event }}</span>
+            &nbsp;&middot;&nbsp;
+            <span class="normal talk__location">{{ post.place }}</span>
+          </div>
+        </a>
+        </li>
+        {% endfor %}
+        <li class="talk post post--talk"><a href="/speaking" class="post__title">See All Talks &rarr;</a></li>
+      </ul>
+    </div><!-- #home__talks -->
   </div>
 </div><!-- #content_area -->
 

@@ -1,42 +1,43 @@
 ---
 layout: base
 ---
-<div id="headline_area">
-  <div class=area id=headline>
-    <div class=grid>
-      <div class="talk-details" itemscope itemtype="http://data-vocabulary.org/Event">
-        <div class='headline_area grid__item one-whole'>
-          <span>On</span>
-          <h1>
-            {{ page.title }}
-          </h1>
-          <span>at</span>
-          <h2 itemprop="summary">
-            {% if page.evlink %}
-            <a href="{{ page.evlink }}" itemprop="link">
-            {% endif %}
-            {{ page.event }}
-            {% if page.evlink %}
-            </a>
-            {% endif %}
-          </h2>
-          <p class='place' itemprop='location'>{{ page.place }}</p>
-          <span>on</span>
-          <p itemprop="startDate" datetime="{{ page.date }}" class='date'>
-          {{ page.date | date: "%d %b" }},
-          <strong>{{ page.date | date: "%Y" }}</strong>
-          </p>
-        </div><!-- .headline_area -->
-      </div><!-- .talk_details -->
+<div id="headline_area" class="grid">
+  <div class="area">
+    <div class="post talk--single grid__item one-whole center" itemscope itemtype="http://data-vocabulary.org/Event">
+      <span>On</span>
+
+      <h1 class="post__title">
+        {{ page.title }}
+      </h1>
+
+      <span>at</span>
+
+      <h2 class="talk__event" itemprop="summary">
+        {% if page.evlink %}
+        <a href="{{ page.evlink }}" itemprop="link">
+        {% endif %}
+          {{ page.event }}
+        {% if page.evlink %}
+        </a>
+        {% endif %}
+      </h2>
+
+      <span class="post__meta talk__location" itemprop='location'>{{ page.place }}</span>
+
+      <span> on </span>
+
+      <span itemprop="startDate" datetime="{{ page.date }}" class="post__meta talk__date">
+      {{ page.date | date: "%d %b" }},
+      <strong>{{ page.date | date: "%Y" }}</strong>
+      </span>
+
     </div>
   </div>
 </div><!-- #headline_area -->
-<div id=event_detail_area>
+<div id=event_detail_area class="grid">
   <div class=area id=event_detail>
-    <div class=grid>
-      <div class='post_content grid__unit one-whole'>
-        {{ content }}            
-      </div>
+    <div class='post_content grid__item one-whole'>
+      {{ content }}            
     </div>
   </div>
 </div><!-- #event_detail_area -->

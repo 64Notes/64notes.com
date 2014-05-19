@@ -1,3 +1,6 @@
 [submodule "assets/vendor/inuit.css"]
 	path = assets/vendor/inuit.css
 	url = git@github.com:csswizardry/inuit.css.git
+[submodule "assets/vendor/helper.inuit.css"]
+	path = assets/vendor/helper.inuit.css
+	url = git@github.com:kingsidharth/helper.inuit.css.git

@@ -1,22 +1,29 @@
 ---
 layout: base
 ---
-<div id='headline_area'>
+<article>
+<div id='headline_area' class="grid">
   <div class='area' id='headline'>
-    <div class='grid'>
-      <h1 class="grid__item one-whole">{{page.title}}</h1>
-    </div>
+    <header class='grid__item one-whole'>
+      <h1 class="post__title">{{page.title}}</h1>
+    </header>
   </div>
 </div><!-- #headline_area -->
-<div id="content_area">
+<div id="content_area" class="grid">
   <div class="area" id="content">
-    <div class="grid post_content">
+    <section class="post__meta">
+      <div class="grid__item one-half palm-one-whole">
+        {{ page.date | date: "%b %d, %Y" }} &middot; {{ page.content | number_of_words }} words
+      </div><!--
+      --><ul class="grid__item one-half right nav desk-show no-bottom-margin js_onload_show" style="display:none;">
+        <li><span class="data_twitter_count"></span> <a onclick="return share_click('twitter')" href="#">Tweet</a></li>
+        <li> &middot; </li>
+        <li><span class="data_facebook_count"></span> <a onclick="return share_click('facebook')" href="#">Share</a></li>
+      </ul>
+    </section>
+    <section class="grid__item one-whole">
       {{content}}
-      {%if page.date %}
-      <small class="meta">
-        This was published on {{ page.date | date: "%b %d, %Y" }} and has {{ page.content | number_of_words }} words.
-      </small>
-      {%endif%}
-    </div>
+    </section>
   </div>
 </div><!-- #content_area -->
+</article>

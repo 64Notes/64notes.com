@@ -2,6 +2,7 @@
 layout: post
 title: Early Adopters
 type: post
+top: true
 ---
 
 It has always been a classic question - If I build something, will people come? Will they honor this new way of doing things? Will they adapt? Will they like this creation of mine?

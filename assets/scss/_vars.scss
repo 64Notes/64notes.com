@@ -1,5 +1,16 @@
 
 
+/*--- Color Scheme */
+// https://kuler.adobe.com/Felicia_Simon-color-theme-3800845/
+$blue: rgb(8, 27, 35);
+$lblue: rgb(56, 123, 140);
+
+$grey: rgb(239, 232, 208);
+
+$dgrey: rgb(152, 191, 183);
+$green: rgb(114, 167, 161);
+
+
 /*------------------------------------*\
     $BASE
 \*------------------------------------*/
@@ -10,7 +21,7 @@ $base-font-size:    18px;
 $base-line-height:  1.61*$base-font-size;
 
 /**
- * Base font-family. 
+ * Base font-family.
  */
 $base-font-family:  sans-serif!default;
 
@@ -60,3 +71,8 @@ $use-block-list:    true;
 $use-rules:         true;
 
 
+$default-transition-function: ease-in;
+
+$directions: -top -right -bottom -left;
+$resolutions: palm lap portable desk;
+$subres: palm lap desk;

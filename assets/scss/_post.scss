@@ -1,0 +1,101 @@
+// POST
+
+@mixin title {
+  font-size: 3em;
+  text-align: center;
+  letter-spacing: -2px;
+  font-weight: 300;
+  @include media-query(palm) {
+    font-size: 2.6em;
+    line-height: 1.4em;
+  }
+}
+
+.post__title {
+  margin-bottom: $base-spacing-unit / 2;
+}
+  h1.post__title {
+    @include title;
+    margin-bottom: 0px;
+  }
+
+.post__content {
+}
+
+.post__meta {
+  color: $dgrey;
+  margin-bottom: 1em;
+  font-weight: 300;
+  text-transform: uppercase;
+  @include font-size($h6-size);
+  em {
+    text-transform: none;
+  }
+  &.event-meta {
+    color: $green;
+    font-size: 0.7em;
+  }
+}
+
+.post_list {
+  margin-left: 0;
+  list-style-type: none;
+
+  .post {
+    padding: 0.5em 0;
+    margin: 0.5em 0 1em 0;
+    width: 100%;
+    @include after-element;
+    &:after {
+      top: 0;
+      left: 0;
+      height: 1px;
+      width: 4em;
+      border-top: 1px solid $green;
+      @include transition(0.2s);
+    }
+    &:hover:after, &:active:after {
+      width: 100%;
+    }
+  }
+  a {
+    display: inline-block;
+    border: none;
+    width: 100%;
+    color: $lblue;
+    @include transition(0.2s);
+    &:hover {
+      border: none;
+      color: $blue;
+      .post__meta {
+        color: $green;
+      }
+    }
+  }
+  .post__meta {
+    font-size: 0.7em;
+    margin-bottom: 0px;
+  }
+  .post__title {
+    font-weight: 500;
+    margin-bottom: 0px;
+  }
+}
+
+.talk--single {
+  .talk__event {
+    margin: 0;
+  }
+  .post__meta {
+    margin: 0;
+    color: $green;
+    font-size: 1em;
+    font-style: normal;
+  }
+
+  span {
+    font-style: italic;
+    font-size: 0.9em;
+    color: $dgrey;
+  }
+}

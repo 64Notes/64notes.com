@@ -1,0 +1,40 @@
+<div id='header_area' class="grid">
+  <div class='area' id='header'>
+
+    <div class="grid__item one-quarter palm-one-whole">
+    {% if page.slug == 'home' %}
+      <h1 id=logo>64 Notes</h1>
+    {% else %}
+      <a href='{{ site.url }}' id='logo'>64 Notes</a>
+    {% endif %}
+    </div><!---
+
+    --><nav class="grid__item three-quarters palm-one-whole">
+      <ul class='nav no-bottom-margin desk-right' data-nav-title="Navigation">
+        <li>
+        <a {% if page.slug == 'home' %}class="active"{%endif%} href='/'>Home</a>
+        </li>
+        <li>
+        <a {% if page.slug == 'about' %}class="active"{% endif %} href='/about'>About</a>
+        </li>
+        <li>
+        <a {% if page.category == 'talks' or page.slug == 'speaking' %}class="active"{% endif %} href='/speaking'>Speaking</a>
+        </li>
+        <li>
+        <a {% if page.category == 'design' or page.slug == 'design_archives' %}class="active"{% endif %} href='/design'>Design</a>
+        </li>
+        <li>
+        <a {% if page.slug == 'archives' %}class="active"{% endif %} href='/archives'>Archives</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- .nav-bar -->
+
+    {% if page.slug == 'home' %}
+    <div class="grid__item one-whole" id="introduction">
+      <p>Notes of a young entrepreneur on <strong>startups, entrepreneurship, design &amp; life</strong>.  Mostly found solving <strong><strike>dragon</strike> design problems at <a href="http://instamojo.com">Instamojo</a></strong>.</p>
+      <p class="no-bottom-margin"><strong>King Sidharth</strong> he calls himself. <strong>Meh</strong>.</p>
+    </div><!-- #introduction -->
+    {% endif %}
+  </div>
+</div><!-- #header_area -->

@@ -1,0 +1,25 @@
+/* RESPONSIVE QUERRIES for 64 Notes */
+
+@include media-query(palm) {
+  .talk-list {
+    text-align: center !important;
+    .talk {
+      .talk-date {
+        text-align: center !important;
+      }
+    }
+    .event-name {
+      display: block;
+    }
+  }
+  #logo {
+    background-position: top center;
+    width: 100%;
+  }
+  #social_area {
+    display: none;
+  }
+  body {
+    font-size: 16px;
+  }
+}

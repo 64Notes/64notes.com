@@ -2,10 +2,10 @@
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "assets/css"
-sass_dir = "assets/sass"
+css_dir = "assets/stylesheets"
+sass_dir = "assets/scss"
 images_dir = "assets/images"
-javascripts_dir = "assets/js"
+javascripts_dir = "assets/scripts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 output_style = :compressed
@@ -16,4 +16,4 @@ output_style = :compressed
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 line_comments = false
 
-preferred_syntax = :sass
+preferred_syntax = :scss

@@ -150,7 +150,101 @@ function social_share_count() {
     _get_share_count(value);
     if(dd[value + '_count']) { _set_share_count(value); }
   });
+
+
+
+
+// ______ RESPONSIVE FRAMEWORK ______ //
+dd['device'] = new Object;
+
+dd['device'] = {
+  'is_desk_wide': false,
+  'is_desk': false,
+  'is_mobile': false,
+  'is_unknown': false
 }
+
+// Viewport Dimensions
+function _get_viewport_dimensions() {
+  dd.device['width'] = window.innerWidth;
+  dd.device['height'] = window.innerHeight;
+  return dd.device;
+}
+
+// Device Orientation
+function _get_device_orientation(width, height) {
+  var width = width || dd.device.width;
+  var height = height || dd.device.height; 
+
+  if (width > height) {
+    dd.device['orientation'] = 'landscape';
+  }
+  else {
+    dd.device['orientation'] = 'portrait';
+  }
+
+  return dd.device.orientation;
+}
+
+// Guess Device Type
+function _get_device_type(width, height) {
+  var width = width || dd.device.width;
+  var height = height || dd.device.height;
+  var orientation = orientation || dd.device.orientation;
+
+  if ( width > 1300 && height > 800 ) {
+    window.dd.device['is_desk_wide'] = true;
+  } 
+  else if (width < 1300 && width >= 760) {
+    window.dd.device['is_desk'] = true;
+  }
+  else if (width < 760 && orientation == 'portrait') {
+    window.dd.device['is_mobile'] = true;
+  }
+  else {
+    window.dd.device['is_unknown'] = true;
+  }
+
+  return dd.device;
+}
+
+function init_responsive() {
+  _get_viewport_dimensions();
+  _get_device_orientation();
+  _get_device_type();
+
+  window.tests['_get_viewport_dimensions'] = function() {
+    var device = window.dd.device;
+    if (device.height && device.width) {
+      return true;
+    } else {
+      tests.msg("Height or Width not defined");
+      return false;
+    }
+  }
+
+  window.tests['_get_device_orientation'] = function() {
+    if(window.dd.device.orientation) {
+      return true;
+    } else {
+      test.msg("Device orientation not set");
+      return false;
+    }
+  }
+
+  window.tests['_get_device_type'] = function() {
+    var d = window.dd.device;
+    if (d.is_desk_wide || d.is_desk || d.is_mobile || d.is_unknown) {
+      return true;
+    } else {
+      tests.msg("_get_device_type is failing. Device type wasn't set");
+      return false;
+    }
+  }
+}
+
+
+
 
 // ______ INITIALIZATION SCRIPTS ______ //
 function _js_classes() {
@@ -176,6 +270,7 @@ var gae = ga_event_register;
 
 function initScripts() {
   _js_classes();
+  init_responsive();
 }
 
 

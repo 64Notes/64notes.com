@@ -1,4 +1,5 @@
 
+var dd = documentData;
 
 // ______ TEST FRAMEWORK ______ //
 var tests = {
@@ -11,7 +12,7 @@ var tests = {
 
 function _run_tests() {
   // Run tests only on dev environment.
-  if (documentData.environment == "dev" ) {
+  if (documentData.environment == "development" ) {
     var tests = window.tests; // cache
     if(tests) {
       for ( var index in tests ) {
@@ -31,23 +32,29 @@ function _run_tests() {
 
 
 // ______ SOCIAL MEDIA FUNCTIONS______ //
+// BASIC DATA
 var share_settings = {
   'facebook': {
     'base_URL': 'http://www.facebook.com/sharer.php?',
     'name' : 'sharer',
     'count_url': 'https://graph.facebook.com/?id=' 
       + encodeURIComponent(documentData.url)
-      + '&callback=?'
+      + '&callback=?',
+    'count_key': 'shares'
   },
   'twitter': {
     'base_URL': 'https://twitter.com/intent/tweet?',
     'name': 'tweet',
     'count_url': 'https://cdn.api.twitter.com/1/urls/count.json?url=' 
       + encodeURIComponent(documentData.url) 
-      + '&callback=?'
+      + '&callback=?',
+    'count_key': 'count'
   }
 }
 
+
+// ACTION::SHARING
+// Pop-up window settings generator. 
 function _window_setting(toolbar, status, width, height) {
   var toolbar = toolbar || '0';
   var status = status || '0';
@@ -67,6 +74,7 @@ function _window_setting(toolbar, status, width, height) {
   }
 })();
 
+// Click to Share Function
 function share_click(network, window_setting) {
   var window_setting = window_setting || window._window_setting(); 
   var network = share_settings[network];
@@ -89,24 +97,62 @@ function share_click(network, window_setting) {
 
   window.open(push_url, verb, window_setting);
   return false;
-
 }
 
+
+// WELDERS::SOCIAL MEDIA SHARED NUMBERS 
+// Get the number of count for a network.
 function _get_share_count(network) {
-  var push_url = window.share_settings[network]['count_url'];
-  var count;
+  var ss = window.share_settings[network];
+  var push_url = ss['count_url'];
+  var count_key = ss['count_key'];
 
-  data = $.getJSON(push_url, function(data) { return data; });
-  console.log(data);
-  
-  if(network == 'twitter') {
-    count = data.count;
-  } 
-  else if (network == 'facebook') {
-    count = data.shares;
-  }
-  console.log(count);
+  var data = $.getJSON(push_url);
+  data.done(function(response) {
+    var count = response[count_key];
+    // Output it to dd for now
+    // TODO: Find a better & testable way to run this function.
+    window.dd[network + '_count'] = response[count_key];
+  });
+  data.fail(function() { 
+    tests.msg('JSON failed to load for _get_share_count on ' + network);
+  });
 }
+
+// Get share count of a network
+// and set it where it's asked for.
+function _set_share_count(network, change_verb) {
+  var change_verb = change_verb || true;
+  var ele = $('.data_' + network + '_count'); 
+  var count = window.dd[network + '_count'];
+
+  if(count != 0 && count != undefined) {
+    $(ele).each(function() {
+      $(this).html(' ' + window.dd[network + '_count']);
+      if(change_verb) {
+        $(this).next().append('s');
+      }
+    });
+  }
+  return ele; 
+}
+(window.tests['_set_share_count'] = function() {
+  if (_set_share_count('facebook') && _set_share_count('twitter')) {
+  } else {
+    tests.msg("There was a problem in _set_share_count");
+  }
+})();
+
+// Get and Set Numbers for each network.
+function social_share_count() {
+  networks = ['facebook', 'twitter'];
+  $(networks).each(function(index, value) {
+    _get_share_count(value);
+    if(dd[value + '_count']) { _set_share_count(value); }
+  });
+}
+
+
 
 
 // ______ INITIALIZATION SCRIPTS ______ //
@@ -117,8 +163,8 @@ function _js_classes() {
     var class_instances = document.getElementsByClassName('js_onload_show');
     class_instances.forEach(function() {
       if(this.hidden) {
-        console.log(this);
-        console.log('.js_onload_show failing. On item ' + this.index);
+        tests.msg(this);
+        tests.msg('.js_onload_show failing. On item ' + this.index);
       }
     });
   }
@@ -131,8 +177,10 @@ function initScripts() {
 
 
 // ______ POST SCRIPTS ______ //
+
 function postScripts() {
   _run_tests();
+  social_share_count();
 }
 
 $(document).ready(function() {

@@ -144,19 +144,17 @@ function _get_share_count(network) {
 
 // Get share count of a network
 // and set it where it's asked for.
-function _set_share_count(network, change_verb) {
-  var change_verb = change_verb || true;
+function _set_share_count(network) {
   var ele = $('.data_' + network + '_count'); 
-  var count = window.dd[network + '_count'];
+  var count = ' ' + window.dd[network + '_count'];
 
   if(count != 0 && count != undefined) {
-    $(ele).each(function() {
-      $(this).html(' ' + window.dd[network + '_count']);
-      if(change_verb) {
-        $(this).next().append('s');
-      }
-    });
+    $(ele).html(count);
+    $(ele).next().append('s');
+
+    Status.msg("Social Count added");
   }
+
   return ele; 
 }
 (window.tests['_set_share_count'] = function() {
@@ -168,16 +166,15 @@ function _set_share_count(network, change_verb) {
 
 // Get and Set Numbers for each network.
 function social_share_count() {
-  networks = ['facebook', 'twitter'];
-
-  // Get numbers only if on desktops
   if(dd.device.is_desk_wide || dd.device.is_desk) {
-    $(networks).each(function(index, value) {
-      _get_share_count(value);
-      if(dd[value + '_count']) { _set_share_count(value); }
-    });
+    _get_share_count('twitter');
+    _get_share_count('facebook');
+
+    _set_share_count('twitter');
+    _set_share_count('facebook');
   }
 }
+// ______ END ______
 
 
 

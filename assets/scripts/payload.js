@@ -146,9 +146,10 @@ function _get_share_count(network) {
 // and set it where it's asked for.
 function _set_share_count(network) {
   var ele = $('.data_' + network + '_count'); 
-  var count = ' ' + window.dd[network + '_count'];
+  var count = window.dd[network + '_count'] || false;
+    count = count.toString();
 
-  if(count != 0 && count != undefined) {
+  if(count) {
     $(ele).html(count);
     $(ele).next().append('s');
 
@@ -164,8 +165,8 @@ function social_share_count() {
     _get_share_count('twitter');
     _get_share_count('facebook');
 
-    _set_share_count('twitter');
     _set_share_count('facebook');
+    _set_share_count('twitter');
   }
 }
 // ______ END ______

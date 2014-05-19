@@ -301,6 +301,5 @@ function postScripts() {
 
 $(document).ready(function() {
   initScripts();
-  social_share_count();
   postScripts(); // The last thing to execute.
 });

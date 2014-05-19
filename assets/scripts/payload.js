@@ -2,13 +2,36 @@
 var dd = documentData;
 
 // ______ TEST FRAMEWORK ______ //
+
+function send_log(signal, app) {
+  if(app) {
+    signal = (app + ' ' + signal).toString();
+    console.log(signal);
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+ 
+
 var tests = {
   'run' : 0,
   'msg' : function(signal) {
-    var signal = "[Tests] " + signal;
-    console.log(signal);
+    if(dd.environment == "development") {
+      send_log(signal, '[Tests]'); 
+    } 
   }
-}
+};
+
+var Status = {
+  'run' : 0,
+  'msg': function(signal) { 
+    if(dd.environment == "development") {
+      send_log(signal, '[Status]'); 
+    }
+  } 
+};
 
 function _run_tests() {
   // Run tests only on dev environment.

@@ -152,9 +152,6 @@ function social_share_count() {
   });
 }
 
-
-
-
 // ______ INITIALIZATION SCRIPTS ______ //
 function _js_classes() {
   $('.js_onload_show').show();
@@ -170,6 +167,12 @@ function _js_classes() {
   }
 }
 
+
+// Google Analytics Event Register
+function ga_event_register (category, action) {
+  _gaq.push(['_trackEvent', category, action]);
+}
+var gae = ga_event_register;
 
 function initScripts() {
   _js_classes();

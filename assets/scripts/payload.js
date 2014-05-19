@@ -157,12 +157,6 @@ function _set_share_count(network) {
 
   return ele; 
 }
-(window.tests['_set_share_count'] = function() {
-  if (_set_share_count('facebook') && _set_share_count('twitter')) {
-  } else {
-    tests.msg("There was a problem in _set_share_count");
-  }
-})();
 
 // Get and Set Numbers for each network.
 function social_share_count() {

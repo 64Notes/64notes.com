@@ -146,10 +146,15 @@ function _set_share_count(network, change_verb) {
 // Get and Set Numbers for each network.
 function social_share_count() {
   networks = ['facebook', 'twitter'];
-  $(networks).each(function(index, value) {
-    _get_share_count(value);
-    if(dd[value + '_count']) { _set_share_count(value); }
-  });
+
+  // Get numbers only if on desktops
+  if(dd.device.is_desk_wide || dd.device.is_desk) {
+    $(networks).each(function(index, value) {
+      _get_share_count(value);
+      if(dd[value + '_count']) { _set_share_count(value); }
+    });
+  }
+}
 
 
 

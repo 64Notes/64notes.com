@@ -35,7 +35,7 @@
     <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/64Notes" />        
     {% endif %}
   </head>
-  <body class="{{ page.slug }} {{ page.category }}"> 
+  <body class="{{ page.slug }} {{ page.category }}" onload="return setTimeout('social_share_count()', 2000);"> 
     {% include header.html %}
     {{ content }}
     {% include footer.html %}

@@ -283,11 +283,10 @@ function initScripts() {
 
 function postScripts() {
   _run_tests();
-  social_share_count();
 }
 
 $(document).ready(function() {
   initScripts();
-
+  social_share_count();
   postScripts(); // The last thing to execute.
 });

@@ -45,7 +45,7 @@ function _run_tests() {
       tests.msg("All tests good. " + tests.run + " tests run.");
     }
     else {
-      console.log("Tests not defined.");
+      tests.msg("Tests not defined.");
       return false;
     }
   }
@@ -73,7 +73,7 @@ var share_settings = {
       + '&callback=?',
     'count_key': 'count'
   }
-}
+};
 
 
 // ACTION::SHARING

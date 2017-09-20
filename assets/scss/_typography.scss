@@ -1,26 +1,40 @@
 /* TYPOGRAPHY */
-
+@import "vars";
 
 @mixin sans {
-  font-family: "Ubuntu", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
+  font-family: "Noto Sans", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
 }
 
 body {
+
+  /* Common Text Rules */
   @include sans;
+  color: $black;
 
   p, ul, ol {
-    line-height: 1.61em;
+    line-height: $base-line-height;
   }
 
-  // Lists
-  ul, ol {
-    @include media-query(palm) {
-      margin-left: 10px;
-      list-style-position: inside;
-      li {
-        margin-bottom: 0.5em;
-      }
+  /* Links */
+  a {
+    color: $blue;
+    text-decoration: none;
+    border-bottom: 1px dotted $blue;
+
+    &:hover, &:active {
+      border-bottom-style: solid;
     }
+  }
+
+  /* Lists */
+  ul, ol {
+    // @include media-query(palm) {
+    //   margin-left: 10px;
+    //   list-style-position: inside;
+    //   li {
+    //     margin-bottom: 0.5em;
+    //   }
+    // }
   }
   ul {
     list-style-type: square;
@@ -29,25 +43,28 @@ body {
     list-style-type: decimal;
   }
 
-  // Quote
+  /* Quote */
   blockquote {
     display: block;
     clear: both;
-    border-left: 2px solid $dgrey;
+    border-left: 2px solid $dark-grey;
     padding-left: 1em;
     margin-top: 10px;
     text-indent: 0px;
     color: adjust-lightness($blue, 10%);
   }
+
+  /* Headings */
   h2, h3, h4, h5, h6 {
-    margin-top: 2.1em;
-    margin-bottom: 0.5em;
+    margin-top: 3em;
+    margin-bottom: 2em;
   }
+
   h2 {
     font-weight: normal;
     letter-spacing: -1px;
-    @include media-query(palm) {
-      line-height: 1.3em;
-    }
+    // @include media-query(palm) {
+    //   line-height: 1.3em;
+    // }
   }
 }

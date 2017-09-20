@@ -2,10 +2,21 @@
 
 /*--- Color Scheme */
 // https://kuler.adobe.com/Felicia_Simon-color-theme-3800845/
-$blue: rgb(8, 27, 35);
+$blue:        rgb(24, 143, 255);
+
+$black:       rgb(80, 85, 97);
+
+$dark-grey:   rgb(121, 125, 137);
+$grey:        rgb(177, 183, 197);
+$light-grey:  rgb(219, 225, 239);
+
+$off-white:   rgb(243, 246, 255);
+$white:       rgb(255, 255, 255);
+
+
 $lblue: rgb(56, 123, 140);
 
-$grey: rgb(239, 232, 208);
+// $grey: rgb(239, 232, 208);
 
 $dgrey: rgb(152, 191, 183);
 $green: rgb(114, 167, 161);
@@ -17,8 +28,9 @@ $green: rgb(114, 167, 161);
 /**
  * Base stuff
  */
-$base-font-size:    18px;
-$base-line-height:  1.61*$base-font-size;
+$base-font-size:    16px;
+$base-line-height:  1.6*$base-font-size;
+$base-spacing-unit: $base-font-size;
 
 /**
  * Base font-family.

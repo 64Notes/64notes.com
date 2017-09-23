@@ -50,9 +50,6 @@ body {
 
   /* Headings */
   h2, h3, h4, h5, h6 {
-    @include ubuntu;
-    margin-top: 3em;
-    margin-bottom: 2em;
   }
 
   h2 {

@@ -3,18 +3,22 @@ layout: base
 title: "64 Notes"
 slug: "home"
 ---
-<div id=content_area class="grid-x">
-  <div class=area id=content>
+<div id="hero_area" class="grid-container">
+    {% include home-hero.html %}
+</div><!-- #hero_area -->
+
+<div id=content_area class="grid-container">
+  <div class="grid-x" id="content">
     <div id="latest" class="cell medium-6 small-12">
       <h2 class="no-top-margin">Recent Notes</h2>
       <ul class='post_list'>
-        {% assign posts = site.posts | exclude_post_category: 'speaking'%}
+        {% assign posts = site.posts | exclude_post_category: 'speaksing'%}
         {% for post in posts limit:7 %}
         <li class="post">
         <a href="{{ post.url }}">
           <div class="post__meta">
             <date class="">{{ post.date | date: "%d %b, %Y" }}</date>
-            {% if post.category == 'design' %} &middot; Design{%endif%}
+            {% if post.data.category == 'design' %} &middot; Design{%endif%}
           </div>
           <span class="post__title">{{ post.title }}</span>
         </a>
@@ -24,8 +28,8 @@ slug: "home"
           <a class="post__title" href="/archives">Want More? Dig the Graveyards &rarr;</a>
         </li>
       </ul>
-    </div><!--
-    --><div id="best" class="cell medium-6 small-12">
+    </div>
+    <div id="best" class="cell medium-6 small-12">
       <h2 class="no-top-margin">Some Popular Ones</h2>
       <ul class="post_list">
         {% assign posts = site.posts | post_with_key_value: 'top', true %}
@@ -34,7 +38,7 @@ slug: "home"
           <a href="{{ post.url }}">
             <div class="post__meta">
               <date class="">{{ post.date | date: "%d %b, %Y" }}</date>
-              {% if post.category == 'design' %} &middot; Design{%endif%}
+              {% if post.data.category == 'design' %} &middot; Design{%endif%}
             </div>
             <span class="post__title">{{ post.title }}</span>
           </a>

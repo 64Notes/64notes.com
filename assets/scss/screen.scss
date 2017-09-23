@@ -15,8 +15,12 @@
 @import "typography";
 @import "colors";
 
+@import "objects/divider";
+@import "components/components";
 
 $base-spacing-unit: 8px;
+
+@import "pages/home";
 
 .area {
   // max-width: 960px!important;

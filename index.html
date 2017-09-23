@@ -3,9 +3,9 @@ layout: base
 title: "64 Notes"
 slug: "home"
 ---
-<div id=content_area class="grid">
+<div id=content_area class="grid-x">
   <div class=area id=content>
-    <div id="latest" class="grid__item one-half palm-one-whole">
+    <div id="latest" class="cell medium-6 small-12">
       <h2 class="no-top-margin">Recent Notes</h2>
       <ul class='post_list'>
         {% assign posts = site.posts | exclude_post_category: 'speaking'%}
@@ -25,7 +25,7 @@ slug: "home"
         </li>
       </ul>
     </div><!--
-    --><div id="best" class="grid__item one-half palm-one-whole">
+    --><div id="best" class="cell medium-6 small-12">
       <h2 class="no-top-margin">Some Popular Ones</h2>
       <ul class="post_list">
         {% assign posts = site.posts | post_with_key_value: 'top', true %}
@@ -43,7 +43,7 @@ slug: "home"
       </ul>
     </div><!-- #best -->
 
-    <div id="home__talks" class="grid__item two-thirds palm-one-whole">
+    <div id="home__talks" class="cell medium-8 small-12">
       <h2>Recent Talks</h2>
       <ul class="post_list">
         {% for post in site.categories.speaking limit: 3 %}
@@ -52,7 +52,7 @@ slug: "home"
 
           <div itemprop="startDate" datetime="{{ post.date }}" class='post__meta'>
             <date>{{ post.date | date: "%d %b" }}, <span class="normal">{{ post.date | date: "%Y" }}</span></date>
-            {% if post.future %} &middot;<strong> Upcoming</strong> 
+            {% if post.future %} &middot;<strong> Upcoming</strong>
             {% else %} &middot; Past{% endif %}
           </div>
 
@@ -71,4 +71,3 @@ slug: "home"
     </div><!-- #home__talks -->
   </div>
 </div><!-- #content_area -->
-

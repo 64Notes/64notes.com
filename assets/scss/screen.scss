@@ -5,211 +5,38 @@
 /* inuit.css [http://inuitcss.com]
  * Initialize inuit.css framework */
 
+// @import "vars";
+@import "settings.foundation";
+
 // @import "../vendor/inuit.css/defaults";
-@import "vars";
 // @import "../vendor/inuit.css/inuit";
-@import "compass";
 // @import "../vendor/helper.inuit.css/helper.inuit.css.scss";
-@import "foundation/css/foundation.css";
 
 @import "typography";
+@import "colors";
 
+
+$base-spacing-unit: 8px;
 
 .area {
-  max-width: 650px;
+  // max-width: 960px!important;
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
-  padding: $base-spacing-unit;
 }
 
-.no-bottom-margin {
-  margin-bottom: 0px;
+#logo {
+  font-size: $global-font-size;
 }
 
 
 // Selection
 ::selection {
-  color: $grey;
-  background: $lblue;
+  color: $off-white;
+  background: $black;
 }
 
 ::-moz-selection {
-  color: $grey;
-  background: $lblue;
+  color: $off-white;
+  background: $black;
 }
-
-// All navigations need to expand full on small size screens
-// @include media-query(palm) {
-//   .nav, .nav--fit {
-//     li {
-//       display: block;
-//       width: 100%;
-//       a {
-//         width: 100%;
-//       }
-//     }
-//   }
-// }
-
-/* Header Area */
-#header_area {
-  .area {
-    max-width: 900px;
-    text-align: center;
-    padding-top: $base-spacing-unit * 2;
-    padding-bottom: $base-spacing-unit;
-    // @include media-query(desk) {
-    //   padding-top: $base-spacing-unit * 4;
-    //   padding-bottom: $base-spacing-unit * 2;
-    // }
-  }
-  .nav {
-    li {
-      // @include media-query(lap-and-up) {
-      //   margin-right: 0.5em;
-      //   &:last-child {
-      //     margin-right: 0px;
-      //   }
-      // }
-      a {
-        padding: 0.5em 0.6em;
-        letter-spacing: 1px;
-        font-size: 0.7em;
-        text-transform: uppercase;
-        border-color: $green;
-        color: $green;
-        &:hover {
-          border-bottom: 1px solid $green;
-          color: $blue;
-        }
-        &.active {
-          color: $dgrey;
-          border-bottom: 1px solid $blue;
-        }
-      }
-    }
-  }
-}
-
-@mixin after-element {
-  position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-  }
-}
-
-
-#introduction {
-  text-align: left;
-  margin-top: $base-spacing-unit;
-  padding-top: $base-spacing-unit;
-  margin-bottom: 0px;
-  font-weight: 300;
-  line-height: 1.65em;
-
-  @include after-element;
-  &:after {
-    top: 0;
-    left: 1em;
-    border: 1px solid $lblue;
-    width: 4em;
-  }
-  strong { font-weight: normal; }
-}
-
-#logo {
-  text-indent: -9999px;
-  display: block;
-  background-image: url("../images/logo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: left center;
-  height: 50px;
-  border: none;
-  padding: 0;
-  margin-bottom: 1em;
-  width: 100%;
-  &:hover {
-    border: none !important;
-  }
-
-  // @include media-query(palm) {
-  //   background-position: center;
-  // }
-}
-
-h1#logo {
-  line-height: 0.6em;
-  margin-bottom: 0.5em;
-}
-
-/*----:[Headline Area]:---- */
-#headline_area {
-  .area {
-    max-width: 900px;
-    padding-bottom: 0px;
-  }
-}
-
-/* Social Area */
-#social_area {
-  background: $lblue;
-  color: $dgrey;
-  text-align: center;
-  font-size: 0.9em;
-  a {
-    color: $grey;
-    border-bottom: 1px dotted $dgrey;
-    &:hover {
-      border-bottom-style: solid;
-    }
-  }
-}
-
-/* Footer Area */
-#footer_area {
-  background: $blue;
-  color: $grey;
-  text-align: center;
-  font-size: 0.75em;
-  font-weight: 300;
-  p {
-    margin-bottom: 0;
-  }
-  a {
-    color: $grey;
-    border-color: $grey;
-  }
-}
-
-
-/* ______ PAGE SPECIFIC ______ */
-.home {
-  #content_area {
-    .area {
-      max-width: 900px;
-    }
-  }
-}
-  #home__talks h2 {
-    @include after-element;
-    &:after {
-      width: 4em;
-      top: -0.5em;
-      left: 0;
-      border: 1px solid $lblue;
-    }
-  }
-
-.talks {
-  #content_area {
-    .area {
-      //max-width: 860px;
-    }
-  }
-}
-
-// @import "post";
-// @import "responsive";

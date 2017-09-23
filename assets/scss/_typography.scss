@@ -1,23 +1,24 @@
 /* TYPOGRAPHY */
-@import "vars";
+@import "colors";
 
-@mixin sans {
-  font-family: "Noto Sans", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
+$font-noto-sans: "Noto Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
+$font-ubuntu: "Ubuntu", "Lucida Grande", "Lucida Sans", sans-serif;
+
+@mixin sans-serif {
+  font-family: $font-noto-sans;
+}
+
+@mixin ubuntu {
+  font-family: $font-ubuntu;
 }
 
 body {
 
-  /* Common Text Rules */
-  @include sans;
-  color: $black;
-
   p, ul, ol {
-    line-height: $base-line-height;
   }
 
   /* Links */
   a {
-    color: $blue;
     text-decoration: none;
     border-bottom: 1px dotted $blue;
 
@@ -28,13 +29,6 @@ body {
 
   /* Lists */
   ul, ol {
-    // @include media-query(palm) {
-    //   margin-left: 10px;
-    //   list-style-position: inside;
-    //   li {
-    //     margin-bottom: 0.5em;
-    //   }
-    // }
   }
   ul {
     list-style-type: square;
@@ -56,6 +50,7 @@ body {
 
   /* Headings */
   h2, h3, h4, h5, h6 {
+    @include ubuntu;
     margin-top: 3em;
     margin-bottom: 2em;
   }

@@ -1,0 +1,22 @@
+{
+  "name": "64notes",
+  "version": "3.0.0",
+  "description": "Source code for [64 Notes](http://64notes.com) - built on [Jekyll](http://jekyllrb.com) & hosted on [GitHib](http://github.com).",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/64Notes/64notes.com.git"
+  },
+  "author": "@kingsidharth",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/64Notes/64notes.com/issues"
+  },
+  "homepage": "https://github.com/64Notes/64notes.com#readme",
+  "dependencies": {
+    "foundation-sites": "^6.4.3"
+  }
+}

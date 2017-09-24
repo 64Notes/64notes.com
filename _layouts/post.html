@@ -1,27 +1,30 @@
 ---
 layout: base
 ---
-<article>
-<div id='headline_area' class="grid">
-  <div class='area' id='headline'>
-    <header class='grid__item one-whole'>
+<article class="post is-post">
+<div id='headline_area' class="grid-container">
+  <div class='grid-x grid-margin-x' id='headline'>
+    <header class='cell small-12 text-center'>
       <h1 class="post__title">{{page.title}}</h1>
     </header>
   </div>
 </div><!-- #headline_area -->
-<div id="content_area" class="grid">
-  <div class="area" id="content">
-    <section class="post__meta">
-      <div class="grid__item one-half palm-one-whole">
+
+<div id="content_area" class="grid-container">
+  <div class="grid-x grid-margin-x" id="content">
+    <section class="cell small-12 medium-10 medium-offset-1">
+      <hr class="divider-4">
+      <div class="post__meta">
         {{ page.date | date: "%b %d, %Y" }} &middot; {{ page.content | number_of_words }} words
-      </div><!--
-      --><ul class="grid__item one-half right nav desk-show no-bottom-margin js_onload_show" style="display:none;">
+      </div>
+      <ul class="grid__item one-half right nav desk-show no-bottom-margin js_onload_show" style="display:none;">
         <li><span class="data_twitter_count"></span> <a onclick="return share_click('twitter')" href="#">Tweet</a></li>
         <li>&nbsp;&middot;&nbsp;</li>
         <li><span class="data_facebook_count"></span> <a onclick="return share_click('facebook')" href="#">Share</a></li>
       </ul>
+      <hr class="divider-2">
     </section>
-    <section class="grid__item one-whole">
+    <section class="cell small-12 medium-10 medium-offset-1">
       {{content}}
     </section>
   </div>

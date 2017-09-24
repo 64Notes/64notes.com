@@ -1,44 +1,28 @@
 ---
 layout: base
 ---
-<div id="headline_area" class="grid">
-  <div class="area">
-    <div class="post talk--single grid__item one-whole center" itemscope itemtype="http://data-vocabulary.org/Event">
-      <span>On</span>
-
-      <h1 class="post__title">
-        {{ page.title }}
+<div class="talk is-post post">
+  <div id="headline_area" class="grid-container">
+    <header id="headline" class="grid-x grid-margin-x" itemscope itemtype="http://data-vocabulary.org/Event">
+      <h1 class="post__title talk__title cell small-12">
+        {{ page.event }} &middot; <em>{{ page.place }}</em>
       </h1>
+      <hr class="divider-1-light-grey small-12 cell" />
+      <div class="subheader cell small-12 talk__meta">
+        {{ page.title }} &middot;
+        <span itemprop="startDate" datetime="{{ page.date }}">
+          {{ page.date | date: "%b, %Y" }}
+        </span>
+      </div>
+      <hr class="divider-1-light-grey small-12 cell" />
+    </header>
+  </div><!-- #header_area -->
 
-      <span>at</span>
-
-      <h2 class="talk__event" itemprop="summary">
-        {% if page.evlink %}
-        <a href="{{ page.evlink }}" itemprop="link">
-        {% endif %}
-          {{ page.event }}
-        {% if page.evlink %}
-        </a>
-        {% endif %}
-      </h2>
-
-      <span class="post__meta talk__location" itemprop='location'>{{ page.place }}</span>
-
-      <span> on </span>
-
-      <span itemprop="startDate" datetime="{{ page.date }}" class="post__meta talk__date">
-      {{ page.date | date: "%d %b" }},
-      <strong>{{ page.date | date: "%Y" }}</strong>
-      </span>
-
+  <div id="event_detail_area" class="grid-container">
+    <div class="grid-x grid-margin-x" id="event_detail">
+      <div class='post__content cell small-12'>
+        {{ content }}
+      </div>
     </div>
-  </div>
-</div><!-- #headline_area -->
-<div id=event_detail_area class="grid">
-  <div class=area id=event_detail>
-    <div class='post_content grid__item one-whole'>
-      {{ content }}            
-    </div>
-  </div>
-</div><!-- #event_detail_area -->
-
+  </div><!-- #event_detail_area -->
+</div><!-- .talk.is-post -->

@@ -28,10 +28,14 @@
     margin-top: 2rem;
     margin-bottom: 1rem;
   }
+
+  .post__content {
+    margin-top: 2rem;
+  }
 }
 
 .is-post {
-  .post__meta {
+  .post__meta, .talk__meta {
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
@@ -66,18 +70,9 @@
   }
 
   .talk__title {
-    color: $dark-grey;
     margin-bottom: 0;
     line-height: 1.2em;
-    letter-spacing: -0.5px;
-    font-weight: bold;
-    text-transform: none;
     margin-top: 0;
-
-    em {
-      font-style: normal;
-      color: $black;
-    }
 
     @include breakpoint(small only) {
       font-size: 1rem;
@@ -119,5 +114,19 @@
     @include breakpoint(small only) {
       line-height: 1.5rem;
     }
+  }
+}
+
+.talk {
+  .talk__title {
+    color: $dark-grey;
+    font-weight: bold;
+    text-transform: none;
+    letter-spacing: -0.5px;
+  }
+
+  em {
+    font-style: normal;
+    color: $black;
   }
 }

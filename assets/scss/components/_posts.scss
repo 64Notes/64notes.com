@@ -67,13 +67,57 @@
 
   .talk__title {
     color: $dark-grey;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
     line-height: 1.2em;
     letter-spacing: -0.5px;
+    font-weight: bold;
+    text-transform: none;
+    margin-top: 0;
 
     em {
       font-style: normal;
       color: $black;
+    }
+
+    @include breakpoint(small only) {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .talk__meta {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    line-height: 2rem;
+    font-size: 0.75rem;
+  }
+}
+
+.list--full {
+  .talk {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid $off-white;
+  }
+
+  .talk__title {
+    line-height: 1.5em;
+    @include breakpoint(small only) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .talk__meta {
+    font-size: 1rem;
+    line-height: 1rem;
+
+    span {
+      color: $blue;
+    }
+
+    @include breakpoint(small only) {
+      line-height: 1.5rem;
     }
   }
 }

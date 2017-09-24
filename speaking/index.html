@@ -1,35 +1,29 @@
 ---
-layout: page 
-title: Talks by King Sidharth 
+layout: page
+title: Talks by King Sidharth
 slug: speaking
 ---
 <p>I am often found traveling around to give <strong>inspirational talks on entrepreneurship &amp; life philosophy</strong> or <strong>technical talks on design</strong>.</p>
-<p>I've given talks at events like <strong>TEDx, Startup Saturday &amp; WordCamps</strong> and in colleges like <strong>BITS Pilani Goa, Kamla Nehru College, &amp; NITs</strong>.</p> 
+<p>I've given talks at events like <strong>TEDx, Startup Saturday &amp; WordCamps</strong> and in colleges like <strong>BITS Pilani Goa, Kamla Nehru College, &amp; NITs</strong>.</p>
 <p>You can invite me to one of your events as well: king@kingsidharth.com</p>
 
-<!--<p class="center">Yikes! Looks like I am not speaking anywhere. Mom? MOMMY?!</p>-->
-<ul class='post_list nav past nav--stacked'>
-{% for post in site.categories.speaking %}
-  <li class='talk post post--talk' itemscope itemtype="http://data-vocabulary.org/Event">
-  <a href="{{ post.url }}" itemprop="url">
+<ul class="posts-list list--full">
+  {% for post in site.categories.speaking %}
+  <li class="talk post post--talk" itemscope itemtype="http://data-vocabulary.org/Event">
+    <div itemprop="startDate" datetime="{{ post.date }}">
 
-    <div itemprop="startDate" datetime="{{ post.date }}" class='post__meta'>
-      <date>{{ post.date | date: "%d %b" }}, <span class="normal">{{ post.date | date: "%Y" }}</span></date>
-      {% if post.future %} &middot;<strong> Upcoming</strong> 
-      {% else %} &middot; Past{% endif %}
-    </div>
+      <h2 class="talk__title post__title">
+        {{ post.event }} &middot; <em>{{ post.place }}</em>
+      </h2>
+      <a href="{{ post.url }}" itemprop="url">
+        <div class="talk__meta post__meta" itemprop="name">
+          {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }} &middot; <span>See More &rarr;</span>
+        </div>
+      </a>
 
-    <div class="post__title talk__title" itemprop="name">{{ post.title }}</div>
-
-    <div class="post__meta">
-      <span class="normal talk__event" itemprop="summary">{{ post.event }}</span>
-      &nbsp;&middot;&nbsp;
-      <span class="normal talk__location">{{ post.place }}</span>
-    </div>
-
-  </a>
+  </div><!-- schema-->
   </li>
-{% endfor %}
+  {% endfor %}
 </ul>
 
 <!-- FUTURE: highlight future ones -->

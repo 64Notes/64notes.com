@@ -21,10 +21,6 @@ slug: "home"
       {% for post in posts limit:7 %}
         <li class="post">
         <a href="{{ post.url }}">
-          <!--<div class="post__meta">
-            <date class="">{{ post.date | date: "%d %b, %Y" }}</date>
-            {% if post.data.category == 'design' %} &middot; Design{%endif%}
-          </div>-->
           <div class="post__title--link">{{ post.title }}</div>
         </a>
         </li>

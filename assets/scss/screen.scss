@@ -16,25 +16,12 @@
 @import "colors";
 
 @import "objects/divider";
+@import "objects/icons";
 @import "components/components";
 
 $base-spacing-unit: 8px;
 
 @import "pages/home";
-
-#logo {
-  font-size: $global-font-size;
-  @include ubuntu;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  font-weight: bold;
-}
-
-#header_area {
-  @include breakpoint(small only) {
-    margin-bottom: 2rem;
-  }
-}
 
 
 // Selection

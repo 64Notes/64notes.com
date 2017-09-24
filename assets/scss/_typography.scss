@@ -21,6 +21,7 @@ body {
   a {
     text-decoration: none;
     border-bottom: 1px dotted $grey;
+    transition: 0.1s all;
 
     &:hover, &:active {
       border-bottom-style: solid;
@@ -74,13 +75,5 @@ body {
     @include breakpoint(small only) {
       font-weight: bold;
     }
-  }
-
-
-  .headline--section {
-    font-size:    1rem;
-    line-height:  1em;
-    margin-top:     1.5rem;
-    margin-bottom:  1.5rem;
   }
 }

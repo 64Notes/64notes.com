@@ -5,8 +5,38 @@
   border-bottom: 1px solid $off-white;
   padding-top:    2rem;
   padding-bottom: 2rem;
+  overflow: hidden;
 
   a {
     border-width: 0px;
+  }
+}
+
+#logo {
+  @include ubuntu;
+
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  line-height: 2.5rem;
+  font-size:   1.5rem;
+  color: $white;
+  background: $black;
+  text-align: center;
+  transition: 0.2s all;
+
+
+  margin-bottom: 0px;
+  display: block;
+
+  &:hover {
+    background: $dark-grey;
+    color: $off-white;
+  }
+}
+
+#header_area {
+  @include breakpoint(small only) {
+    margin-bottom: 2rem;
   }
 }

@@ -2,6 +2,18 @@
 // -----------
 
 
+.divider-1-light-grey {
+  border-bottom: 1px solid $light-grey;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.divider-1-off-white {
+  border-bottom: 1px solid $off-white;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .divider-2 {
   border-bottom-width: 2px;
   border-color: $light-grey;

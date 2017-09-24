@@ -1,19 +1,20 @@
 ---
 layout: page
-title: Archives of 64 Notes
+title: Archive
 slug: archives
 ---
+<p>
+  All the notes ever. More than 64 for sure.
+</p>
 <ul class="posts-list">
   {% assign posts = site.posts | exclude_post_category: 'speaking' %}
+
   {% for post in posts %}
-  <li class="post">
-  <a href="{{ post.url }}" class="entry-title">
-  <div class="post__meta">
-    <date>{{ post.date | date: "%d %b, %Y" }}</date>
-    {% if post.category == 'design' %}<span class="normal"> &middot; Design</span>{%endif%}
-  </div>
-  <span class="post__title">{{ post.title }}</span>
-  </a>
+  <li class="post" style="margin-bottom: 32px;">
+
+    {% include posts/post-list-item.html %}
+    <hr class="divider-1-off-white">
+
   </li>
   {% endfor %}
 </ul>

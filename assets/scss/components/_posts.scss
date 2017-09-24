@@ -8,6 +8,7 @@
   .post__title {
     @include ubuntu;
     word-wrap: normal;
+    text-transform: none;
   }
 
   .post__title--link {
@@ -53,9 +54,18 @@
     margin-bottom: 1.5rem;
   }
 
-  .talk__title {
+  .post__meta {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post__title {
+    margin-top: 0;
+    margin-bottom: 2rem;
     font-weight: bold;
-    text-transform: none;
+  }
+
+  .talk__title {
     color: $dark-grey;
     margin-bottom: 0.5rem;
     line-height: 1.2em;

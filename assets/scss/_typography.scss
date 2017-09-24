@@ -28,30 +28,13 @@ body {
   }
 
   /* Lists */
-  ul, ol {
-  }
-  ul {
-    list-style-type: square;
-  }
   ol {
     list-style-type: decimal;
-  }
-
-  /* Quote */
-  blockquote {
-    display: block;
-    clear: both;
-    border-left: 2px solid $dark-grey;
-    padding-left: 1em;
-    margin-top: 10px;
-    text-indent: 0px;
-    color: adjust-lightness($blue, 10%);
   }
 
   /* Headings */
   h2, h3, h4, h5, h6 {
     a {
-      text-decoration: none;
       border-bottom-width: 0px;
       &:hover {
         border-bottom-width: 0px;
@@ -61,23 +44,36 @@ body {
 
   h2, .h2 {
     font-weight: normal;
-    letter-spacing: -1.5px;
+    @include breakpoint(medium up) {
+      letter-spacing: -1.5px;
+    }
   }
 
   h3, .h3 {
     font-weight: normal;
-    letter-spacing: -1px;
     text-transform: uppercase;
+    @include breakpoint(small only) {
+      font-weight: bold;
+    }
+    @include breakpoint(medium up) {
+      letter-spacing: -1px;
+    }
   }
 
   h4, .h4 {
     text-transform: uppercase;
+    @include breakpoint(small only) {
+      font-weight: bold;
+    }
   }
 
   h5 {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.5px;
+    @include breakpoint(small only) {
+      font-weight: bold;
+    }
   }
 
 

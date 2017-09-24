@@ -22,15 +22,18 @@ $base-spacing-unit: 8px;
 
 @import "pages/home";
 
-.area {
-  // max-width: 960px!important;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
 #logo {
   font-size: $global-font-size;
+  @include ubuntu;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#header_area {
+  @include breakpoint(small only) {
+    margin-bottom: 2rem;
+  }
 }
 
 

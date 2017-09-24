@@ -9,6 +9,11 @@
     margin-bottom: 3.5rem;
   };
 
+  @include breakpoint(small only) {
+    margin-top: 2.75rem;
+    margin-bottom: 2.75rem;
+  }
+
   .pre-header {
     font-weight: normal;
     text-transform: uppercase;
@@ -23,11 +28,15 @@
     font-weight: bold;
     letter-spacing: -1.3px;
     line-height: 1em;
+    margin-bottom: 1rem;
 
     @include breakpoint(mediup up) {
       margin-top: 0;
-      margin-bottom: 1rem;
     };
+
+    @include breakpoint(small only) {
+      font-size: 1.5rem;
+    }
   }
 
   .subheader-2 {

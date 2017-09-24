@@ -20,7 +20,7 @@ slug: "home"
       {% for post in posts limit:7 %}
         <li class="post">
         <a href="{{ post.url }}">
-          <div class="post__title--link">{{ post.title }}</div>
+          <h4 class="post__title">{{ post.title }}</h4>
         </a>
         </li>
       {% endfor %}
@@ -34,31 +34,42 @@ slug: "home"
 
 <div id="recent_posts_area" class="grid-container">
   <div class="grid-x grid-margin-x" id="recent_posts">
-    <h3 class="cell small-12 headline--section">
+    <h3 class="[ cell small-12 ][ headline--section ]">
       Recent Notes &middot; <a href="#">See All &rarr;</a>
     </h3>
 
-    <ul class="posts-list cell small-12 medium-8 medium-offset-2">
+    <ul class="posts-list cell small-12 medium-6">
 
-      {% assign posts = site.posts | exclude_post_category: 'speaksing'%}
-      {% for post in posts limit:7 %}
+      {% assign posts = site.posts | exclude_post_category: 'speaking'%}
+      {% for post in posts limit:5 %}
       <li class="post">
-      <a href="{{ post.url }}">
-
-        <div class="grid-x grid-margin-x">
-          <div class="[ cell small-12 medium-3 ][ text-right ]">
-            <date class="post__meta">{{ post.date | date: "%d %b, %Y" }}</date>
-            {% if post.data.category == 'design' %} &middot; Design{%endif%}
+        <a href="{{ post.url }}">
+          <div class="post__meta">
+            <date>{{ post.date | date: "%d %b, %Y" }}</date>
           </div><!-- .post__meta -->
-          <div class="post__title--link [ cell small-12 medium-9 ]">
+          <h4 class="post__title">
             {{ post.title }}
-          </div><!-- .post__title -->
-        </div>
-
-      </a>
+          </h4><!-- .post__title -->
+        </a>
       </li>
       {% endfor %}
 
+    </ul>
+
+    <ul class="posts-list cell show-medium-up-only medium-6">
+      {% assign posts = site.posts | exclude_post_category: 'speaking'%}
+      {% for post in posts limit:5 offset:5 %}
+      <li class="post">
+        <a href="{{ post.url }}">
+          <div class="post__meta">
+            <date>{{ post.date | date: "%d %b, %Y" }}</date>
+          </div><!-- .post__meta -->
+          <h4 class="post__title">
+            {{ post.title }}
+          </h4><!-- .post__title -->
+        </a>
+      </li>
+      {% endfor %}
     </ul>
 
   </div>

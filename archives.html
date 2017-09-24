@@ -1,9 +1,9 @@
 ---
-layout: page 
+layout: page
 title: Archives of 64 Notes
 slug: archives
 ---
-<ul class="post_list">
+<ul class="posts-list">
   {% assign posts = site.posts | exclude_post_category: 'speaking' %}
   {% for post in posts %}
   <li class="post">
@@ -17,4 +17,3 @@ slug: archives
   </li>
   {% endfor %}
 </ul>
-

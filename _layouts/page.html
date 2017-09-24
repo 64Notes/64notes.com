@@ -1,20 +1,17 @@
 ---
 layout: base
 ---
-<article>
-<div id="headline_area" class="grid-container">
-  <div class="grid-x grid-margin-x" id="headline">
-    <header class="cell small-12">
-      <h1 class="post__title">{{page.title}}</h1>
-    </header>
-  </div>
-</div><!-- #headline_area -->
+<article class="post is-post">
+  <div id="headline_area" class="grid-container">
+    {% include masthead.html %}
+  </div><!-- #headline_area -->
 
-<div id="content_area" class="grid-container">
-  <div class="grid-x grid-margin-x" id="content">
-    <section class="cell smal-12">
-      {{content}}
-    </section>
-  </div>
-</div><!-- #content_area -->
+  <div id="content_area" class="grid-container">
+    <div class="grid-x grid-margin-x" id="content">
+      <section class="cell small-12 medium-10 medium-offset-1">
+        {{content}}
+      </section>
+      <hr class="divider-4 [ cell small-12 ]">
+    </div>
+  </div><!-- #content_area -->
 </article>

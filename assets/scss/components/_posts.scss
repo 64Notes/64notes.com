@@ -46,6 +46,8 @@
 
 .posts-list {
   list-style-type: none;
+  margin-left: 0;
+
   > .post {
     display: block;
     margin-bottom: 1.5rem;

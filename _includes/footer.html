@@ -1,22 +1,30 @@
 <div id="social_area" class="grid-container">
   <div class="grid-x grid-margin-x" id="social">
-    <ul class="nav nav--block [ cell smal-12 ]" id="socialfollow">
-      <li>Follow on </li>
-      <li class="twitter">
-      <a href="https://twitter.com/kingsidharth" onclick="gae('Social', 'Twitter')" target="_blank">@kingsidharth</a>
+    <ul class="no-bullet text-center [ cell small-12 ]" id="socialfollow">
+      <li>Best way to get in touch:</li>
+      <li>
+        <a href="https://twitter.com/kingsidharth">Twitter</a> or
+        <a href="#">Email</a>.
       </li>
-      <li><em> or </em></li>
-      <li class="fb">
-      <a href="https://www.facebook.com/kingsidharth" onclick="gae('Social', 'Facebook')" target="_blank">facebook</a>
+      <li>For stalking:</li>
+      <li>
+        <a href="#">Instagram</a> &middot; &nbsp;
+        <a href="#">Medium</a> &middot; &nbsp;
+        <a href="#">Facebook</a>
       </li>
     </ul>
   </div>
 </div>
 <!-- #social_area -->
 
-<div id="footer_area" class="grid">
-  <div class="area" id="footer">
-    <p class="grid__item one-whole">&copy; 2010-14<a href="https://plus.google.com/100630005600562803456/" rel="author">.</a> | <a href="/colophon">Colophon</a></p>
+<div id="footer_area" class="grid-container">
+  <div class="grid-x grid-margin-x" id="footer">
+    <div class="cell small-12 medium-6">&copy; {{ 'now' | date: "%Y" }}
+      <a href="#">@kingsidharth</a><a href="https://plus.google.com/100630005600562803456/" rel="author">.</a>
+    </div>
+    <div class="cell small-12 medium-6 text-right">
+      <a href="/colophon">Colophon</a> &middot; <a href="#">Code on Github</a>
+    </div>
   </div>
   <!-- #footer -->
 </div>

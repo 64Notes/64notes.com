@@ -20,7 +20,7 @@ body {
   /* Links */
   a {
     text-decoration: none;
-    border-bottom: 1px dotted $blue;
+    border-bottom: 1px dotted $grey;
 
     &:hover, &:active {
       border-bottom-style: solid;
@@ -50,6 +50,13 @@ body {
 
   /* Headings */
   h2, h3, h4, h5, h6 {
+    a {
+      text-decoration: none;
+      border-bottom-width: 0px;
+      &:hover {
+        border-bottom-width: 0px;
+      }
+    }
   }
 
   h2, .h2 {

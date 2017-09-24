@@ -22,12 +22,24 @@ body {
     margin-top: 10px;
     text-indent: 0px;
     color: adjust-lightness(#188fff, 10%); }
-  body h2, body h3, body h4, body h5, body h6 {
-    margin-top: 3em;
-    margin-bottom: 2em; }
-  body h2 {
+  body h2, body .h2 {
     font-weight: normal;
-    letter-spacing: -1px; }
+    letter-spacing: -1.5px; }
+  body h3, body .h3 {
+    font-weight: normal;
+    letter-spacing: -1px;
+    text-transform: uppercase; }
+  body h4, body .h4 {
+    text-transform: uppercase; }
+  body h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px; }
+  body .headline--section {
+    font-size: 1rem;
+    line-height: 1em;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem; }
 
 /**
  * Foundation for Sites by ZURB
@@ -2061,9 +2073,9 @@ td {
   padding: 0; }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   font-size: inherit;
-  line-height: 1.6;
+  line-height: 1.8em;
   text-rendering: optimizeLegibility; }
 
 em,
@@ -2104,37 +2116,37 @@ h1, .h1 {
   font-size: 1.5rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1rem; }
 
 h2, .h2 {
   font-size: 1rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1rem; }
 
 h3, .h3 {
   font-size: 0.75rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1rem; }
 
 h4, .h4 {
   font-size: 0.75rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1rem; }
 
 h5, .h5 {
   font-size: 0.75rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1rem; }
 
 h6, .h6 {
   font-size: 0.5rem;
   line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 0.5rem; }
+  margin-bottom: 1rem; }
 
 @media print, screen and (min-width: 40em) {
   h1, .h1 {
@@ -2157,10 +2169,11 @@ h6, .h6 {
 a {
   line-height: inherit;
   color: #188fff;
-  text-decoration: none;
+  text-decoration: 1px dotted #188fff;
   cursor: pointer; }
   a:hover, a:focus {
-    color: #007cf0; }
+    color: #505561;
+    text-decoration: 1px solid #505561; }
   a img {
     border: 0; }
 
@@ -2168,7 +2181,7 @@ hr {
   clear: both;
   max-width: 50rem;
   height: 0;
-  margin: 1.25rem auto;
+  margin: 1rem auto;
   border-top: 0;
   border-right: 0;
   border-bottom: 1px solid #b1b7c5;
@@ -2177,16 +2190,16 @@ hr {
 ul,
 ol,
 dl {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   list-style-position: outside;
-  line-height: 1.6; }
+  line-height: 1.8em; }
 
 li {
   font-size: inherit; }
 
 ul {
   margin-left: 1.25rem;
-  list-style-type: disc; }
+  list-style-type: square; }
 
 ol {
   margin-left: 1.25rem; }
@@ -2202,11 +2215,11 @@ dl {
     font-weight: bold; }
 
 blockquote {
-  margin: 0 0 1rem;
+  margin: 0 0 1.5rem;
   padding: 0.5625rem 1.25rem 0 1.1875rem;
   border-left: 1px solid #b1b7c5; }
   blockquote, blockquote p {
-    line-height: 1.6;
+    line-height: 1.8em;
     color: #797d89; }
 
 cite {

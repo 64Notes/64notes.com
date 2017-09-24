@@ -52,11 +52,32 @@ body {
   h2, h3, h4, h5, h6 {
   }
 
-  h2 {
+  h2, .h2 {
+    font-weight: normal;
+    letter-spacing: -1.5px;
+  }
+
+  h3, .h3 {
     font-weight: normal;
     letter-spacing: -1px;
-    // @include media-query(palm) {
-    //   line-height: 1.3em;
-    // }
+    text-transform: uppercase;
+  }
+
+  h4, .h4 {
+    text-transform: uppercase;
+  }
+
+  h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+
+
+  .headline--section {
+    font-size:    1rem;
+    line-height:  1em;
+    margin-top:     1.5rem;
+    margin-bottom:  1.5rem;
   }
 }

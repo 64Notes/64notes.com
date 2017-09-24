@@ -1,0 +1,67 @@
+// Posts
+// -----------
+
+@import "typography";
+
+
+.post {
+  .post__title {
+    @include ubuntu;
+    word-wrap: normal;
+  }
+
+  .post__title--link {
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .post__meta, a.post__meta {
+    font-weight: normal;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: $grey;
+  }
+
+  h2, h3, h4, h5, h6 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.is-post {
+  .post__meta {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  @include breakpoint(medium up) {
+    .post__title {
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      letter-spacing: -1.8px;
+    }
+  }
+}
+
+.posts-list {
+  list-style-type: none;
+  > .post {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+
+  .talk__title {
+    font-weight: bold;
+    text-transform: none;
+    color: $dark-grey;
+    margin-bottom: 0.5rem;
+    line-height: 1.2em;
+    letter-spacing: -0.5px;
+
+    em {
+      font-style: normal;
+      color: $black;
+    }
+  }
+}

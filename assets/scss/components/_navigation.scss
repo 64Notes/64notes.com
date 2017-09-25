@@ -18,8 +18,8 @@
     width: 0px;
     height: 100%;
     margin: 0;
+    padding-top: 0.5rem;
     overflow: hidden;
-    padding-top: 2rem;
 
     &.is-active {
       width: 100%;
@@ -44,10 +44,19 @@
   > li {
     line-height: 1.5rem;
     > a {
+      border: 0px;
       &:hover, &:active {
         background: $blue;
         color: $white;
+
+        svg {
+          fill: $white;
+        }
       }
     }
+  }
+
+  .icon {
+    height: 1rem;
   }
 }

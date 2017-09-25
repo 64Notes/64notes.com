@@ -36,10 +36,16 @@
 
 .is-post {
   .post__meta, .talk__meta {
-    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     margin-bottom: 1rem;
+    color: $grey;
+    border-top: 1px solid $off-white;
+    border-bottom: 1px solid $off-white;
   }
+}
 
+.is-post, .is-page {
   @include breakpoint(medium up) {
     .post__title {
       margin-top: 2.5rem;

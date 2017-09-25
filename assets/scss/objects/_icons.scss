@@ -14,3 +14,16 @@
     stroke-width: 2px;
   }
 }
+
+.icon--home {
+  float: left;
+  height: 1rem;
+  fill: $blue;
+}
+
+.icon--arrow_forward  {
+  height: 1rem;
+  position: relative;
+  top: rem-calc(3);
+  fill: $blue;
+}

@@ -2,13 +2,16 @@
 // ----------
 
 #header {
-  border-bottom: 1px solid $off-white;
-  padding-top:    2rem;
-  padding-bottom: 2rem;
   overflow: hidden;
+  padding: 0.625rem 0;
 
   a {
     border-width: 0px;
+  }
+
+  @include breakpoint(medium up) {
+    border-bottom: 1px solid $off-white;
+    padding: 2rem 0;
   }
 }
 

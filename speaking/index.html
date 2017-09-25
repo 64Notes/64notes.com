@@ -3,18 +3,54 @@ layout: page
 title: Talks by King Sidharth
 slug: speaking
 ---
-<p>I am often found traveling around to give <strong>inspirational talks on entrepreneurship &amp; life philosophy</strong> or <strong>technical talks on design</strong>.</p>
-<p>I've given talks at events like <strong>TEDx, Startup Saturday &amp; WordCamps</strong> and in colleges like <strong>BITS Pilani Goa, Kamla Nehru College, &amp; NITs</strong>.</p>
-<p>You can invite me to one of your events as well: king@kingsidharth.com</p>
+<p>
+  I talk about <strong>entrepreneruship, design, career, and life</strong> to college students.
+  I've spoken at tech-fests of colleges like
+  <strong>VJTI, BITS Goa, NMIMS, KNC, NITs, and TEDx</strong>.
+</p>
+
+<p>
+  I've talked about design at
+  <strong>Design Day, The UX Project, Startup Saturday, BarCamp, and WordCamps.</strong>
+</p>
+
+<p>
+  Got an invitation? Email me at: contact&lt;at&gt;kingsidharth.com
+</p>
+
+<div class="show-for-medium" style="text-align: center;">
+  <iframe
+    width="600"
+    height="338"
+    src="https://www.youtube-nocookie.com/embed/8qmJvW5xKjo?rel=0"
+    frameborder="0"
+    style="margin: 0 auto;"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<div class="show-for-small-only" style="text-align: center;">
+  <iframe
+    width="320"
+    height="170"
+    src="https://www.youtube-nocookie.com/embed/8qmJvW5xKjo?rel=0"
+    frameborder="0"
+    style="margin: 0 auto;"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<hr class="divider-1-light-grey" style="margin: 2rem 0;"/>
+<h3>Some Past Talks:</h3>
 
 <ul class="posts-list list--full">
   {% for post in site.categories.speaking %}
   <li class="talk post post--talk" itemscope itemtype="http://data-vocabulary.org/Event">
     <div itemprop="startDate" datetime="{{ post.date }}">
 
-      <h2 class="talk__title post__title">
+      <h3 class="talk__title post__title">
         {{ post.event }} &middot; <em>{{ post.place }}</em>
-      </h2>
+      </h3>
       <a href="{{ post.url }}" itemprop="url">
         <div class="talk__meta post__meta" itemprop="name">
           {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }} &middot; <span>See More &rarr;</span>

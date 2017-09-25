@@ -51,11 +51,18 @@ slug: speaking
       <h3 class="talk__title post__title">
         {{ post.event }} &middot; <em>{{ post.place }}</em>
       </h3>
+
+      {% if post.more %}
       <a href="{{ post.url }}" itemprop="url">
         <div class="talk__meta post__meta" itemprop="name">
           {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }} &middot; <span>See More &rarr;</span>
         </div>
       </a>
+      {% else %}
+      <div class="talk__meta post__meta" itemprop="name">
+        {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }}
+      </div>
+      {% endif %}
 
   </div><!-- schema-->
   </li>

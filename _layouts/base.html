@@ -10,6 +10,7 @@
     <!-- Viewport Settings -->
     <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#F3F6FF" />
     <meta charset="utf-8">
     <!-- scripts -->
     <!-- meta -->
@@ -35,9 +36,10 @@
     <!-- others -->
     <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/64Notes" />
   </head>
-  <body class="{{ page.slug }} {{ page.category }}" onload="return setTimeout('social_share_count()', 2000);">
+  <body class="{{ page.slug }} {{ page.category }}">
     {% include components/header.html %}
     {{ content }}
     {% include components/footer.html %}
   </body>
+  {% include scripts.html %}
 </html>

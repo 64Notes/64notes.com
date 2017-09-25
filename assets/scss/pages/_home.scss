@@ -31,7 +31,7 @@
     line-height: 1em;
     margin-bottom: 1rem;
 
-    @include breakpoint(mediup up) {
+    @include breakpoint(medium up) {
       margin-top: 0;
     };
 

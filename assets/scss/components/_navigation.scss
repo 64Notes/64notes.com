@@ -4,7 +4,7 @@
 #main_navigation {
   text-align: right;
 
-  @include breakpoint(mediup up){
+  @include breakpoint(medium up){
     .menu { justify-content: flex-end; }
   }
 

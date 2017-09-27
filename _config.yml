@@ -5,7 +5,7 @@ url: http://www.64notes.com
 name: 64 Notes
 description: Notes of a Young Entrepreneur
 encoding: utf-8
-permalink: /:categories/:title
+permalink: /:categories/:title/
 
 # Defaults
 defaults:
@@ -33,12 +33,12 @@ defaults:
 
 # Development Settings
 plugins:
-  - sass
+  # - sass
   - octopress-minify-html
 
-minify_html: true
+# minify_html: true
 
-exclude: [sass, vendor, config.rb, Readme.markdown, Gemfile, Gemfile.lock, Felicia_Simon.ase, .htaccess, scss, assets/vendor]
+exclude: [sass, vendor, node_modules config.rb, Readme.markdown, Gemfile, Gemfile.lock, Felicia_Simon.ase, .htaccess, scss, assets/vendor]
 sass:
   sass_dir: assets/scss/
   css_dir: assets/css/
@@ -49,4 +49,4 @@ sass:
 
 # Jekyll Environment Variables
 # For production: $ export JEKYLL_ENV=production
-env: development
+env: production

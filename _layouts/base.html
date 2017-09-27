@@ -2,42 +2,44 @@
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
   <head {% if page.type == 'post' %} prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#"{% endif %}>
     <title>{{ page.title }}</title>
-    <!-- stylesheets -->
+
+    <!-- Stylesheets -->
     <link href="/assets/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/assets/stylesheets/foundation.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+    <!-- Viewport Settings -->
     <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta charset="utf-8"> 
+    <meta name="theme-color" content="#F3F6FF" />
+    <meta charset="utf-8">
     <!-- scripts -->
     <!-- meta -->
-    <meta name="google-site-verification" content="K9OQiuncypaFig7doDL5AXVteG8pLNyWmumfkcCj3qA" />        
+    <meta name="google-site-verification" content="K9OQiuncypaFig7doDL5AXVteG8pLNyWmumfkcCj3qA" />
 
-    <meta property="fb:app_id"               content="171634969647127" />       
+    <meta property="fb:app_id"               content="171634969647127" />
     {% if page.image %}
     <meta property="og:image"                content="{{ page.image }}">
-    {% endif %}      
+    {% endif %}
     <meta property="og:image"                content="http://www.64notes.com/assets/images/64notes-logo.png">
     {% if page.type == 'post' %}
-    <meta property="og:type"                 content="article"> 
+    <meta property="og:type"                 content="article">
     <meta property="og:url"                  content="http://www.64notes.com{{ page.url }}/">
     <meta property="og:site_name"            content="{{ site.name }}">
     <meta property="og:title"                content="{{ page.title }}">
     <meta property="article:author"          content="http://www.kingsidharth.com">
     {% endif %}
     {% if page.slug == 'home' %}
-    <meta property="og:type"                 content="website"> 
-    <meta property="og:url"                  content="{{ site.url  }}"> 
+    <meta property="og:type"                 content="website">
+    <meta property="og:url"                  content="{{ site.url  }}">
     <meta property="og:title"                content="{{ site.name }}">
     {% endif %}
     <!-- others -->
-    {% if page.category == 'talks' %}
-    <link rel="alternate" type="application/rss+xml" href="http://www.64notes.com/speaking/feed.xml" />            
-    {% else %}
-    <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/64Notes" />        
-    {% endif %}
+    <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/64Notes" />
   </head>
-  <body class="{{ page.slug }} {{ page.category }}" onload="return setTimeout('social_share_count()', 2000);"> 
-    {% include header.html %}
+  <body class="{{ page.slug }} {{ page.category }}">
+    {% include components/header.html %}
     {{ content }}
-    {% include footer.html %}
+    {% include components/footer.html %}
   </body>
+  {% include scripts.html %}
 </html>

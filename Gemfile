@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-group :jekyll_plugins do
-  gem 'jekyll-minify-html'
-end
+gem 'jekyll'
+gem 'sass'
 
-gem 'compass'
-gem 'sass', '~> 3.2.18'
+group :jekyll_plugins do
+  gem 'octopress-minify-html'
+end

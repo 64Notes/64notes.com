@@ -1,5 +1,5 @@
 module Jekyll
-  module ExcludePostCategory 
+  module ExcludePostCategory
     def exclude_post_category(posts, category)
       filtered = []
       for post in posts
@@ -25,6 +25,6 @@ module Jekyll
     end
   end
 end
- 
+
 Liquid::Template.register_filter(Jekyll::ExcludePostCategory)
 Liquid::Template.register_filter(Jekyll::PostWithKeyValue)

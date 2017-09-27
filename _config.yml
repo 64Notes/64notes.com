@@ -12,28 +12,33 @@ defaults:
   -
     scope:
       path: "" # empty string for all files
-      type: "post"
+      type: "posts"
     values:
       layout: "post"
   -
     scope:
       path: "design"
-      type: "post"
+      type: "posts"
     values:
       layout: "post"
       category: "design"
   -
     scope:
       path: "speaking"
-      type: "post"
+      type: "posts"
     values:
       layout: "talk"
       categories: "speaking"
 
 
 # Development Settings
+plugins:
+  - sass
+  - octopress-minify-html
+
+minify_html: true
+
 exclude: [sass, vendor, config.rb, Readme.markdown, Gemfile, Gemfile.lock, Felicia_Simon.ase, .htaccess, scss, assets/vendor]
-gems: [jekyll-minify-html]
 sass:
   sass_dir: assets/scss/
   css_dir: assets/css/
@@ -41,5 +46,7 @@ sass:
   line_comments: false
 
 # MODULES
+
 # Jekyll Environment Variables
-env: development # For production: $ export JEKYLL_ENV=production
+# For production: $ export JEKYLL_ENV=production
+env: development

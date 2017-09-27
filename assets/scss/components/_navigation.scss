@@ -1,0 +1,63 @@
+// Navigation
+// ---------
+
+#main_navigation {
+  text-align: right;
+
+  @include breakpoint(medium up){
+    .menu { justify-content: flex-end; }
+  }
+
+  @include breakpoint(small only) {
+    transform: translate3d(110%, 0, 10px);
+    transition: 0.5s all;
+    position: absolute;
+    left: 110%;
+    top: 0;
+    background: $white;
+    width: 0px;
+    height: 100%;
+    margin: 0;
+    padding-top: 0.5rem;
+    overflow: hidden;
+
+    &.is-active {
+      width: 100%;
+      transform: translate3d(0, 0, 10px);
+      left: 0;
+    }
+
+    .menu {
+      flex-direction: column;
+
+      > li {
+        // text-align: left;
+        > a {
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  > li {
+    line-height: 1.5rem;
+    > a {
+      border: 0px;
+
+      &:hover, &:active {
+        background: $blue;
+        color: $white;
+
+        svg {
+          fill: $white;
+        }
+      }
+    }
+  }
+
+  .icon {
+    height: 1rem;
+  }
+}

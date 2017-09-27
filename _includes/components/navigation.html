@@ -1,0 +1,41 @@
+<nav class="[ cell medium-9 small-12 ]" id="main_navigation">
+  <ul class='[ menu  ]' data-nav-title="Navigation">
+    <li class="show-for-small-only">
+      <a href="#" onclick="return close_navigation()">
+        Close
+        <svg class="icon icon--arrow_forward" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+      </a>
+    </li>
+
+    <li>
+      <a {% if page.slug == 'home' %}class="is-active"{%endif%} href='/'>
+        Home
+      </a>
+    </li>
+
+    <li>
+      <a {% if page.slug == 'about' %}class="is-active"{% endif %} href='/about'>
+        About
+      </a>
+    </li>
+
+    <li>
+      <a {% if page.category == 'talks' or page.slug == 'speaking' %}class="is-active"{% endif %} href='/speaking'>
+        Speaking
+      </a>
+    </li>
+
+    <li>
+      <a {% if page.category == 'design' or page.slug == 'design_archives' %}class="is-active"{% endif %} href='/design'>
+        Design
+      </a>
+    </li>
+
+    <li>
+      <a {% if page.slug == 'archives' %}class="is-active"{% endif %} href='/archives'>
+        Archives
+      </a>
+    </li>
+  </ul>
+</nav>
+<!-- .nav-bar -->

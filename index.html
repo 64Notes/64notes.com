@@ -3,72 +3,109 @@ layout: base
 title: "64 Notes"
 slug: "home"
 ---
-<div id=content_area class="grid">
-  <div class=area id=content>
-    <div id="latest" class="grid__item one-half palm-one-whole">
-      <h2 class="no-top-margin">Recent Notes</h2>
-      <ul class='post_list'>
-        {% assign posts = site.posts | exclude_post_category: 'speaking'%}
-        {% for post in posts limit:7 %}
+<div id="hero_area" class="grid-container">
+    {% include home/hero.html %}
+</div><!-- #hero_area -->
+
+<div id="popular_posts_area" class="grid-container">
+  <section id="popular_posts" class="grid-x grid-margin-x">
+    <header class="cell small-12">
+      <h3 class="headline--section">
+        Popular Notes
+      </h3>
+    </header>
+
+    <ul class="posts-list cell small-12 medium-7">
+      {% assign posts = site.posts | post_with_key_value: 'top', true %}
+      {% for post in posts limit:7 %}
         <li class="post">
         <a href="{{ post.url }}">
-          <div class="post__meta">
-            <date class="">{{ post.date | date: "%d %b, %Y" }}</date>
-            {% if post.category == 'design' %} &middot; Design{%endif%}
-          </div>
-          <span class="post__title">{{ post.title }}</span>
+          <h4 class="post__title">{{ post.title }}</h4>
         </a>
         </li>
-        {% endfor %}
-        <li class="post">
-          <a class="post__title" href="/archives">Want More? Dig the Graveyards &rarr;</a>
-        </li>
-      </ul>
-    </div><!--
-    --><div id="best" class="grid__item one-half palm-one-whole">
-      <h2 class="no-top-margin">Some Popular Ones</h2>
-      <ul class="post_list">
-        {% assign posts = site.posts | post_with_key_value: 'top', true %}
-        {% for post in posts limit:7 %}
-          <li class="post">
-          <a href="{{ post.url }}">
-            <div class="post__meta">
-              <date class="">{{ post.date | date: "%d %b, %Y" }}</date>
-              {% if post.category == 'design' %} &middot; Design{%endif%}
-            </div>
-            <span class="post__title">{{ post.title }}</span>
-          </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </div><!-- #best -->
+      {% endfor %}
+    </ul>
+    <div class="cell small-12 medium-5" style="margin-bottom: 2rem;">
+      <h5>Feature In</h5>
+      {% include home/featured.html %}
+    </div>
 
-    <div id="home__talks" class="grid__item two-thirds palm-one-whole">
-      <h2>Recent Talks</h2>
-      <ul class="post_list">
-        {% for post in site.categories.speaking limit: 3 %}
-        <li class='talk post post--talk' itemscope itemtype="http://data-vocabulary.org/Event">
-        <a href="{{ post.url }}" itemprop="url">
+  </section>
+</div><!-- #popular_posts_area -->
 
-          <div itemprop="startDate" datetime="{{ post.date }}" class='post__meta'>
-            <date>{{ post.date | date: "%d %b" }}, <span class="normal">{{ post.date | date: "%Y" }}</span></date>
-            {% if post.future %} &middot;<strong> Upcoming</strong> 
-            {% else %} &middot; Past{% endif %}
-          </div>
+<div id="recent_posts_area" class="grid-container">
+  <div class="grid-x grid-margin-x" id="recent_posts">
+    <h3 class="[ cell small-12 ][ headline--section ]">
+      Recent Notes &middot; <a href="/archives">See All &rarr;</a>
+    </h3>
 
-          <div class="post__title talk__title" itemprop="name">{{ post.title }}</div>
+    <ul class="posts-list cell small-12 medium-6">
 
+      {% assign posts = site.posts | exclude_post_category: 'speaking'%}
+      {% for post in posts limit:5 %}
+      <li class="post">
+        <a href="{{ post.url }}">
           <div class="post__meta">
-            <span class="normal talk__event" itemprop="summary">{{ post.event }}</span>
-            &nbsp;&middot;&nbsp;
-            <span class="normal talk__location">{{ post.place }}</span>
-          </div>
+            <date>{{ post.date | date: "%d %b, %Y" }}</date>
+          </div><!-- .post__meta -->
+          <h4 class="post__title">
+            {{ post.title }}
+          </h4><!-- .post__title -->
         </a>
-        </li>
-        {% endfor %}
-        <li class="talk post post--talk"><a href="/speaking" class="post__title">See All Talks &rarr;</a></li>
-      </ul>
-    </div><!-- #home__talks -->
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    <ul class="posts-list cell show-medium-up-only medium-6">
+      {% assign posts = site.posts | exclude_post_category: 'speaking'%}
+      {% for post in posts limit:5 offset:5 %}
+      <li class="post">
+        <a href="{{ post.url }}">
+          <div class="post__meta">
+            <date>{{ post.date | date: "%d %b, %Y" }}</date>
+          </div><!-- .post__meta -->
+          <h4 class="post__title">
+            {{ post.title }}
+          </h4><!-- .post__title -->
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
   </div>
-</div><!-- #content_area -->
+</div><!-- #recent_posts_area -->
 
+<div id="speaking_area" class="grid-container">
+  <section class="grid-x grid-margin-x" id="speaking">
+    <header class="[ cell small-12 ]">
+      <h3 class="headline--section">
+        Speaking
+      </h3>
+    </header>
+
+    <div class="cell small-12 medium-6 medium-push-6" style="margin-bottom: 2rem;">
+      <p>
+        In past I've spoken at events of colleges like
+        <strong>VJIT, BITS Goa, NMIMS, VIT, KNC, NITs, etc.</strong>
+      </p>
+      <p>
+        And at events like
+        <strong>TEDx, BarCamp, Design Day, The UX Project, Startup Saturday, etc.</strong>
+      </p>
+      <ul class="vertical menu">
+        <li><a href="/speaking">See All Past Talks &rarr;</a></li>
+        <li><a href="mailto:contact@kingsidharth.com">Invite for a Talk</a></li>
+      </ul>
+    </div>
+
+    <ul class="[ cell smal-12 medium-6 ][ posts-list ]">
+      {% for post in site.categories.speaking limit: 4 %}
+      <li class="[ talk post post--talk ]">
+        <h4 class="talk__title">{{ post.event }} &middot; <em>{{ post.place }}</em></h4>
+        <span class="talk__meta post__meta">{{ post.title }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

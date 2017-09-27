@@ -1,0 +1,13 @@
+@import "settings.foundation";
+@import "../../node_modules/foundation-sites/scss/foundation";
+
+@include foundation-global-styles;
+@include foundation-xy-grid-classes;
+@include foundation-typography;
+@include foundation-menu;
+@include foundation-media-object;
+@include foundation-table;
+@include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-flex-classes;

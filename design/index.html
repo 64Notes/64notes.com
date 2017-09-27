@@ -1,20 +1,19 @@
 ---
-layout: page 
-title: Notes on Design 
+layout: page
+title: Notes on Design
 slug: design_archives
 ---
-<p>I started designing when I was in high-school. That's 7+ years of designing! Took me a long while to get started on writing about design.</p>
+<!-- <p>I started designing when I was in high-school. That's 7+ years of designing! Took me a long while to get started on writing about design.</p> -->
 
-<ul class="post_list">
+<ul class="posts-list">
   {% for post in site.categories.design %}
   <li class="post">
-  <a href="{{ post.url }}" class="entry-title">
-    <div class="post__meta">
-    <date>{{ post.date | date: "%d %b, %Y" }}</date>
-    </div>
-    <span class="post__title">{{ post.title }}</span>
-  </a>
+    <a href="{{ post.url }}" class="entry-title">
+
+      {% include posts/post-list-item.html %}
+      <hr class="divider-1-off-white">
+
+    </a>
   </li>
   {% endfor %}
 </ul>
-

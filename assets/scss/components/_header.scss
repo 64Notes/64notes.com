@@ -1,0 +1,45 @@
+// Header::Components
+// ----------
+
+#header {
+  overflow: hidden;
+  padding: 0.625rem 0;
+
+  a {
+    border-width: 0px;
+  }
+
+  @include breakpoint(medium up) {
+    border-bottom: 1px solid $off-white;
+    padding: 2rem 0;
+  }
+}
+
+#logo {
+  @include ubuntu;
+
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+  line-height: 2.5rem;
+  font-size:   1.5rem;
+  color: $white;
+  background: $black;
+  text-align: center;
+  transition: 0.2s all;
+
+
+  margin-bottom: 0px;
+  display: block;
+
+  &:hover {
+    background: $dark-grey;
+    color: $off-white;
+  }
+}
+
+#header_area {
+  @include breakpoint(small only) {
+    margin-bottom: 2rem;
+  }
+}

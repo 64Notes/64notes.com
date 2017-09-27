@@ -1,0 +1,20 @@
+<header id='header_area' class="grid-container">
+  <div class='grid-x grid-margin-x' id='header'>
+
+    <div class="cell medium-3 small-12">
+      <h2 id="logo" onclick="return open_navigation()">
+        64 Notes
+        <div class="show-for-small-only" id="icon_hamburger" >
+          <svg viewPort="0 0 24 24">
+            <line class="top" x1="0" y1="3" x2="24" y2="3" />
+            <line class="mid" x1="0" y1="12" x2="24" y2="12" />
+            <line class="bot" x1="0" y1="21" x2="24" y2="21" />
+          </svg>
+        </div>
+      </h2>
+    </div>
+
+    {% include components/navigation.html %}
+
+  </div><!-- #header -->
+</header><!-- #header_area -->

@@ -1,22 +1,11 @@
 /*----:[IMPORTS]:---- */
 
-//@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,400italic)
-
-/* inuit.css [http://inuitcss.com]
- * Initialize inuit.css framework */
-
-// @import "vars";
 @import "settings.foundation";
-
-// @import "../vendor/inuit.css/defaults";
-// @import "../vendor/inuit.css/inuit";
-// @import "../vendor/helper.inuit.css/helper.inuit.css.scss";
 
 @import "typography";
 @import "colors";
 
-@import "objects/divider";
-@import "objects/icons";
+@import "objects/objects";
 @import "components/components";
 
 $base-spacing-unit: 8px;

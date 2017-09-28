@@ -1,8 +1,8 @@
 ---
 layout: post
-title: The End of Web Mutiny
+title: A Shift for Web Mutiny
 type: post
---- 
+---
 
 **Note:** In recent development, Web Mutiny has not ended (technically). The legal entity lives on with only Aditya (my co-founder) from the original team.
 
@@ -28,7 +28,7 @@ Businesses are supposed to be a symbiosis. People who can benefit each other com
 Often this is a result of people believing that they are somehow superior to another. When, really, it's a mix of incomparable people coming together. Till the superiority complex is gone, it won't be a symbiosis. Because there will be no respect.
 
 ### Overworked
-This one is a personal experience. Often, I was working almost every waking hour - on everything under the sun, from handling clients to fixing the CSS bugs. Quiet obviously I burned out pretty frequent - I'd slow down, crash and burn. To a point where my personal life was at stake. 
+This one is a personal experience. Often, I was working almost every waking hour - on everything under the sun, from handling clients to fixing the CSS bugs. Quiet obviously I burned out pretty frequent - I'd slow down, crash and burn. To a point where my personal life was at stake.
 
 Now in startups - this happens. You do all this and it is worth if if there is an outcome - if there is a symbiosis. But overworking in a parasitic complex is just invitation to death.
 
@@ -37,17 +37,17 @@ As I've [mentioned before](http://www.64notes.com/business-side-of-things/#finan
 
 That lead to a lot of pay-less months, even though people were working. That caused much frustration and chain reactions of emotional friction.
 
-### Human Values and Relations 
+### Human Values and Relations
 A startup is a *bunch of people* doing business and *creating a culture*. Without culture there is nothing life-changing that can come out. You can make money; but you won't change the world without culture.
 
 When building a culture from ground-up, it is essential to respect people for who they are and what they do. You've to respect the individual. That lacked in Mutiny a great deal. In fact we lost many valuable people when their very self-respect was at stake.
 
 Human relations and individuals is what makes a startup what it is. Without respect and trust; nothing is possible.
 
-## The Best of Mutiny 
+## The Best of Mutiny
 
 ### We had balls
-Internet is full of designers complaining about clients from hell demanding logo to dance and be a little bit bigger. We never took that shit. 
+Internet is full of designers complaining about clients from hell demanding logo to dance and be a little bit bigger. We never took that shit.
 
 We knew what we were doing and unless there was a logical explanation / evidence to it otherwise - we won't do it.
 
@@ -59,12 +59,12 @@ One of the two key reasons of doing Mutiny was to **solve good design problems**
 We were out there, changing the world - one pixel at a time.
 
 ### Symbiosis Nature
-Not all relations at Mutiny were parasitic. In fact, most helped me grow personally and I am sure everyone who was involved grew as well. 
+Not all relations at Mutiny were parasitic. In fact, most helped me grow personally and I am sure everyone who was involved grew as well.
 
 That's what matters - growth as individuals. That's what keeps symbiosis going. And as long as everyone's vision of growth is aligned - the company grows too.
 
 ## A Note on Failing
-There are many people who hate failing. They hate failing so much that they'd bluff rather than fail. 
+There are many people who hate failing. They hate failing so much that they'd bluff rather than fail.
 
 First thing I learned, as an entrepreneur, was - failing isn't bad but a part of the process. It's noting to be ashamed of. In fact, if you are not failing - you're not trying anything new.
 
@@ -75,11 +75,11 @@ And in the end there is no failure, if you had fun it and if you grew as a perso
 ## People at Web Mutiny
 Web Mutiny was always a small company filled with amazing people. I want to take time to mention them and what they mean to me:
 
-**Aditya Kumar Nayak**: He is man of ambition and big dreams. But what makes him really different is that he has balls. He knows how to defend what he believes in, and in design industry - we need people like him. 
+**Aditya Kumar Nayak**: He is man of ambition and big dreams. But what makes him really different is that he has balls. He knows how to defend what he believes in, and in design industry - we need people like him.
 
 I've learned a lot from him and I owe him a great deal for pushing me, again and again, out of my comfort zone. He has, he is and he will change the world.
 
-**Roma Kalani**: I do not have enough words to express what she meant to us (as a company) or me (as an individual). She played many roles from being a mother figure at times - who'd scold and give a wake-up calls. And being a coffee girl other times. 
+**Roma Kalani**: I do not have enough words to express what she meant to us (as a company) or me (as an individual). She played many roles from being a mother figure at times - who'd scold and give a wake-up calls. And being a coffee girl other times.
 
 Without here we would've done nothing. Mutiny owes a great deal to her. There is no other like her.
 

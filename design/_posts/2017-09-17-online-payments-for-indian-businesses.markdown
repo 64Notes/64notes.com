@@ -2,6 +2,7 @@
 layout: post
 title: Designing a Payments Product for Indian Businesses
 type: post
+top: true
 ---
 
 <p class="subheader">Lessons & challenges in designing a digital product experience for underserved businesses.</p>

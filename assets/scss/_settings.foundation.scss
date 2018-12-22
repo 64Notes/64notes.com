@@ -66,8 +66,8 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
-$global-width: rem-calc(800);
+$global-font-size: 140%;
+$global-width: rem-calc(860);
 $global-lineheight: 1.6;
 $foundation-palette: (
   primary: $blue,
@@ -131,7 +131,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $font-ubuntu;
+$header-font-family: $font-noto-sans;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;

@@ -1,72 +1,46 @@
 ---
-layout: page
+layout: base
 title: Talks by King Sidharth
 slug: speaking
 ---
-<p>
-  I talk about <strong>entrepreneruship, design, career, and life</strong> to college students.
-  I've spoken at tech-fests of colleges like
-  <strong>VJTI, BITS Goa, NMIMS, VIT, KNC, NITs, and TEDx</strong>.
-</p>
 
-<p>
-  I've talked about design at
-  <strong>Design Day, The UX Project, Startup Saturday, BarCamp, and WordCamps.</strong>
-</p>
+{% include speaking/introduction.html %}
 
-<p>
-  Got an invitation? Email me at: contact&lt;at&gt;kingsidharth.com
-</p>
+<div id="intro_area_2" class="grid-container">
+  <div class="grid-x grid-margin-x">
+    <div class="[ cell small-12 ]">
 
-<div class="show-for-medium" style="text-align: center;">
-  <iframe
-    width="600"
-    height="338"
-    src="https://www.youtube-nocookie.com/embed/8qmJvW5xKjo?rel=0"
-    frameborder="0"
-    style="margin: 0 auto;"
-    allowfullscreen>
-  </iframe>
+      <hr class="divider-1-light-grey" style="margin: 2rem 0;"/>
+      <h3>Some Past Talks:</h3>
+
+      <ul class="posts-list list--full">
+        {% for post in site.categories.speaking %}
+        <li class="talk post post--talk" itemscope itemtype="http://data-vocabulary.org/Event">
+          <div itemprop="startDate" datetime="{{ post.date }}">
+
+            <h2 class="talk__title post__title">
+              {{ post.event }} &middot; <em>{{ post.place }}</em>
+            </h2>
+
+            {% if post.more %}
+            <a href="{{ post.url }}" itemprop="url">
+              <div class="talk__meta post__meta" itemprop="name">
+                {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }} &middot; <span>See More &rarr;</span>
+              </div>
+            </a>
+            {% else %}
+            <div class="talk__meta post__meta" itemprop="name">
+              {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }}
+            </div>
+            {% endif %}
+
+        </div><!-- schema-->
+        </li>
+        {% endfor %}
+      </ul>
+
+    </div>
+  </div>
 </div>
-
-<div class="show-for-small-only" style="text-align: center;">
-  <iframe
-    width="320"
-    height="170"
-    src="https://www.youtube-nocookie.com/embed/8qmJvW5xKjo?rel=0"
-    frameborder="0"
-    style="margin: 0 auto;"
-    allowfullscreen>
-  </iframe>
-</div>
-
-<hr class="divider-1-light-grey" style="margin: 2rem 0;"/>
-<h3>Some Past Talks:</h3>
-
-<ul class="posts-list list--full">
-  {% for post in site.categories.speaking %}
-  <li class="talk post post--talk" itemscope itemtype="http://data-vocabulary.org/Event">
-    <div itemprop="startDate" datetime="{{ post.date }}">
-
-      <h3 class="talk__title post__title">
-        {{ post.event }} &middot; <em>{{ post.place }}</em>
-      </h3>
-
-      {% if post.more %}
-      <a href="{{ post.url }}" itemprop="url">
-        <div class="talk__meta post__meta" itemprop="name">
-          {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }} &middot; <span>See More &rarr;</span>
-        </div>
-      </a>
-      {% else %}
-      <div class="talk__meta post__meta" itemprop="name">
-        {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }}
-      </div>
-      {% endif %}
-
-  </div><!-- schema-->
-  </li>
-  {% endfor %}
-</ul>
 
 <!-- FUTURE: highlight future ones -->

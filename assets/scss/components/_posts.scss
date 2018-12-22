@@ -86,7 +86,7 @@
 
 .is-post, .is-page {
   @include breakpoint(medium up) {
-    .post__title {
+    h1.post__title {
       margin-top: 2.5rem;
       margin-bottom: 1rem;
       letter-spacing: -3.2px;

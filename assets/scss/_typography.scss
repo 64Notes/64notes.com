@@ -2,14 +2,9 @@
 @import "colors";
 
 $font-noto-sans: "Noto Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
-$font-ubuntu: "Ubuntu", "Lucida Grande", "Lucida Sans", sans-serif;
 
 @mixin sans-serif {
   font-family: $font-noto-sans;
-}
-
-@mixin ubuntu {
-  font-family: $font-ubuntu;
 }
 
 body {
@@ -76,13 +71,4 @@ body {
       font-weight: bold;
     }
   }
-}
-
-
-// Paragraph Styles
-
-.subheader {
-  font-color: $dark-grey;
-  font-size: 1.5rem;
-  padding-bottom: 1.5rem;
 }

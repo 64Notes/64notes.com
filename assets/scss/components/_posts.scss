@@ -3,30 +3,55 @@
 
 @import "typography";
 
-
+// Post Common
 .post {
   .post__title {
-    @include ubuntu;
     word-wrap: normal;
     text-transform: none;
+    font-weight: bold;
+    letter-spacing: -1px;
   }
 
   .post__title--link {
-    font-weight: bold;
-    font-size: 1rem;
     line-height: 1.5rem;
   }
 
   .post__meta, a.post__meta {
     font-weight: normal;
     font-size: 0.75rem;
-    line-height: 1rem;
-    color: $grey;
+    color: $dark-grey;
+    date {
+      text-transform: uppercase;
+    }
   }
 
+  // Headlines
   h2, h3, h4, h5, h6 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    letter-spacing: -0.05em;
+    font-weight: bold;
+  }
+
+  h3 {
+    letter-spacing: normal;
+    font-weight: bold;
+    color: $dark-grey;
+  }
+
+  // Paragraphs
+
+
+  // Lists
+  p, ul, ol {
+    margin-bottom: 2em;
+  }
+
+  li {
+    margin-bottom: 1em;
   }
 
   .post__content {
@@ -34,7 +59,17 @@
   }
 }
 
+
+// Single Post Page
 .is-post {
+  .post__title {
+    text-align: center;
+  }
+
+  .subheader {
+    margin-bottom: 0.8em;
+  }
+
   .post__meta, .talk__meta {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -43,6 +78,10 @@
     border-top: 1px solid $off-white;
     border-bottom: 1px solid $off-white;
   }
+
+  a {
+    border-bottom: 1px solid $blue;
+  }
 }
 
 .is-post, .is-page {
@@ -50,29 +89,44 @@
     .post__title {
       margin-top: 2.5rem;
       margin-bottom: 1rem;
-      letter-spacing: -1.8px;
+      letter-spacing: -3.2px;
+      font-size: 2.4em;
     }
   }
 }
 
+
+// List of Posts
 .posts-list {
   list-style-type: none;
   margin-left: 0;
 
   > .post {
     display: block;
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
   }
 
   .post__meta {
     margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.2em;
   }
 
   .post__title {
     margin-top: 0;
     margin-bottom: 2rem;
-    font-weight: bold;
+  }
+
+  a  {
+
+    & > .post__title {
+      color: $blue;
+      transition: 0.1s color;
+    }
+
+    &:hover > .post__title {
+      color: $black;
+    }
   }
 
   .talk__title {
@@ -87,10 +141,12 @@
   }
 
   .talk__meta {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-bottom: 0;
-    line-height: 2rem;
+    line-height: 1.2em;
     font-size: 0.75rem;
+    color: $black;
+    letter-spacing: -0.5px;
   }
 }
 
@@ -123,6 +179,7 @@
   }
 }
 
+// Special Modification for Talks
 .talk {
   .talk__title {
     color: $dark-grey;

@@ -208,6 +208,7 @@ body .highlight-1 {
     margin-left: -35%; } }
 
 .caption {
+  font-size: 1rem;
   display: block;
   background: #dbe1ef;
   padding: 0.5em;

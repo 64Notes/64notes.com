@@ -1,11 +1,10 @@
 ---
 layout: post
 title: Designing a Payments Product for Indian Businesses
+subheader: "Lessons & challenges in designing a digital product experience for underserved businesses"
 type: post
 top: true
 ---
-
-<p class="subheader">Lessons & challenges in designing a digital product experience for underserved businesses.</p>
 
 In the past, a simple computer would need an entire room. Today, you can wear 100 times that power on your wrist. Thanks to technology and the disruption it brings, computers have evolved from enterprise undertakings to consumer products.
 

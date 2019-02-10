@@ -62,12 +62,10 @@
 
 // Single Post Page
 .is-post {
-  .post__title {
-    text-align: center;
-  }
+  .post__title { }
 
   .subheader {
-    margin-bottom: 0.8em;
+    margin-bottom: 0.8rem;
   }
 
   .post__meta, .talk__meta {
@@ -103,7 +101,7 @@
 
   > .post {
     display: block;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
   }
 
   .post__meta {
@@ -114,7 +112,8 @@
 
   .post__title {
     margin-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8em;
   }
 
   a  {
@@ -135,8 +134,8 @@
     margin-top: 0;
 
     @include breakpoint(small only) {
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: 1.5rem;
+      line-height: 2rem;
     }
   }
 

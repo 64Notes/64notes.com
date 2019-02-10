@@ -8,6 +8,19 @@
 #footer {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  @include breakpoint(small only) {
+    text-align: center;
+  }
+
+  @include breakpoint(medium up) {
+    .alt {
+      text-align: right;
+    }
+  }
+
+  > div {
+    padding: 0.5em 0;
+  }
 }
 
 

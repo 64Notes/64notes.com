@@ -5,8 +5,8 @@
 #hero {
 
   @include breakpoint(medium up) {
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
   };
 
   @include breakpoint(small only) {
@@ -16,40 +16,41 @@
 
   .pre-header {
     font-weight: normal;
-    text-transform: uppercase;
+    text-transform: lowercase;
     display: block;
     margin-bottom: 0.5rem;
-    line-height: 0.75rem;
-    font-size: 0.75rem;
+    line-height: 1rem;
+    font-size: 1rem;
     letter-spacing: 0px;
   }
 
   .headline {
     font-weight: bold;
-    font-size: 2.8rem;
-    letter-spacing: -1.6px;
+    font-size: 4rem;
     line-height: 1.4em;
     margin-bottom: 1rem;
+    text-transform: lowercase;
 
     @include breakpoint(medium up) {
+      letter-spacing: -2px;
       margin-top: 0;
     };
 
     @include breakpoint(small only) {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
+      letter-spacing: -0.5px
     }
   }
 
 }
 
 .headline--section {
-  text-transform: none;
+  text-transform: lowercase;
   letter-spacing: normal;
-  border-bottom: 1px solid $light-grey;
-  border-top: 2px solid $off-white;
-  font-size: 1rem;
+  border-top: 2px solid $grey;
+  font-size: 2.5rem;
   line-height: 1em;
-  padding: 1.5rem 0;
+  padding: 4rem 0;
   margin-top: 0;
   margin-bottom: 1.5rem;
 }

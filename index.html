@@ -7,33 +7,6 @@ slug: "home"
     {% include home/hero.html %}
 </div><!-- #hero_area -->
 
-<div id="popular_posts_area" class="grid-container">
-  <section id="popular_posts" class="grid-x grid-margin-x">
-    <header class="cell small-12">
-      <h3 class="headline--section">
-        Popular
-      </h3>
-    </header>
-
-    <ul class="posts-list cell small-12 medium-6">
-      {% assign posts = site.posts | post_with_key_value: 'top', true %}
-      {% for post in posts limit:5 %}
-        <li class="post">
-        <a href="{{ post.url }}">
-          <h3 class="post__title">{{ post.title }}</h3>
-        </a>
-        </li>
-      {% endfor %}
-    </ul>
-
-    <div class="cell small-12 medium-6" style="margin-bottom: 2rem;">
-      <h5>Feature In</h5>
-      {% include home/featured.html %}
-    </div>
-    
-  </section>
-</div><!-- #popular_posts_area -->
-
 <div id="speaking_area" class="grid-container">
   <section class="grid-x grid-margin-x" id="speaking">
     <header class="[ cell small-12 ]">
@@ -43,18 +16,11 @@ slug: "home"
     </header>
 
     <div class="cell small-12 medium-6 medium-push-6" style="margin-bottom: 2rem;">
-      <h2 class="stat">
-        <span class="stat__number">{{ site.categories.speaking | size }}</span>
-        <span class="stat__label"> events</span>
-      </h2>
       <p>
-        <strong>Events:</strong>
-        TEDx, Design Day, The UX Project, Startup Saturday, etc.
+        I speak about design at design & startup events
       </p>
       <p>
-        <strong>Colleges:</strong>
-        VJIT, BITS Goa, NMIMS, VIT, KNC, NITs, etc.
-      </p>
+        About entrepreneurship, career, and startups at colleges.
       <p>...</p>
       <p><a href="/speaking">See All Past Talks &rarr;</a></p>
       <p><a href="mailto:contact@kingsidharth.com">Invite for a Talk</a></p>
@@ -72,11 +38,47 @@ slug: "home"
   </section>
 </div><!-- #speaking_area -->
 
+<div id="popular_posts_area" class="grid-container">
+  <section id="popular_posts" class="grid-x grid-margin-x">
+    <header class="cell small-12">
+      <h3 class="headline--section">
+        Popular
+      </h3>
+    </header>
+
+    <ul class="posts-list cell small-12 medium-6">
+      {% assign posts = site.posts | post_with_key_value: 'top', true %}
+      {% for post in posts limit:5 %}
+        <li class="post">
+        <a href="{{ post.url }}">
+          <div class="post__meta">
+            <date>{{ post.date | date: "%b, %Y" }}</date>
+          </div><!-- .post__meta -->
+          <h3 class="post__title">{{ post.title }}</h3>
+        </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="cell small-12 medium-6  text-right" style="margin-bottom: 2rem;">
+      <h5>Feature In</h5>
+      {% include home/featured.html %}
+    </div>
+
+
+
+  </section>
+</div><!-- #popular_posts_area -->
+
+
+
 <div id="recent_posts_area" class="grid-container">
   <div class="grid-x grid-margin-x" id="recent_posts">
     <h3 class="[ cell small-12 ][ headline--section ]">
-      Recent &middot; <a href="/archives">See All &rarr;</a>
+      Recent
     </h3>
+    <p class="[ cell small-12 ]">
+    </p>
 
     <ul class="posts-list cell small-12 medium-6">
 
@@ -85,7 +87,7 @@ slug: "home"
       <li class="post">
         <a href="{{ post.url }}">
           <div class="post__meta">
-            <date>{{ post.date | date: "%d %b, %Y" }}</date>
+            <date>{{ post.date | date: "%b, %Y" }}</date>
           </div><!-- .post__meta -->
           <h3 class="post__title">
             {{ post.title }}
@@ -96,13 +98,13 @@ slug: "home"
 
     </ul>
 
-    <ul class="posts-list cell show-medium-up-only medium-6">
+    <ul class="posts-list cell medium-6">
       {% assign posts = site.posts | exclude_post_category: 'speaking'%}
       {% for post in posts limit:3 offset:3 %}
       <li class="post">
         <a href="{{ post.url }}">
           <div class="post__meta">
-            <date>{{ post.date | date: "%d %b, %Y" }}</date>
+            <date>{{ post.date | date: "%b, %Y" }}</date>
           </div><!-- .post__meta -->
           <h3 class="post__title">
             {{ post.title }}
@@ -111,6 +113,10 @@ slug: "home"
       </li>
       {% endfor %}
     </ul>
+
+    <p class="cell small-12">
+      You can <a href="/archives">see all notes here &rarr;</a>
+    </p>
 
   </div>
 </div><!-- #recent_posts_area -->

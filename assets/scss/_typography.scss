@@ -9,6 +9,10 @@ $font-noto-sans: "Noto Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-s
 
 body {
 
+  @include breakpoint(medium up) {
+    font-size: 140%;
+  }
+
   p, ul, ol {
   }
 
@@ -69,6 +73,47 @@ body {
     letter-spacing: 0.5px;
     @include breakpoint(small only) {
       font-weight: bold;
+    }
+  }
+}
+
+
+/* ----- Additional Typesetting ----- */
+body {
+  .text--dark {
+    color: $white;
+    background: $black;
+  }
+
+  // Paragraph Styles
+
+  // Subheaders
+  .subheader {
+    font-size: 1.5rem;
+    line-height: 1.6em;
+
+    span {
+      background-color: $black;
+      color: $white;
+      padding: 0.2em;
+    }
+  }
+
+  .subheader-2 {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+
+  // Highlights
+  .highlight-1 {
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: -1px;
+    color: $dark-grey;
+    span {
+      color: $white;
+      background: $dark-grey;
     }
   }
 }

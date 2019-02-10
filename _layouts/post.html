@@ -11,6 +11,13 @@ layout: base
     <div class="grid-x grid-margin-x" id="content">
 
       <section class="cell small-12 medium-10 medium-offset-1 post__meta">
+
+        {% if page.subheader %}
+        <p class="subheader">
+          <span>{{ page.subheader }}</span>
+        </p>
+        {% endif %}
+
         <div class="">
           <date>{{ page.date | date: "%b %d," }} <strong>{{ page.date | date: "%Y" }}</strong></date> &middot;
           {{ page.content | number_of_words }} Words
@@ -23,7 +30,7 @@ layout: base
       </section>
 
       <section class="cell small-12 medium-10 medium-offset-1">
-        {{content}}
+        {{ content }}
       </section>
 
     </div><!-- #content -->

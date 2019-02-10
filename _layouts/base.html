@@ -20,10 +20,10 @@
     {% if page.image %}
     <meta property="og:image"                content="{{ page.image }}">
     {% endif %}
-    <meta property="og:image"                content="http://www.64notes.com/assets/images/64notes-logo.png?=032432sduf0sdfy328ufhudfs">
+    <meta property="og:image"                content="http://www.64notes.com/assets/images/64notes-logo.png?=394h348u23489e32498f">
     {% if page.type == 'post' %}
     <meta property="og:type"                 content="article">
-    <meta property="og:url"                  content="http://www.64notes.com{{ page.url }}/">
+    <meta property="og:url"                  content="{{ site.url }}{{ page.url }}/">
     <meta property="og:site_name"            content="{{ site.name }}">
     <meta property="og:title"                content="{{ page.title }}">
     <meta property="article:author"          content="http://www.kingsidharth.com">
@@ -34,7 +34,11 @@
     <meta property="og:title"                content="{{ site.name }}">
     {% endif %}
     <!-- others -->
+    <link rel="canonical"
+      href="{% if page.canonical_url %}{{ page.canonical_url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}">
     <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/64Notes" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+
   </head>
   <body class="{{ page.slug }} {{ page.category }}">
     {% include components/header.html %}

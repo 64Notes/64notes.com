@@ -22,17 +22,18 @@ slug: speaking
               {{ post.event }} &middot; <em>{{ post.place }}</em>
             </h2>
 
-            {% if post.more %}
-            <a href="{{ post.url }}" itemprop="url">
-              <div class="talk__meta post__meta" itemprop="name">
-                {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }} &middot; <span>See More &rarr;</span>
-              </div>
-            </a>
-            {% else %}
             <div class="talk__meta post__meta" itemprop="name">
               {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }}
+              {% if post.video_link %} &middot;
+              <a href="{{ post.video_link }}" target="_blank">Video</a>
+              {% endif %}
+              {% if post.slide_link %} &middot;
+              <a href="{{ post.slide_link }}" target="_blank">Slides</a>
+              {% endif %}
+              {% if post.more %} &middot;
+              <a href="{{ post.url }}">See More &rarr;</a>
+              {% endif %}
             </div>
-            {% endif %}
 
         </div><!-- schema-->
         </li>

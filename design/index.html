@@ -1,19 +1,28 @@
 ---
-layout: page
+layout: base
 title: Notes on Design
 slug: design_archives
 ---
-<!-- <p>I started designing when I was in high-school. That's 7+ years of designing! Took me a long while to get started on writing about design.</p> -->
 
-<ul class="posts-list">
-  {% for post in site.categories.design %}
-  <li class="post">
-    <a href="{{ post.url }}" class="entry-title">
+{% include design/introduction.html %}
 
-      {% include posts/post-list-item.html %}
-      <hr class="divider-1-off-white">
+<div id="content_area" class="grid-container">
+  <div class="grid-x grid-margin-x">
+    <div class="[ cell small-12 ]">
 
-    </a>
-  </li>
-  {% endfor %}
-</ul>
+      <ul class="posts-list">
+        {% for post in site.categories.design %}
+        <li class="post">
+          <a href="{{ post.url }}" class="entry-title">
+
+            {% include posts/post-list-item.html %}
+            <hr class="divider-1-off-white">
+
+          </a>
+        </li>
+        {% endfor %}
+      </ul><!-- .posts-list -->
+
+    </div>
+  </div>
+</div><!-- #content_area -->

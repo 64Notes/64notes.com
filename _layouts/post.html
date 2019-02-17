@@ -1,6 +1,9 @@
 ---
 layout: base
 ---
+{% assign current_year = 'now' | date: '%Y' %}
+{% assign post_year = page.date | date: '%Y' %}
+{% assign gap_since = current_year | minus: post_year %}
 <article class="post is-post">
 
   <div id='headline_area' class="grid-container">
@@ -31,6 +34,14 @@ layout: base
 
       <section class="cell small-12 medium-10 medium-offset-1">
         {{ content }}
+        {% if gap_since > 3 %}
+        <p class="notice">
+          <small>
+            You are reading a post that I wrote a long time back—at least {{ gap_since }} years ago.
+            Take it with a bag of salt.
+          </small>
+        </p>
+        {% endif %}
       </section>
 
     </div><!-- #content -->

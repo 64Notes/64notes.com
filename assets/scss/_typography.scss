@@ -116,4 +116,10 @@ body {
       background: $dark-grey;
     }
   }
+
+  .notice {
+    border: 1px solid $light-grey;
+    background: $lighter-grey;
+    padding: 1rem;
+  }
 }

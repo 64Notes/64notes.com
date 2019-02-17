@@ -68,6 +68,10 @@ body .highlight-1 {
   body .highlight-1 span {
     color: white;
     background: #797d89; }
+body .notice {
+  border: 1px solid #dbe1ef;
+  background: #e8ecf6;
+  padding: 1rem; }
 
 /**
  * Foundation for Sites by ZURB

@@ -23,7 +23,8 @@ slug: speaking
             </h2>
 
             <div class="talk__meta post__meta" itemprop="name">
-              {{ post.title }} &middot; {{ post.date | date: "%b, %Y" }}
+              <strong class="text-black" itemprop="description">{{ post.title }}</strong>
+               &middot; {{ post.date | date: "%b, %Y" }}
               {% if post.video_link %} &middot;
               <a href="{{ post.video_link }}" target="_blank">Video</a>
               {% endif %}

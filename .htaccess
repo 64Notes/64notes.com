@@ -15,6 +15,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
 RewriteRule (.*)$ /$1/ [R=302,L]
 
+# Redirections
+Redirect 301 /speaking/ https://www.kingsidharth.com/speaking/
+
 # Gzip
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript

@@ -9,7 +9,7 @@
     word-wrap: normal;
     text-transform: none;
     font-weight: bold;
-    letter-spacing: -1px;
+    letter-spacing: -1.5px;
   }
 
   .post__title--link {
@@ -71,10 +71,8 @@
   .post__meta, .talk__meta {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: $grey;
-    border-top: 1px solid $off-white;
-    border-bottom: 1px solid $off-white;
   }
 
   a {
@@ -101,7 +99,7 @@
 
   > .post {
     display: block;
-    margin-bottom: 4em;
+    padding-top: 2rem;
   }
 
   .post__meta {
@@ -112,7 +110,7 @@
 
   .post__title {
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
     line-height: 1.8em;
   }
 

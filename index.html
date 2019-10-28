@@ -7,41 +7,47 @@ slug: "home"
     {% include home/hero.html %}
 </div><!-- #hero_area -->
 
-<div id="speaking_area" class="grid-container">
-  <section class="grid-x grid-margin-x" id="speaking">
-    <header class="[ cell small-12 ]">
+<div id="popular_posts_area" class="grid-container">
+  <section id="popular_posts" class="grid-x grid-margin-x">
+    <header class="cell small-12">
       <h3 class="headline--section">
-        Speaking
+        Popular Notes
       </h3>
     </header>
 
-    <div class="cell small-12 medium-6 medium-push-6" style="margin-bottom: 2rem;">
-      <p class="subheader-2">
-        Spoken at colleges like — BITS (Goa), VIT, VJTI (Mumbai), NITs, etc.
-      </p>
-      <p>&nbsp;</p>
-      <p class="subheader-2">
-        And at events like — Startup Saturday (Mumbai), Design Day, TechSparks,
-        Behance Review, WordCamps, etc.
-      </p>
-      <p>&nbsp;</p>
-      <p><a href="/speaking">See All Past Talks &rarr;</a></p>
-      <p><a href="mailto:contact@kingsidharth.com">Invite for a Talk</a></p>
-    </div>
+    <ul class="posts-list cell small-12 medium-6">
+      {% assign posts = site.posts | post_with_key_value: 'top', true %}
+      {% for post in posts limit:4 %}
+        <li class="post">
+        <a href="{{ post.url }}">
+          <div class="post__meta">
+            <date>{{ post.date | date: "%b, %Y" }}</date>
+          </div><!-- .post__meta -->
+          <h3 class="post__title">{{ post.title }}</h3>
+        </a>
+        </li>
+      {% endfor %}
+    </ul>
 
-    <ul class="[ cell smal-12 medium-6 ][ posts-list ]">
-      {% for post in site.categories.speaking limit: 4 %}
-      <li class="[ talk post post--talk ]">
-        <h3 class="talk__title">{{ post.event }} &middot; <em>{{ post.place }}</em></h3>
-        <p class="talk__meta post__meta">{{ post.title }}</p>
+    <ul class="posts-list cell small-12 medium-6">
+      {% assign posts = site.posts | post_with_key_value: 'top', true %}
+      {% for post in posts limit:4 offset:4 %}
+      <li class="post">
+      <a href="{{ post.url }}">
+        <div class="post__meta">
+          <date>{{ post.date | date: "%b, %Y" }}</date>
+        </div><!-- .post__meta -->
+        <h3 class="post__title">{{ post.title }}</h3>
+      </a>
       </li>
       {% endfor %}
     </ul>
 
+    <div class="cell small-12 medium-6  text-right" style="margin-bottom: 2rem;">
+
+    </div>
   </section>
-</div><!-- #speaking_area -->
-
-
+</div><!-- #popular_posts_area -->
 
 <div id="recent_posts_area" class="grid-container">
   <div class="grid-x grid-margin-x" id="recent_posts">
@@ -93,33 +99,35 @@ slug: "home"
 </div><!-- #recent_posts_area -->
 
 
-<div id="popular_posts_area" class="grid-container">
-  <section id="popular_posts" class="grid-x grid-margin-x">
-    <header class="cell small-12">
+<div id="speaking_area" class="grid-container">
+  <section class="grid-x grid-margin-x" id="speaking">
+    <header class="[ cell small-12 ]">
       <h3 class="headline--section">
-        Popular Notes
+        Speaking
       </h3>
     </header>
 
-    <ul class="posts-list cell small-12 medium-6">
-      {% assign posts = site.posts | post_with_key_value: 'top', true %}
-      {% for post in posts limit:5 %}
-        <li class="post">
-        <a href="{{ post.url }}">
-          <div class="post__meta">
-            <date>{{ post.date | date: "%b, %Y" }}</date>
-          </div><!-- .post__meta -->
-          <h3 class="post__title">{{ post.title }}</h3>
-        </a>
-        </li>
-      {% endfor %}
-    </ul>
-
-    <div class="cell small-12 medium-6  text-right" style="margin-bottom: 2rem;">
-
+    <div class="cell small-12 medium-10" style="margin-bottom: 2rem;">
+      <p class="">
+        Spoken at colleges like — <strong>IIT, BITS (Goa), VIT, VJTI (Mumbai), NITs</strong>, etc.
+      </p>
+      <p>&nbsp;</p>
+      <p class="">
+        And at events like — <strong>Startup Saturday (Mumbai), Design Day, TechSparks,
+        Behance Review, WordCamps</strong>, etc.
+      </p>
+      <p>&nbsp;</p>
+      <p><a href="https://www.kingsidharth.com/speaking/">See All Past Talks &rarr;</a></p>
     </div>
 
-
+    <!-- <ul class="[ cell smal-12 medium-6 ][ posts-list ]">
+      {% for post in site.categories.speaking limit: 4 %}
+      <li class="[ talk post post--talk ]">
+        <h3 class="talk__title">{{ post.event }} &middot; <em>{{ post.place }}</em></h3>
+        <p class="talk__meta post__meta">{{ post.title }}</p>
+      </li>
+      {% endfor %}
+    </ul> -->
 
   </section>
-</div><!-- #popular_posts_area -->
+</div><!-- #speaking_area -->

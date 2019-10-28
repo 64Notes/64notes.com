@@ -68,6 +68,10 @@ body .highlight-1 {
   body .highlight-1 span {
     color: white;
     background: #797d89; }
+body .notice {
+  border: 1px solid #dbe1ef;
+  background: #e8ecf6;
+  padding: 1rem; }
 
 /* TYPOGRAPHY */
 body {
@@ -138,6 +142,10 @@ body .highlight-1 {
   body .highlight-1 span {
     color: white;
     background: #797d89; }
+body .notice {
+  border: 1px solid #dbe1ef;
+  background: #e8ecf6;
+  padding: 1rem; }
 
 .divider-1-light-grey {
   border-bottom: 1px solid #dbe1ef;
@@ -186,8 +194,27 @@ body .highlight-1 {
 .img {
   display: block;
   width: 100%;
-  clear: both; }
+  clear: both;
+  margin-bottom: 2rem; }
 
+.post .img--60cent > p {
+  margin-bottom: 0; }
+@media screen and (min-width: 64em) {
+  .post .img--60cent {
+    width: 60%;
+    margin-left: 20%; } }
+.post .img--80cent > p {
+  margin-bottom: 0; }
+@media screen and (min-width: 64em) {
+  .post .img--80cent {
+    width: 80%;
+    margin-left: 10%; } }
+.post .img--100cent > p {
+  margin-bottom: 0; }
+@media screen and (min-width: 64em) {
+  .post .img--100cent {
+    width: 100%;
+    margin-left: 0%; } }
 .post .img--120cent > p {
   margin-bottom: 0; }
 @media screen and (min-width: 64em) {
@@ -474,12 +501,16 @@ body .highlight-1 {
   body .highlight-1 span {
     color: white;
     background: #797d89; }
+body .notice {
+  border: 1px solid #dbe1ef;
+  background: #e8ecf6;
+  padding: 1rem; }
 
 .post .post__title {
   word-wrap: normal;
   text-transform: none;
   font-weight: bold;
-  letter-spacing: -1px; }
+  letter-spacing: -1.5px; }
 .post .post__title--link {
   line-height: 1.5rem; }
 .post .post__meta, .post a.post__meta {
@@ -510,10 +541,8 @@ body .highlight-1 {
 .is-post .post__meta, .is-post .talk__meta {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  margin-bottom: 1rem;
-  color: #b1b7c5;
-  border-top: 1px solid #f3f6ff;
-  border-bottom: 1px solid #f3f6ff; }
+  margin-bottom: 1.5rem;
+  color: #b1b7c5; }
 .is-post a {
   border-bottom: 1px solid #188fff; }
 
@@ -529,14 +558,14 @@ body .highlight-1 {
   margin-left: 0; }
   .posts-list > .post {
     display: block;
-    margin-bottom: 4em; }
+    padding-top: 2rem; }
   .posts-list .post__meta {
     margin-top: 0.5rem;
     margin-bottom: 0.2rem;
     line-height: 1.2em; }
   .posts-list .post__title {
     margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
     line-height: 1.8em; }
   .posts-list a > .post__title {
     color: #188fff;
@@ -656,6 +685,10 @@ body .highlight-1 {
   body .highlight-1 span {
     color: white;
     background: #797d89; }
+body .notice {
+  border: 1px solid #dbe1ef;
+  background: #e8ecf6;
+  padding: 1rem; }
 
 @media screen and (min-width: 40em) {
   #hero {

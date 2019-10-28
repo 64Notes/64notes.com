@@ -1,0 +1,591 @@
+---
+layout: post
+title: "Designing Frameworks: tame massive scope & complexity"
+subheader: "Case study in building a design framework for millions of tickets"
+type: post
+category: design
+---
+{% assign image_path = '/images/2019/design-framework/' %}
+<p>
+  Millions of customers from over 120 countries use
+  <a href="https://www.headout.com" target="_blank">Headout</a> every month to book
+  experiences like guided tours, attractions, and activities.
+</p>
+
+<p>
+  We have over 5,000 listed products; each may have several partners fulfilling
+  the experience. For these products, we generate more than 5,000 types of
+  tickets on our platform.
+</p>
+
+<p>
+  This is how most of these tickets looked like:
+</p>
+
+<div class="img img--80cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}headout-ticket-original.png"
+          width="100%"
+          alt="The original headout ticket, with important information hidden in a huge wall of text.">
+  </p>
+</div>
+
+<div class="img img--80cent">
+  <p class="text-center">
+    <video width="100%" autoplay loop>
+      <source src="{{ image_path }}meme-aint-nobody-got-time-for-that.mp4" type="video/mp4">
+        Meme: Confused (video can't load in your browser)
+    </video>
+  </p>
+</div>
+
+<p>
+  Customers were missing out on their experiences because of bad ticket design!
+  The most critical of these issues were:
+</p>
+
+<ol>
+  <li>
+    For print tickets, customers were missing out that they had to print it
+  </li>
+  <li>
+    When the customers received a mobile ticket they would reach the location only to
+    find out their network/internet does not work
+  </li>
+  <li>
+    Customers were missing out on the location they're supposed to reach
+  </li>
+  <li>
+    Customers were not able to locate the Bar Code, QR Code, or the partner
+    ticket ID required to access the experience
+  </li>
+</ol>
+
+<p>
+  The content & marketing team did an audit & redesigned the ticket:
+</p>
+
+<div class="img img--80cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}headout-ticket-revision-1.png"
+          width="100%"
+          alt="The revised ticket is an imporvement, but the important information is still lost.">
+  </p>
+  <span class="caption">
+    The revised version of ticket was better; but important information was still easy to miss.
+  </span>
+</div>
+
+<p>
+  There were some improvements. However, the problems wouldn't go away.
+</p>
+
+<div class="img img--80cent">
+  <p class="text-center">
+    <video width="100%" autoplay loop>
+      <source src="{{ image_path }}meme-pulp-fiction-confused.mp4" type="video/mp4">
+        Meme: Confused (video can't load in your browser)
+    </video>
+  </p>
+</div>
+
+<p>
+  At first glance, we see several issues like:
+</p>
+
+<ol>
+  <li>
+    That QR Code looks like a way to access the 5% discount; it's not —
+    the on-ground staff scans it to validate the ticket
+  </li>
+  <li>
+    Most people will skip the text (it's critical to read it)
+  </li>
+  <li>
+    Maps look better, but there is visual noise
+    and the contrast ratio doesn't survive a black & white printing
+  </li>
+</ol>
+
+<p>
+  With an ever growing number of listings, tickets, and usecases
+  we needed something more robust.
+<p>
+
+<p>
+  Let's redesign the tickets, right?
+</p>
+
+<div class="img img--80cent">
+  <p class="text-center">
+    <video width="100%" autoplay loop>
+      <source src="{{ image_path }}meme-get-ready.mp4" type="video/mp4">
+    </video>
+  </p>
+</div>
+
+<p>
+  Sure. Let's start by taking a look at the information we are communicating.
+  Here's a list (most of) the variables that go into a ticket.
+</p>
+
+<div class="img img--100cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}ticket-variables.png"
+          width="100%"
+          alt="A preview of the list of variables and states we were dealing with to design these tickets">
+  </p>
+</div>
+
+<p>
+  Most of these variables have at least two states (Present & Absent); some have 4+ states & several
+  ways to represent the data.
+</p>
+
+<p>
+  That's 30+ variables with at least 27x2 = 54 states.
+</p>
+
+<p>
+  Our simplest ticket uses 7 variables (7x~2 states = ~14 states) from the list.
+  That's ~3,432 combinations. [<a href="https://en.wikipedia.org/wiki/Combination" target="_blank">C(n,r)</a> => 14!/(7!(14-7)!]
+</p>
+
+<p class="lead">
+  With the remaining 20+ variables — There are at least ~1,84,756 combinations that exist!
+</p>
+
+<div class="img img--80cent">
+  <p class="text-center">
+    <video width="100%" autoplay loop>
+      <source src="{{ image_path }}meme-calculating.mp4" type="video/mp4">
+    </video>
+  </p>
+</div>
+
+
+<p>
+  Of course, not all these combinations would be realistic, but even if we were
+  to take a conservative estimate, only 10% are realistic; that leaves us with
+  at least 1,800 additional combinations to design for.
+</p>
+
+<div class="img img--100cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}meme-sheldon-throwing-papers.webp"
+          width="100%"
+          alt="Meme: Sheldon Copper throwing papers.">
+  </p>
+</div>
+
+<p>
+  We need a better way than iterating each possible combination. Or checking if it's realistic.
+</p>
+
+<h2>Taming the Beast</h2>
+<h3 class="subtitle">
+  Using Qualitative Data in Design Process: Support Tickets, Chats, NPS Comments,
+  App Store & Play Store Ratings, etc.
+</h3>
+
+<p>
+  We create design frameworks to manage complex problems like these. What's a
+  framework, and how does you create one? Let's learn by building one!
+</p>
+
+<p>
+  We are in the process of building our Design System. The goal of the
+  building this system is to aid designers in:
+</p>
+
+<ol>
+  <li>
+    <strong>Understanding the problems:</strong> For this, we use design frameworks
+  </li>
+  <li>
+    <strong>Iterate solutions:</strong> For this, we make component libraries and style guides
+    like — UI Kit, Print Styleguide, Ad Styleguide, etc.  (which, tbh, are
+    documentation of self-defined constraints)
+  </li>
+</ol>
+
+<p class="lead">
+  We start with problems. When in doubt, focus on
+  understanding the problem better.
+</p>
+
+<p>
+  Some context can help us tame the ticket madness. This is where stories of
+  our customers, who used these tickets, came in handy. We didn't have to
+  look too far — the customer ops. team had detailed stories of these customers,
+  and we had NPS comments & support tickets raised by the customers.
+</p>
+
+<p>
+  These stories & narratives can help reveal insights, and validate our hypothesis.
+  Let's take an example of 3 such NPS comments that illustrate this well:
+</p>
+
+<div class="img img--100cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}nps-comments-example-for-meeting-point.png"
+          width="100%"
+          alt="3 example NPS comments to understand problems related to the meeting point.">
+  </p>
+</div>
+
+<div class="img img--80cent">
+  <p class="text-center">
+    <video width="100%" autoplay loop>
+      <source src="{{ image_path }}meme-embarrasing.mp4" type="video/mp4">
+    </video>
+  </p>
+</div>
+
+<p>The meeting point is trouble.</p>
+
+<p>
+  We can see clear patterns; and use customer's own words & actions to map their state of mind,
+  abilities, reality, problems, and the flow of events.
+</p>
+
+<div class="img img--100cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}nps-comments-annotated.png"
+          width="100%"
+          alt="Here are some notes on what we can take away from the NPS comments">
+  </p>
+</div>
+
+<p>At this point, we have fair amount of data, stories, and evidence for the next step:</p>
+
+{% comment %}
+<ol>
+  <li>
+    The customer support team who was raising the alarm about the increasing
+    number of these incidents — they were already able to prioritise the most
+    critical problems
+  </li>
+  <li>
+    An audit report by the marketing team, studying over 400 tickets (and
+    followed-up with their story), and the common issues among them
+  </li>
+  <li>
+    Existing customer support tickets & NPS comments – that give us problem statements, problem scenarios,
+    narratives, cues, etc.
+  </li>
+</ol>
+{% endcomment %}
+
+<p>Our old friend — mapping. Here are 3 example maps we could draw:</p>
+
+<ol>
+  <li>Customer who bought the ticket over ~24 hours before the experience</li>
+  <li>Customer who purchased the ticket within less than ~24 hours before the experience</li>
+  <li>
+    Customer who purchased a combo which may generate a single, two or more tcikets
+    ( this leads us back to #1 & #2 as sub-journey maps)
+  </li>
+</ol>
+
+<p>
+  Let's see what usecases emerge, as we try to map our customers' journey:
+</p>
+
+<div class="img img--120cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}user-journey-map-ticket-lead-time-gt-24-hours-example.png"
+          width="100%"
+          alt="Example User Journey Map: Rue buys tickets 48 hours before the experience.">
+  </p>
+  <span class="caption">
+    Example User Journey Map: This helps us find, study, and manage usecase.
+  </span>
+</div>
+
+<p>
+  As we draw our timelines, we get a better view of what happened before &
+  after the problem(s), and how these events relate to each other.
+</p>
+
+<p>
+  Designing for the happy path may seem like an obvious step, but what
+  happens on the unhappy paths are constraints for the happy path.
+</p>
+
+<p>
+  E.g; Customer reaches the meeting point and realizes they had to print the ticket —
+  there's nothing they can do now. We can proactively solve this issue by marking the
+  tickets, emails, and remind our customers to print the ticket well-in time.
+</p>
+
+<div class="img img--120cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}example-user-journey-map-annotated.png"
+          width="100%"
+          alt="Example User Journey Map: How mapping a timeline can help us anticipate and solve problems.">
+  </p>
+</div>
+
+<p>
+  This exercise gives us:
+</p>
+
+<ol>
+  <li>
+    <strong>Usecases:</strong> that we'll design for, including the problem statements
+    we started with. We use the information/variables and their various states & representations
+    to solve these problems
+  </li>
+  <li>
+    <p>
+      <strong>User Concerns:</strong> that allow us to make "groups" of these usecases,
+      which, further, allows us to:
+    </p>
+    <ul>
+      <li>Control & document side-effects (shared use-cases and/or information)</li>
+      <li>Allow us to prevent the problem; rather than "fixing" it with reactive support</li>
+      <li>Priortize which user-concerns should we iterate, test, or deliver first (based on frequency, cost, urgency, etc.)</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Let's pick one concern from our map above — <em>"Where do I need to go?"</em> — to illustrate:</p>
+
+<div class="img img--120cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}mapping-concerns-usecases-variables-states.png"
+          width="100%"
+          alt="An example mapping user concerns which contain use cases, which contain variables, which have states.">
+  </p>
+</div>
+
+<p class="lead">
+  The First part of our Ticket Design Framework is the definition of the problem landscape.
+</p>
+
+<p>Now, we can ask useful questions to our teams (data, tech, category, support), like:</p>
+
+<ol>
+  <li>How often does this happen?</li>
+  <li>How many tickets do we generate every day with these vs these iterations?</li>
+  <li>What's the typical count of people per booking?</li>
+</ol>
+
+<p>Or to our customers (not verbatim):</p>
+
+<ol>
+  <li>What happened after you got your tickets?</li>
+  <li>How did you make sure you're at the right spot?</li>
+</ol>
+
+<p>This helps us prioritise and tame the scope of work.</p>
+
+<p>
+  Now we start to study how these variables relate to each other, and
+  we can make guidelines around how to best design for them.
+</p>
+
+<p>Let's take the example of these variables & the states they may exist in:</p>
+
+<div class="img img--100cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}variable-state-examples.png"
+          width="100%"
+          alt="An example of grouping & turning variables into structured data.">
+  </p>
+</div>
+
+<p>
+  Let's say we have to add another variable to this structure:
+</p>
+
+<div class="img img--100cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}adding-new-variable-to-structured-data.png"
+          width="100%"
+          alt="An example of adding a new variable to the structured data.">
+  </p>
+</div>
+
+<p>
+  Well that was easy! Also, at this point we can check for all side-effects.
+</p>
+
+<p>
+  Let's go one step further — what's the best way to communicate <em>Validity</em>?
+</p>
+
+<div class="img img--100cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}options-for-formatting-validity-data.png"
+          width="100%"
+          alt="We can dive deeper to understand what's the best way to communicate validity.">
+  </p>
+  <span class="caption">
+    Writing the full date is the best way to communicate validity (for print). We can explore options,
+    document the final decision and the reason for that decision.
+  </span>
+</div>
+
+<p>
+  Not only the were we able to understand the problem, the solution (communicate information),
+  and architect the information, but this also allowed us to think harder about the small details.
+</p>
+
+<p>
+  This makes iterations more meaningful, and you can quickly check them against
+  your problem statements.
+</p>
+
+<hr>
+<h3>Iterating for Solutions</h3>
+
+<p>Remember our meeting point problem? This is the new version:</p>
+
+<div class="img img--120cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}meeting-point-print-ticket-example.jpg"
+          width="100%"
+          alt="This is how we improved our meeting point.">
+  </p>
+</div>
+
+<p>Some improvements include:</p>
+
+<ul>
+  <li>
+    Meeting point with landmarks (A & B) in picture and map format
+  </li>
+  <li>
+    "Reach Here" is clearer than "Location"
+  </li>
+  <li>
+    A link to Google Maps on the mobile & email version, and a scannable QR code
+    to open the link in Maps on the print version.
+  </li>
+  <li>
+    Clear instructions on whom/what to find when you reach the meeting point; we often
+    try to include photos of the guide
+  </li>
+  <li>
+    Landmarks described in easy to show/say words to help customers locate
+    the meeting point; should they feel lost
+  </li>
+</ul>
+
+<p>
+  Our guides were hard to spot — another problem highlighted by the NPS comments.
+  So we designed T-shirts for our guides:
+</p>
+
+<div class="img img--100cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}headout-guide-tshirt-design.jpg"
+          width="100%" height="auto"
+          alt="Headout Guide's wearing the new easy to spot Tshirts.">
+  </p>
+  <span class="caption">
+    Our brand colour is easy to spot in Europe; where most people wear neutral colours.
+    Name of the City & word "Headout" are visible in front, the word "Guide" at the back
+    (which doubles up as a discount code).
+  </span>
+</div>
+
+<p>Here's what the final tickets look like:</p>
+
+<p><strong>Example Print Tickets:</strong></p>
+
+<div class="img img--80cent">
+  <p class="text-center">
+    <img  src="{{ image_path }}headout-print-ticket-photos.jpg"
+          width="100%" height="auto"
+          alt="Photo of Sample Headout Print Tickets.">
+  </p>
+  <span class="caption">
+    Sample print tickets (we are still optimizing map colours for B&W print).
+  </span>
+</div>
+
+<p><strong>Mobile Ticket Prototype:</strong></p>
+
+<div class="img img--60cent">
+  <p class="text-center">
+    <video width="100%" loop controls>
+      <source src="{{ image_path }}headout-mobile-ticket-prototype-demo.mp4" type="video/mp4">
+        Demo of Headout Mobile Ticket Prototype
+    </video>
+  </p>
+</div>
+
+<hr>
+
+<h3>Why use Design Frameworks?</h3>
+
+<ol>
+  <li>
+    <p>
+      Document problems & nuances
+    </p>
+  </li>
+  <li>
+    <p>
+      Understand, tame & prioritise the vast scope
+    </p>
+  </li>
+  <li>
+    <p>
+      Separate the problem from the solution: We can keep trying different
+      solutions & ideas, without losing sight of the problems. We can test &
+      measure our iterations against these problem statements & use cases.
+    </p>
+    <p>
+      This also helps inform Product KPI's and Non-Functional Requirements (for ya'll PM's out there).
+    </p>
+  </li>
+  <li>
+    <p>
+      Document & understand feedback: Did we get the problem wrong or the
+      solution doesn't work? Or some other solution is better because of x?
+    </p>
+  </li>
+  <li>
+    <p>
+      Help us solve better, by allowing us to isolate the relevant parts
+      and dig deeper
+    </p>
+  </li>
+</ol>
+
+<p>Here's (almost) the entire process visualised:</p>
+
+<div class="img img--100cent">
+  <p class="text-center">
+    <video width="100%" loop controls>
+      <source src="{{ image_path }}design-framework-process.mp4" type="video/mp4">
+        Visualization of our process of creating a design framework
+    </video>
+  </p>
+</div>
+
+<p>
+  Do you see the value of using Design Frameworks at your organisation? Does your
+  Design System document problems? What are the parts you find useful or unusable?
+</p>
+
+<p>Let me know <a href="https://www.twitter.com/kingsidharth" target="_blank">on twitter</a>.</p>
+
+<p>
+  <strong>PS:</strong> This article is a result of the
+  <a href="https://twitter.com/kingsidharth/status/1175348098584858624" target="_blank">conversation on twitter</a>,
+  followed by a video:
+</p>
+
+<div class="img img--100cent">
+  <p class="text-center">
+    <iframe width="100%" style="height: 320px; min-height: 250px;"
+            src="https://www.youtube.com/embed/KHKkF8efyMo"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </p>
+</div>

@@ -1,5 +1,12 @@
 <div class="grid-x grid-margin-x" id="headline masthead">
   <header class="cell small-12">
+    {% if page.preview_image %}
+    <div class="img img--100cent">
+      <img src="/images/{{ page.preview_image }}"
+            alt="{{ post.title }}"
+            width="100%">
+    </div>
+    {% endif %}
     <h1 class="post__title">{{ page.title }}</h1>
   </header>
 </div>

@@ -1,0 +1,24 @@
+---
+layout: base
+title: Tissue Notes the Newsletter
+slug: newsletter
+---
+
+<div id="content_area" class="grid-container">
+  <div class="grid-x grid-margin-x">
+    <div class="[ cell small-12 ]">
+      <ul class="posts-list">
+
+        {% for post in site.categories.newsletter %}
+        <li class="post">
+          <a href="{{ post.url }}" class="entry-title">
+            {% include posts/post-list-item.html %}
+            <hr class="divider-1-off-white">
+          </a>
+        </li>
+        {% endfor %}
+
+      </ul><!-- .posts-list -->
+    </div>
+  </div>
+</div><!-- #content_area -->

@@ -40,12 +40,8 @@ body .text--dark {
   color: white;
   background: #505561; }
 body .subheader {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 1.6em; }
-  body .subheader span {
-    background-color: #505561;
-    color: white;
-    padding: 0.2em; }
 body .subheader-2 {
   font-size: 1rem;
   margin-bottom: 0; }
@@ -102,12 +98,8 @@ body .text--dark {
   color: white;
   background: #505561; }
 body .subheader {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 1.6em; }
-  body .subheader span {
-    background-color: #505561;
-    color: white;
-    padding: 0.2em; }
 body .subheader-2 {
   font-size: 1rem;
   margin-bottom: 0; }
@@ -449,12 +441,8 @@ body .text--dark {
   color: white;
   background: #505561; }
 body .subheader {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 1.6em; }
-  body .subheader span {
-    background-color: #505561;
-    color: white;
-    padding: 0.2em; }
 body .subheader-2 {
   font-size: 1rem;
   margin-bottom: 0; }
@@ -478,10 +466,8 @@ body .notice {
   line-height: 1.5rem; }
 .post .post__meta, .post a.post__meta {
   font-weight: normal;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #797d89; }
-  .post .post__meta date, .post a.post__meta date {
-    text-transform: uppercase; }
 .post h2, .post h3, .post h4, .post h5, .post h6 {
   margin-top: 3rem;
   margin-bottom: 1.5rem; }
@@ -517,14 +503,14 @@ body .notice {
   margin-left: 0; }
   .posts-list > .post {
     display: block;
-    padding-top: 2rem; }
+    padding-top: 1rem; }
   .posts-list .post__meta {
     margin-top: 0.5rem;
     margin-bottom: 0.2rem;
     line-height: 1.2em; }
   .posts-list .post__title {
     margin-top: 0;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     line-height: 1.8em; }
   .posts-list a > .post__title {
     color: #188fff;
@@ -614,12 +600,8 @@ body .text--dark {
   color: white;
   background: #505561; }
 body .subheader {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 1.6em; }
-  body .subheader span {
-    background-color: #505561;
-    color: white;
-    padding: 0.2em; }
 body .subheader-2 {
   font-size: 1rem;
   margin-bottom: 0; }

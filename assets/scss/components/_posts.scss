@@ -17,11 +17,8 @@
 
   .post__meta, a.post__meta {
     font-weight: normal;
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: $dark-grey;
-    date {
-      text-transform: uppercase;
-    }
   }
 
   // Headlines
@@ -83,8 +80,6 @@
       margin-bottom: 0em;
       font-size: 2.4em;
     }
-
-
   }
 }
 
@@ -96,7 +91,7 @@
 
   > .post {
     display: block;
-    padding-top: 2rem;
+    padding-top: 1rem;
   }
 
   .post__meta {
@@ -107,7 +102,7 @@
 
   .post__title {
     margin-top: 0;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     line-height: 1.8em;
   }
 

@@ -28,7 +28,7 @@ slug: "home"
         <div class="[ grid-x grid-margin-x ]">
           <p class="subheader-2 [ cell small-6 ]">
             Otherwise found <a href="https://www.kingsidharth.com/speaking/?ref=kingsidharth">speaking at colleges & events</a> about
-            entrepreneurship, career, and life choices and design & product.
+            entrepreneurship, career, and design & product.
           </p>
           <div class="[ cell small-6 ]">
             <h5>Feature In</h5>
@@ -188,8 +188,8 @@ slug: "home"
     </p>
 
     <ul class="posts-list cell small-12">
-      {% assign posts = site.posts | exclude_post_category: 'speaking'%}
-      {% for post in posts limit:7 %}
+      {% assign posts = site.posts | exclude_post_category: 'speaking' | exclude_post_category: 'podcast'  | exclude_post_category: 'newsletter' %}
+      {% for post in posts limit:5 %}
       <li class="post">
         <a href="{{ post.url }}">
           <div class="post__meta">
@@ -214,8 +214,10 @@ slug: "home"
         Speaking
       </h3>
     </header>
-
-    <div class="cell small-12 medium-10" style="margin-bottom: 2rem;">
+    <div class="cell small-12 medium-5">
+      <iframe width="320" height="180" src="https://www.youtube.com/embed/8qmJvW5xKjo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="cell small-12 medium-7" style="margin-bottom: 2rem;">
       <p class="">
         Spoken at colleges like — <strong>IIT, BITS (Goa), VIT, VJTI (Mumbai), NITs</strong>, etc.
         And at events like — <strong>Startup Saturday (Mumbai), Design Day, TechSparks,
@@ -223,6 +225,55 @@ slug: "home"
       </p>
       <p><a href="https://www.kingsidharth.com/speaking/">More &rarr;</a></p>
     </div>
-
   </section>
 </div><!-- #speaking_area -->
+
+<div id="podcast_area" class="grid-container">
+  <section class="grid-x grid-margin-x" id="podcast">
+    <header class="[ cell small-12 ]">
+      <h3 class="headline--section">
+        Podcast
+      </h3>
+    </header>
+    <div class="cell small-12" style="margin-bottom: 2rem;">
+      <p class="">
+        Conversations about design, product, startups, future careers, and life. I often have more than one guest. Check it out:
+      </p>
+      <ul class="posts-list cell small-12">
+        {% for post in site.categories.podcast limit:5 %}
+        <li class="post">
+          <a href="{{ post.url }}">
+            <div class="post__meta">
+              <date>{{ post.date | date: "%b, %Y" }}</date>
+            </div><!-- .post__meta -->
+            <div class="post__title">
+              {{ post.title }}
+            </div><!-- .post__title -->
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      <p><a href="/podcast/">More &rarr;</a></p>
+
+    </div>
+  </section>
+</div><!-- #podcast_area -->
+
+<div id="newsletter_area" class="grid-container">
+  <section class="grid-x grid-margin-x" id="newsletter">
+    <header class="[ cell small-12 ]">
+      <h3 class="headline--section">
+        Tissue Notes the Newsletter
+      </h3>
+    </header>
+    <div class="cell small-12">
+    </div>
+    <div class="cell small-12" style="margin-bottom: 2rem;">
+      <p class="">
+        Tissue notes is my (almost) weekly newsletter where I share updates about projects, write-ups, podcast, and other things I am upto.
+        And one interesting concept, idea, or some food for thought:
+      </p>
+      <p><a href="/newsletter/">Subscribe &rarr;</a></p>
+    </div>
+  </section>
+</div><!-- #podcast_area -->

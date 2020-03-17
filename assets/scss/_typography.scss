@@ -1,7 +1,7 @@
 /* TYPOGRAPHY */
 @import "colors";
 
-$font-noto-sans: "Nunito Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
+$font-noto-sans: "Asap", "Noto Sans", "Lucida Sans", "Segoe UI", sans-serif;
 
 @mixin sans-serif {
   font-family: $font-noto-sans;
@@ -79,14 +79,8 @@ body {
 
   // Subheaders
   .subheader {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     line-height: 1.6em;
-
-    span {
-      background-color: $black;
-      color: $white;
-      padding: 0.2em;
-    }
   }
 
   .subheader-2 {

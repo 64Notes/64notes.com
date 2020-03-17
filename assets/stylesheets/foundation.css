@@ -40,12 +40,8 @@ body .text--dark {
   color: white;
   background: #505561; }
 body .subheader {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 1.6em; }
-  body .subheader span {
-    background-color: #505561;
-    color: white;
-    padding: 0.2em; }
 body .subheader-2 {
   font-size: 1rem;
   margin-bottom: 0; }
@@ -227,7 +223,7 @@ body {
   margin: 0;
   padding: 0;
   background: white;
-  font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
+  font-family: "Asap", "Noto Sans", "Lucida Sans", "Segoe UI", sans-serif;
   font-weight: normal;
   line-height: 1.6;
   color: #505561;
@@ -1860,7 +1856,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
+  font-family: "Asap", "Noto Sans", "Lucida Sans", "Segoe UI", sans-serif;
   font-style: normal;
   font-weight: normal;
   color: inherit;

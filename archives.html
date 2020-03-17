@@ -9,7 +9,7 @@ slug: archives
   <div class="grid-x grid-margin-x">
     <div class="[ cell small-12 ]">
       <ul class="posts-list">
-        {% assign posts = site.posts | exclude_post_category: 'speaking' %}
+        {% assign posts = site.posts | exclude_post_category: 'speaking' | exclude_post_category: 'newsletter' | exclude_post_category: 'podcast' %}
         {% for post in posts %}
         <li class="post" style="margin-bottom: 32px;">
           {% include posts/post-list-item.html %}

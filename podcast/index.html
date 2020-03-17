@@ -1,0 +1,46 @@
+---
+layout: base
+title: Anamorphic the Podcast
+slug: podcast
+---
+<div id="hero_area" class="grid-container">
+  <div class="grid-x grid-margin-x">
+    <div class="[ cell small-12 ]" id="hero">
+      <h1 class="headline">{{ page.title }}</h1>
+      <p class="subheader-1">
+        Conversations about career, design, products, startups and life. Find on your favourite Podcast app:
+      </p>
+      <ul class="menu">
+        <li><a href="https://open.spotify.com/show/1VZF4U1vMF6HfFxm2om94U" target="_blank">Anamorphic on Spotify</a></li>
+        <li><a href="https://podcasts.apple.com/us/podcast/anamorphic-by-kingsidharth/id1496614233?ign-mpt=uo%3D4" target="_blank">Apple Podcast</a></li>
+        <li><a href="https://www.breaker.audio/anamorphic-by-at-kingsidharth" target="_blank">Breaker</a></li>
+        <li><a href="https://podcasts.google.com/?q=anamorphic%20kingsidharth" target="_blank">Google Podcast</a></li>
+        <li><a href="https://overcast.fm/itunes1496614233/anamorphic-by-kingsidharth" target="_blank">Overcast</a></li>
+        <li><a href="https://pca.st/hif0ynui" target="_blank">Pocket Cast</a></li>
+        <li><a href="https://radiopublic.com/anamorphic-by-kingsidharth-GA4g3n" target="_blank">Radiopublic</a></li>
+        <li><a href="https://anchor.fm/kingsidharth/" target="_blank">Anchor.fm</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="divider-2">
+</div>
+
+<div id="content_area" class="grid-container">
+  <div class="grid-x grid-margin-x">
+    <div class="[ cell small-12 ]">
+      <ul class="posts-list">
+
+        {% for post in site.categories.podcast %}
+        <li class="post">
+          <a href="{{ post.url }}" class="entry-title">
+            {% include posts/post-list-item.html %}
+            <hr class="divider-1-off-white">
+          </a>
+        </li>
+        {% endfor %}
+
+      </ul><!-- .posts-list -->
+    </div>
+  </div>
+</div><!-- #content_area -->

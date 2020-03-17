@@ -21,27 +21,16 @@ body {
       border-bottom-width: 0px; }
   body h2, body .h2 {
     font-weight: normal; }
-    @media screen and (min-width: 40em) {
-      body h2, body .h2 {
-        letter-spacing: -1.5px; } }
   body h3, body .h3 {
-    font-weight: normal;
-    text-transform: uppercase; }
+    font-weight: normal; }
     @media screen and (max-width: 39.99875em) {
       body h3, body .h3 {
         font-weight: bold; } }
-    @media screen and (min-width: 40em) {
-      body h3, body .h3 {
-        letter-spacing: -1px; } }
-  body h4, body .h4 {
-    text-transform: uppercase; }
-    @media screen and (max-width: 39.99875em) {
-      body h4, body .h4 {
-        font-weight: bold; } }
+  @media screen and (max-width: 39.99875em) {
+    body h4, body .h4 {
+      font-weight: bold; } }
   body h5 {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.5px; }
+    font-weight: bold; }
     @media screen and (max-width: 39.99875em) {
       body h5 {
         font-weight: bold; } }
@@ -63,7 +52,6 @@ body .subheader-2 {
 body .highlight-1 {
   font-size: 1.2em;
   font-weight: bold;
-  letter-spacing: -1px;
   color: #797d89; }
   body .highlight-1 span {
     color: white;
@@ -95,27 +83,16 @@ body {
       border-bottom-width: 0px; }
   body h2, body .h2 {
     font-weight: normal; }
-    @media screen and (min-width: 40em) {
-      body h2, body .h2 {
-        letter-spacing: -1.5px; } }
   body h3, body .h3 {
-    font-weight: normal;
-    text-transform: uppercase; }
+    font-weight: normal; }
     @media screen and (max-width: 39.99875em) {
       body h3, body .h3 {
         font-weight: bold; } }
-    @media screen and (min-width: 40em) {
-      body h3, body .h3 {
-        letter-spacing: -1px; } }
-  body h4, body .h4 {
-    text-transform: uppercase; }
-    @media screen and (max-width: 39.99875em) {
-      body h4, body .h4 {
-        font-weight: bold; } }
+  @media screen and (max-width: 39.99875em) {
+    body h4, body .h4 {
+      font-weight: bold; } }
   body h5 {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.5px; }
+    font-weight: bold; }
     @media screen and (max-width: 39.99875em) {
       body h5 {
         font-weight: bold; } }
@@ -137,7 +114,6 @@ body .subheader-2 {
 body .highlight-1 {
   font-size: 1.2em;
   font-weight: bold;
-  letter-spacing: -1px;
   color: #797d89; }
   body .highlight-1 span {
     color: white;
@@ -363,31 +339,31 @@ body .notice {
   margin: 2em 0;
   line-height: 1em; }
 
+#header_area .divider {
+  border-bottom: 3px solid #b1b7c5;
+  margin-bottom: 0; }
+
 #header {
   overflow: hidden;
-  padding: 2rem 0 0 0; }
-  #header a {
-    border-width: 0px; }
-  #header .divider {
-    border-bottom: 3px solid #b1b7c5;
-    margin-top: 1.75em;
-    margin-bottom: 0; }
+  padding: 2.5rem 0; }
   @media screen and (min-width: 40em) {
     #header {
-      padding: 2rem 0 0 0; } }
+      padding: 3rem 0; } }
+  #header a {
+    border-width: 0px; }
   #header .menu {
     text-transform: lowercase; }
 
 #logo {
   text-transform: lowercase;
-  letter-spacing: -1px;
   font-weight: bold;
-  line-height: 2.2rem;
-  font-size: 2rem;
+  font-size: 1em;
+  line-height: 1;
   color: #505561;
   transition: 0.2s all;
   margin-bottom: 0px;
-  display: block; }
+  display: block;
+  padding: 0.7rem 1rem; }
 
 @media screen and (max-width: 39.99875em) {
   #header_area {
@@ -454,27 +430,16 @@ body {
       border-bottom-width: 0px; }
   body h2, body .h2 {
     font-weight: normal; }
-    @media screen and (min-width: 40em) {
-      body h2, body .h2 {
-        letter-spacing: -1.5px; } }
   body h3, body .h3 {
-    font-weight: normal;
-    text-transform: uppercase; }
+    font-weight: normal; }
     @media screen and (max-width: 39.99875em) {
       body h3, body .h3 {
         font-weight: bold; } }
-    @media screen and (min-width: 40em) {
-      body h3, body .h3 {
-        letter-spacing: -1px; } }
-  body h4, body .h4 {
-    text-transform: uppercase; }
-    @media screen and (max-width: 39.99875em) {
-      body h4, body .h4 {
-        font-weight: bold; } }
+  @media screen and (max-width: 39.99875em) {
+    body h4, body .h4 {
+      font-weight: bold; } }
   body h5 {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.5px; }
+    font-weight: bold; }
     @media screen and (max-width: 39.99875em) {
       body h5 {
         font-weight: bold; } }
@@ -496,7 +461,6 @@ body .subheader-2 {
 body .highlight-1 {
   font-size: 1.2em;
   font-weight: bold;
-  letter-spacing: -1px;
   color: #797d89; }
   body .highlight-1 span {
     color: white;
@@ -509,8 +473,7 @@ body .notice {
 .post .post__title {
   word-wrap: normal;
   text-transform: none;
-  font-weight: bold;
-  letter-spacing: -1.5px; }
+  font-weight: bold; }
 .post .post__title--link {
   line-height: 1.5rem; }
 .post .post__meta, .post a.post__meta {
@@ -523,25 +486,22 @@ body .notice {
   margin-top: 3rem;
   margin-bottom: 1.5rem; }
 .post h2 {
-  letter-spacing: -0.05em;
   font-weight: bold; }
 .post h3 {
-  letter-spacing: normal;
   font-weight: bold;
   color: #797d89; }
 .post p, .post ul, .post ol {
   margin-bottom: 2em; }
 .post li {
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  margin-left: 1em; }
 .post .post__content {
   margin-top: 2rem; }
 
 .is-post .subheader {
   margin-bottom: 0.8rem; }
 .is-post .post__meta, .is-post .talk__meta {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   color: #b1b7c5; }
 .is-post a {
   border-bottom: 1px solid #188fff; }
@@ -549,8 +509,7 @@ body .notice {
 @media screen and (min-width: 40em) {
   .is-post h1.post__title, .is-page h1.post__title {
     margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    letter-spacing: -3.2px;
+    margin-bottom: 0em;
     font-size: 2.4em; } }
 
 .posts-list {
@@ -585,8 +544,7 @@ body .notice {
     margin-bottom: 0;
     line-height: 1.2em;
     font-size: 0.75rem;
-    color: #505561;
-    letter-spacing: -0.5px; }
+    color: #505561; }
 
 .list--full .talk {
   padding-top: 2rem;
@@ -610,8 +568,7 @@ body .notice {
 .talk .talk__title {
   color: #797d89;
   font-weight: bold;
-  text-transform: none;
-  letter-spacing: -0.5px; }
+  text-transform: none; }
 .talk em {
   font-style: normal;
   color: #505561; }
@@ -638,27 +595,16 @@ body {
       border-bottom-width: 0px; }
   body h2, body .h2 {
     font-weight: normal; }
-    @media screen and (min-width: 40em) {
-      body h2, body .h2 {
-        letter-spacing: -1.5px; } }
   body h3, body .h3 {
-    font-weight: normal;
-    text-transform: uppercase; }
+    font-weight: normal; }
     @media screen and (max-width: 39.99875em) {
       body h3, body .h3 {
         font-weight: bold; } }
-    @media screen and (min-width: 40em) {
-      body h3, body .h3 {
-        letter-spacing: -1px; } }
-  body h4, body .h4 {
-    text-transform: uppercase; }
-    @media screen and (max-width: 39.99875em) {
-      body h4, body .h4 {
-        font-weight: bold; } }
+  @media screen and (max-width: 39.99875em) {
+    body h4, body .h4 {
+      font-weight: bold; } }
   body h5 {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.5px; }
+    font-weight: bold; }
     @media screen and (max-width: 39.99875em) {
       body h5 {
         font-weight: bold; } }
@@ -680,7 +626,6 @@ body .subheader-2 {
 body .highlight-1 {
   font-size: 1.2em;
   font-weight: bold;
-  letter-spacing: -1px;
   color: #797d89; }
   body .highlight-1 span {
     color: white;
@@ -704,7 +649,7 @@ body .notice {
   display: block;
   margin-bottom: 0.5rem;
   line-height: 1rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   letter-spacing: 0px; }
 #hero .headline {
   font-weight: bold;
@@ -712,24 +657,15 @@ body .notice {
   line-height: 1.4em;
   margin-bottom: 1rem;
   text-transform: lowercase; }
-  @media screen and (min-width: 40em) {
-    #hero .headline {
-      letter-spacing: -2px;
-      margin-top: 0; } }
-  @media screen and (max-width: 39.99875em) {
-    #hero .headline {
-      font-size: 2.5rem;
-      letter-spacing: -0.5px; } }
 
 .headline--section {
   text-transform: lowercase;
   letter-spacing: normal;
   border-top: 2px solid #b1b7c5;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   line-height: 1em;
-  padding: 4rem 0;
-  margin-top: 0;
-  margin-bottom: 1.5rem; }
+  padding: 4rem 0 2.75rem 0;
+  margin-top: 0; }
 
 ::selection {
   color: #f3f6ff;

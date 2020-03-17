@@ -1,7 +1,7 @@
 /* TYPOGRAPHY */
 @import "colors";
 
-$font-noto-sans: "Noto Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
+$font-noto-sans: "Nunito Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
 
 @mixin sans-serif {
   font-family: $font-noto-sans;
@@ -44,33 +44,23 @@ body {
 
   h2, .h2 {
     font-weight: normal;
-    @include breakpoint(medium up) {
-      letter-spacing: -1.5px;
-    }
   }
 
   h3, .h3 {
     font-weight: normal;
-    text-transform: uppercase;
     @include breakpoint(small only) {
       font-weight: bold;
-    }
-    @include breakpoint(medium up) {
-      letter-spacing: -1px;
     }
   }
 
   h4, .h4 {
-    text-transform: uppercase;
     @include breakpoint(small only) {
       font-weight: bold;
     }
   }
 
   h5 {
-    text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 0.5px;
     @include breakpoint(small only) {
       font-weight: bold;
     }
@@ -109,7 +99,6 @@ body {
   .highlight-1 {
     font-size: 1.2em;
     font-weight: bold;
-    letter-spacing: -1px;
     color: $dark-grey;
     span {
       color: $white;

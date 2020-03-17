@@ -4,8 +4,152 @@ title: "64 Notes"
 slug: "home"
 ---
 <div id="hero_area" class="grid-container">
-    {% include home/hero.html %}
+  <div style="overflow:hidden;">
+    <div class="[ grid-x grid-margin-x ]" id="hero">
+
+      {% include home/circular.html %}
+
+      <h1 class="[ headline ][ cell small-12 ]">
+        <span class="pre-header">
+          Notes on
+        </span>
+        <span class="text-dark">
+          Design, Product & Business
+        </span>
+      </h1>
+
+      <p class="[ subheader-1 ][ cell small-12 medium-9 ]">
+        Written by
+        <a href="https://www.kingsidharth.com?ref=kingsidharth" onclick="return mixpanel.track('kingsidharth.com')">@kingsidharth</a>,
+        who is mostly found solving problems at <a href="https://www.headout.com?referrer=kingsidharth">Headout</a>.
+      </p>
+
+      <div class="cell small-12">
+        <div class="[ grid-x grid-margin-x ]">
+          <p class="subheader-2 [ cell small-6 ]">
+            Otherwise found <a href="https://www.kingsidharth.com/speaking/?ref=kingsidharth">speaking at colleges & events</a> about
+            entrepreneurship, career, and life choices and design & product.
+          </p>
+          <div class="[ cell small-6 ]">
+            <h5>Feature In</h5>
+            <ul class="menu h4">
+              <li>
+                <a href="https://www.bloomberg.com/news/articles/2015-04-27/the-best-and-worst-fonts-to-use-on-your-r-sum-" target="_blank" rel="nofollow">
+                  Bloomberg
+                </a>
+              </li>
+              <li>
+                <a href="http://oedb.org/ilibrarian/24-blogs-for-young-entrepreneurs/" target="_blank" rel="nofollow">
+                  Open Education Database
+                </a>
+              </li>
+              <li>
+                <a href="http://www.makeuseof.com/tag/10-awesome-inspiring-blogs-entrepreneurs-business-owners/" target="_blank" rel="nofollow">
+                  Make Use Of
+                </a>
+              </li>
+              <li>
+                <a href="http://www.creativebloq.com/design/designer-says-stop-using-helvetica-and-arial-5135619" target="_blank" rel="nofollow">
+                  .net Magazine
+                </a>
+              </li>
+              <li>
+                <a href="https://www.kingsidharth.com/media-mentions/?ref=kingsidharth" target="_blank">
+                  More
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="decor">
+          {% assign notes = 64 %}
+          {% for count in notes %}
+            {{ count }} .
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- #hero -->
 </div><!-- #hero_area -->
+
+<div id="start_here_area" class="grid-container">
+  <section id="start_here" class="grid-x grid-margin-x">
+    <h3 class="[ headline--section ][ cell small-12 ]">Start Here</h3>
+    <div class="cell small-12 large-6">
+      <p>
+        <strong>
+          For Designers, Product Managers, and Startup Folks:
+        </strong>
+      </p>
+      <ol class="">
+        <li>
+          <a href="https://www.youtube.com/watch?v=oS_e_PVXD8o">
+            Career Path as a Designer
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=GRDwW0EfCEQ&list=PLbwADCh48-fV1GY7f6N1pnD-1DFDv1Koq">
+            Building a Design Career without a Degree
+          </a>
+        </li>
+        <li>
+          <a href="/design/inherited-design-redesign/">
+            Making Sense of Inherited Design
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=KHKkF8efyMo">
+            Case Study: Headout Tickets
+          </a>
+        </li>
+        <li>
+          <a href="/design/online-payments-for-indian-businesses/">
+            Designing Online Payments for Indian Businesses
+          </a>
+        </li>
+        <li>
+          <a href="/design/instamojo-redesign-concerns/">
+            Case Study: Redesign without getting hate from the users
+          </a>
+        </li>
+      </ol>
+    </div>
+    <div class="cell small-12 large-6">
+      <p>
+        <strong>
+          For Students:
+        </strong>
+      </p>
+      <ol class="">
+        <li>
+          <a href="https://www.youtube.com/watch?v=8qmJvW5xKjo" target="_blank">
+            TEDx Talk: What to do with your life
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=gmRlPl_Ljh8" target="_blank">
+            Building a Career using the Internet & Why your degree won't be enough
+          </a>
+        </li>
+        <li>
+          <a href="/to-college-or-not-to-college/">
+            To College or not to College
+          </a>
+        </li>
+        <li>
+          <a href="/mistakes-failures/">
+            Mistakes
+          </a>
+        </li>
+      </ol>
+    </div>
+    <p class="cell small-12">&nbsp;</p>
+  </section>
+</div>
 
 <div id="popular_posts_area" class="grid-container">
   <section id="popular_posts" class="grid-x grid-margin-x">
@@ -15,35 +159,21 @@ slug: "home"
       </h3>
     </header>
 
-    <ul class="posts-list cell small-12 medium-6">
+    <ul class="posts-list cell small-12">
       {% assign posts = site.posts | post_with_key_value: 'top', true %}
-      {% for post in posts limit:4 %}
+      {% for post in posts limit:5 %}
         <li class="post">
         <a href="{{ post.url }}">
           <div class="post__meta">
             <date>{{ post.date | date: "%b, %Y" }}</date>
           </div><!-- .post__meta -->
-          <h3 class="post__title">{{ post.title }}</h3>
+          <div class="post__title">{{ post.title }}</div>
         </a>
         </li>
       {% endfor %}
     </ul>
 
-    <ul class="posts-list cell small-12 medium-6">
-      {% assign posts = site.posts | post_with_key_value: 'top', true %}
-      {% for post in posts limit:4 offset:4 %}
-      <li class="post">
-      <a href="{{ post.url }}">
-        <div class="post__meta">
-          <date>{{ post.date | date: "%b, %Y" }}</date>
-        </div><!-- .post__meta -->
-        <h3 class="post__title">{{ post.title }}</h3>
-      </a>
-      </li>
-      {% endfor %}
-    </ul>
-
-    <div class="cell small-12 medium-6  text-right" style="margin-bottom: 2rem;">
+    <div class="cell small-12  text-right" style="margin-bottom: 2rem;">
 
     </div>
   </section>
@@ -57,43 +187,21 @@ slug: "home"
     <p class="[ cell small-12 ]">
     </p>
 
-    <ul class="posts-list cell small-12 medium-6">
-
+    <ul class="posts-list cell small-12">
       {% assign posts = site.posts | exclude_post_category: 'speaking'%}
-      {% for post in posts limit:3 %}
+      {% for post in posts limit:7 %}
       <li class="post">
         <a href="{{ post.url }}">
           <div class="post__meta">
             <date>{{ post.date | date: "%b, %Y" }}</date>
           </div><!-- .post__meta -->
-          <h3 class="post__title">
+          <div class="post__title">
             {{ post.title }}
-          </h3><!-- .post__title -->
-        </a>
-      </li>
-      {% endfor %}
-
-    </ul>
-
-    <ul class="posts-list cell medium-6">
-      {% assign posts = site.posts | exclude_post_category: 'speaking'%}
-      {% for post in posts limit:3 offset:3 %}
-      <li class="post">
-        <a href="{{ post.url }}">
-          <div class="post__meta">
-            <date>{{ post.date | date: "%b, %Y" }}</date>
-          </div><!-- .post__meta -->
-          <h3 class="post__title">
-            {{ post.title }}
-          </h3><!-- .post__title -->
+          </div><!-- .post__title -->
         </a>
       </li>
       {% endfor %}
     </ul>
-
-    <p class="cell small-12">
-      You can <a href="/archives">see all notes here &rarr;</a>
-    </p>
 
   </div>
 </div><!-- #recent_posts_area -->
@@ -110,24 +218,11 @@ slug: "home"
     <div class="cell small-12 medium-10" style="margin-bottom: 2rem;">
       <p class="">
         Spoken at colleges like — <strong>IIT, BITS (Goa), VIT, VJTI (Mumbai), NITs</strong>, etc.
-      </p>
-      <p>&nbsp;</p>
-      <p class="">
         And at events like — <strong>Startup Saturday (Mumbai), Design Day, TechSparks,
         Behance Review, WordCamps</strong>, etc.
       </p>
-      <p>&nbsp;</p>
-      <p><a href="https://www.kingsidharth.com/speaking/">See All Past Talks &rarr;</a></p>
+      <p><a href="https://www.kingsidharth.com/speaking/">More &rarr;</a></p>
     </div>
-
-    <!-- <ul class="[ cell smal-12 medium-6 ][ posts-list ]">
-      {% for post in site.categories.speaking limit: 4 %}
-      <li class="[ talk post post--talk ]">
-        <h3 class="talk__title">{{ post.event }} &middot; <em>{{ post.place }}</em></h3>
-        <p class="talk__meta post__meta">{{ post.title }}</p>
-      </li>
-      {% endfor %}
-    </ul> -->
 
   </section>
 </div><!-- #speaking_area -->

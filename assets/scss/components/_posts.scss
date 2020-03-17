@@ -9,7 +9,6 @@
     word-wrap: normal;
     text-transform: none;
     font-weight: bold;
-    letter-spacing: -1.5px;
   }
 
   .post__title--link {
@@ -32,12 +31,10 @@
   }
 
   h2 {
-    letter-spacing: -0.05em;
     font-weight: bold;
   }
 
   h3 {
-    letter-spacing: normal;
     font-weight: bold;
     color: $dark-grey;
   }
@@ -52,6 +49,7 @@
 
   li {
     margin-bottom: 1em;
+    margin-left: 1em;
   }
 
   .post__content {
@@ -69,9 +67,7 @@
   }
 
   .post__meta, .talk__meta {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: $grey;
   }
 
@@ -84,10 +80,11 @@
   @include breakpoint(medium up) {
     h1.post__title {
       margin-top: 2.5rem;
-      margin-bottom: 1rem;
-      letter-spacing: -3.2px;
+      margin-bottom: 0em;
       font-size: 2.4em;
     }
+
+
   }
 }
 
@@ -143,7 +140,6 @@
     line-height: 1.2em;
     font-size: 0.75rem;
     color: $black;
-    letter-spacing: -0.5px;
   }
 }
 
@@ -182,7 +178,6 @@
     color: $dark-grey;
     font-weight: bold;
     text-transform: none;
-    letter-spacing: -0.5px;
   }
 
   em {

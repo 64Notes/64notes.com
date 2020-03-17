@@ -15,10 +15,27 @@
 
     <li>
       <a {% if page.slug == 'archives' %}class="is-active"{% endif %} href='/archives'>
-        Essays & Notes
+        Blog
       </a>
     </li>
 
+    <li>
+      <a {% if page.category == 'design' or page.slug == 'design_archives' %}class="is-active"{% endif %} href='/design'>
+        Design
+      </a>
+    </li>
+
+    <li>
+      <a href="/podcast">
+        Podcast
+      </a>
+    </li>
+
+    <li>
+      <a href="/newsletter/" title="Newsletter">
+        Newsletter
+      </a>
+    </li>
 
     <li>
       <a {% if page.category == 'talks' or page.slug == 'speaking' %}class="is-active"{% endif %}
@@ -27,21 +44,6 @@
         Talks
       </a>
     </li>
-
-    {% comment %}
-    <li>
-      <a {% if page.category == 'design' or page.slug == 'design_archives' %}class="is-active"{% endif %} href='/design'>
-        Design
-      </a>
-    </li>
-    {% endcomment %}
-
-    <li>
-      <a href="https://mailchi.mp/6ae07cdfd463/64nn_sub" title="View previous campaigns" target="_blank">
-        Newsletter
-      </a>
-    </li>
-
   </ul>
 </nav>
 <!-- .nav-bar -->

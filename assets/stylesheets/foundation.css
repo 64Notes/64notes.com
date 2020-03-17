@@ -21,27 +21,16 @@ body {
       border-bottom-width: 0px; }
   body h2, body .h2 {
     font-weight: normal; }
-    @media screen and (min-width: 40em) {
-      body h2, body .h2 {
-        letter-spacing: -1.5px; } }
   body h3, body .h3 {
-    font-weight: normal;
-    text-transform: uppercase; }
+    font-weight: normal; }
     @media screen and (max-width: 39.99875em) {
       body h3, body .h3 {
         font-weight: bold; } }
-    @media screen and (min-width: 40em) {
-      body h3, body .h3 {
-        letter-spacing: -1px; } }
-  body h4, body .h4 {
-    text-transform: uppercase; }
-    @media screen and (max-width: 39.99875em) {
-      body h4, body .h4 {
-        font-weight: bold; } }
+  @media screen and (max-width: 39.99875em) {
+    body h4, body .h4 {
+      font-weight: bold; } }
   body h5 {
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 0.5px; }
+    font-weight: bold; }
     @media screen and (max-width: 39.99875em) {
       body h5 {
         font-weight: bold; } }
@@ -63,7 +52,6 @@ body .subheader-2 {
 body .highlight-1 {
   font-size: 1.2em;
   font-weight: bold;
-  letter-spacing: -1px;
   color: #797d89; }
   body .highlight-1 span {
     color: white;
@@ -239,7 +227,7 @@ body {
   margin: 0;
   padding: 0;
   background: white;
-  font-family: "Noto Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
+  font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
   font-weight: normal;
   line-height: 1.6;
   color: #505561;
@@ -1872,7 +1860,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Noto Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
+  font-family: "Nunito Sans", "Lucida Grande", "Lucida Sans", "Segoe UI", sans-serif;
   font-style: normal;
   font-weight: normal;
   color: inherit;

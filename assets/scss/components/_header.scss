@@ -1,24 +1,22 @@
 // Header::Components
 // ----------
 
+#header_area {
+  .divider {
+    border-bottom: 3px solid $grey;
+    margin-bottom: 0;
+  }
+}
+
 #header {
   overflow: hidden;
-  padding: 2rem 0 0 0;
+  padding: 2.5rem 0;
+  @include breakpoint(medium up){
+    padding: 3rem 0;
+  }
 
   a {
     border-width: 0px;
-  }
-
-  .divider {
-    border-bottom: 3px solid $grey;
-    margin-top: 1.75em;
-    margin-bottom: 0;
-    @include breakpoint(medium up) {
-    }
-  }
-
-  @include breakpoint(medium up) {
-    padding: 2rem 0 0 0;
   }
 
   .menu {
@@ -27,16 +25,15 @@
 }
 
 #logo {
-  text-transform: lowercase;;
-  letter-spacing: -1px;
+  text-transform: lowercase;
   font-weight: bold;
-  line-height: 2.2rem;
-  font-size:   2rem;
+  font-size: 1em;
+  line-height: 1;
   color: $black;
   transition: 0.2s all;
-
   margin-bottom: 0px;
   display: block;
+  padding: 0.7rem 1rem;
 }
 
 #header_area {

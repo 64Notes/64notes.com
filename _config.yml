@@ -3,9 +3,14 @@
 # Site Settings
 url: https://www.64notes.com
 name: 64 Notes
-description: Notes of a Young Entrepreneur
+description: A blog by @kingsidharth on design, product, startups, and business
 encoding: utf-8
 permalink: /:categories/:title/
+
+author: king@kingsidharth.com (@kingsidharth)
+copyright: All Rights Reserved
+rss_name: feed.xml
+rss_post_limit: 10
 
 # Defaults
 defaults:
@@ -24,11 +29,11 @@ defaults:
       category: "design"
   -
     scope:
-      path: "speaking"
+      path: "podcast"
       type: "posts"
     values:
-      layout: "talk"
-      categories: "speaking"
+      layout: "post"
+      categories: "podcast"
 
 
 # Development Settings

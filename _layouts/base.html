@@ -4,8 +4,8 @@
     <title>{{ page.title }}</title>
 
     <!-- Stylesheets -->
-    <link href="/assets/stylesheets/screen.css?stamp=77hdj88039m378" media="screen, projection" rel="stylesheet" type="text/css" />
-    <link href="/assets/stylesheets/foundation.css?stamp=77hdj88039m378" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/assets/stylesheets/screen.css?stamp=chwuiidk29dyuu278u0kd" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="/assets/stylesheets/foundation.css?stamp=chwuiidk29dyuu278u0kd" media="screen, projection" rel="stylesheet" type="text/css" />
 
     <!-- Viewport Settings -->
     <link rel="icon" type="image/x-icon" href="{{ site.url }}/favicon.ico?stamp=7874j32d5h38y" />
@@ -26,6 +26,11 @@
     <meta property="og:url"                  content="{{ site.url }}{{ page.url }}/">
     <meta property="og:site_name"            content="{{ site.name }}">
     <meta property="og:title"                content="{{ page.title }}">
+    {% if page.seo_description or page.subheader %}
+    <meta name="description" content="{%if page.seo_description %}{{ page.seo_description }}{% else %}{{ page.subheader }}{% endif %}"/>
+    <meta name="description" content="{%if page.seo_description %}{{ page.seo_description }}{% else %}{{ page.subheader }}{% endif %}"/>
+    <meta property="og:description"          content="{%if page.seo_description %}{{ page.seo_description }}{% else %}{{ page.subheader }}{% endif %}">
+    {% endif %}
     <meta property="article:author"          content="http://www.kingsidharth.com">
     {% endif %}
     {% if page.slug == 'home' %}
@@ -34,8 +39,7 @@
     <meta property="og:title"                content="{{ site.name }}">
     {% endif %}
     <!-- others -->
-    <link rel="canonical"
-      href="{% if page.canonical_url %}{{ page.canonical_url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}">
+    <link rel="canonical" href="{% if page.canonical_url %}{{ page.canonical_url }}{% else %}{{ site.url }}{{ page.url }}{% endif %}">
     <link rel="alternate" type="application/rss+xml" href="http://feeds.feedburner.com/64Notes" />
     <link rel="alternate" type="application/rss+xml" href="/feed.xml?stamp=77hdj88039m378" />
 

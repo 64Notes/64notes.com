@@ -559,6 +559,12 @@ body .notice {
   font-style: normal;
   color: #505561; }
 
+/* Podcast */
+.podcast .podcast__title {
+  font-weight: bold;
+  font-size: 1.25em;
+  margin-top: 1em; }
+
 /* TYPOGRAPHY */
 body {
   /* Links */

@@ -29,12 +29,23 @@ slug: podcast
 <div id="content_area" class="grid-container">
   <div class="grid-x grid-margin-x">
     <div class="[ cell small-12 ]">
-      <ul class="posts-list">
+      <ul class="podcast-list posts-list">
 
         {% for post in site.categories.podcast %}
-        <li class="post">
+        <li class="post podcast">
           <a href="{{ post.url }}" class="entry-title">
-            {% include posts/post-list-item.html %}
+            <a href="{{ post.url }}" title="{{ post.title }}" class="grid-x grid-margin-x">
+              <div class="post__meta cell small-12">
+                <date>{{ post.date | date: "%d %b, %Y" }}</date>
+              </div>
+              <div class="cell small-12 medium-8">
+                <h2 class="post__title h3">{{ post.title }}</h2>
+                <iframe src="{{ post.anchor_url }}" width="100%" height="auto" frameborder="0" scrolling="no"></iframe>
+              </div>
+              <div class="img img--100cent cell small-12 medium-4">
+                <img src="/images/{{ post.preview_image }}" alt="{{ post.title }} Podcast Preview Image">
+              </div>
+            </a>
             <hr class="divider-1-off-white">
           </a>
         </li>

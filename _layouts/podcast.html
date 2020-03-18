@@ -1,0 +1,79 @@
+---
+layout: base
+---
+{% assign current_year = 'now' | date: '%Y' %}
+{% assign post_year = page.date | date: '%Y' %}
+{% assign gap_since = current_year | minus: post_year %}
+<article class="post is-post podcast">
+
+  <div id='headline_area' class="grid-container">
+    <div id="headline masthead">
+      <header class="grid-x grid-margin-x">
+        {% if page.preview_image %}
+        <div class="[ img img--100cent ][ cell small-12 large-4 ]">
+          <img src="/images/{{ page.preview_image }}"
+                alt="{{ post.title }}"
+                width="100%">
+        </div>
+        {% endif %}
+        <h1 class="[ podcast__title ][ cell small-12 large-8 ]">{{ page.title }}</h1>
+      </header>
+      <div class="[ podcast--emebed ][ grid-x ]">
+        <div class="cell small-12">
+          {% if page.anchor_url %}
+          <iframe src="{{ page.anchor_url }}" width="100%" height="auto" frameborder="0" scrolling="no"></iframe>
+          {% else %}
+          No Emebed Present
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div><!-- #headline_area -->
+
+
+
+  <div id="content_area" class="grid-container">
+    <div class="grid-x grid-margin-x" id="content">
+
+      <section class="cell small-12 post__meta">
+
+        {% if page.subheader %}
+        <p class="subheader">
+          <span>{{ page.subheader }}</span>
+        </p>
+        {% endif %}
+
+        <div>
+          <date>{{ page.date | date: "%b %d," }} <strong>{{ page.date | date: "%Y" }}</strong></date> &middot;
+          {{ page.content | number_of_words }} Words
+        </div>
+
+        {% comment %}
+        <ul class="grid__item one-half right nav desk-show no-bottom-margin js_onload_show" style="display:none;">
+          <li><span class="data_twitter_count"></span> <a onclick="return share_click('twitter')" href="#">Tweet</a></li>
+          <li>&nbsp;&middot;&nbsp;</li>
+          <li><span class="data_facebook_count"></span> <a onclick="return share_click('facebook')" href="#">Share</a></li>
+        </ul>
+        {% endcomment %}
+      </section>
+
+      <section class="cell small-12">
+        {{ content }}
+        {% if gap_since > 3 %}
+        <p class="notice">
+          <small>
+            You are reading a post that I wrote a long time back—at least {{ gap_since }} years ago.
+            Take it with a bag of salt.
+          </small>
+        </p>
+        {% endif %}
+      </section>
+
+    </div><!-- #content -->
+  </div><!-- #content_area -->
+
+</article>
+
+<script>
+  fbq('track', 'ViewContent');
+</script>

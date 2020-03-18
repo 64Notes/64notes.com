@@ -26,12 +26,11 @@
     <meta property="og:url"                  content="{{ site.url }}{{ page.url }}/">
     <meta property="og:site_name"            content="{{ site.name }}">
     <meta property="og:title"                content="{{ page.title }}">
+    <meta property="article:author"          content="http://www.kingsidharth.com">
+    {% endif %}
     {% if page.seo_description or page.subheader %}
     <meta name="description" content="{%if page.seo_description %}{{ page.seo_description }}{% else %}{{ page.subheader }}{% endif %}"/>
-    <meta name="description" content="{%if page.seo_description %}{{ page.seo_description }}{% else %}{{ page.subheader }}{% endif %}"/>
     <meta property="og:description"          content="{%if page.seo_description %}{{ page.seo_description }}{% else %}{{ page.subheader }}{% endif %}">
-    {% endif %}
-    <meta property="article:author"          content="http://www.kingsidharth.com">
     {% endif %}
     {% if page.slug == 'home' %}
     <meta property="og:type"                 content="website">

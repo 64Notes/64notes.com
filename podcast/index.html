@@ -34,22 +34,19 @@ seo_description: "Anamorphic is a podcast by @kingsidharth where conversations
       <ul class="podcast-list posts-list">
 
         {% for post in site.categories.podcast %}
-        <li class="post podcast">
-          <a href="{{ post.url }}" class="entry-title">
-            <a href="{{ post.url }}" title="{{ post.title }}" class="grid-x grid-margin-x">
-              <div class="post__meta cell small-12">
-                <date>{{ post.date | date: "%d %b, %Y" }}</date>
-              </div>
-              <div class="cell small-12 medium-8">
-                <h2 class="post__title h3">{{ post.title }}</h2>
-                <iframe src="{{ post.anchor_url }}" width="100%" height="auto" frameborder="0" scrolling="no"></iframe>
-              </div>
-              <div class="img img--100cent cell small-12 medium-4">
-                <img src="/images/{{ post.preview_image }}" alt="{{ post.title }} Podcast Preview Image">
-              </div>
-            </a>
-            <hr class="divider-1-off-white">
-          </a>
+        <li class="[ post podcast ][ grid-x grid-margin-x ]">
+          <div class="[ cell small-12 ]">
+            <iframe src="{{ post.embed_url }}" width="100%" height="auto" frameborder="0" scrolling="no" allow="encrypted-media"></iframe>
+          </div>
+
+          <div class="cell small-12 post__meta">
+            <date>{{ post.date | date: "%d %b, %Y" }}</date> &middot;
+            <span><a href="{{ post.url }}">Read Transcript</a></span>
+            {% if post.spotify_url %}
+             &middot; <span><a href="{{ post.spotify_url }}" target="_blank" rel="nofollow">Listen on Spotify</a></span>
+            {% endif %}
+          </div>
+          <hr>
         </li>
         {% endfor %}
 

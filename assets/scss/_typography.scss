@@ -1,7 +1,8 @@
 /* TYPOGRAPHY */
 @import "colors";
 
-$font-noto-sans: "Asap", "Noto Sans", "Lucida Sans", "Segoe UI", sans-serif;
+$font-noto-sans: "degular-text", "Noto Sans", "Lucida Sans", "Segoe UI", sans-serif;
+$serif: 'new-spirit', 'Garamond', serif;
 
 @mixin sans-serif {
   font-family: $font-noto-sans;
@@ -41,30 +42,6 @@ body {
       }
     }
   }
-
-  h2, .h2 {
-    font-weight: normal;
-  }
-
-  h3, .h3 {
-    font-weight: normal;
-    @include breakpoint(small only) {
-      font-weight: bold;
-    }
-  }
-
-  h4, .h4 {
-    @include breakpoint(small only) {
-      font-weight: bold;
-    }
-  }
-
-  h5 {
-    font-weight: bold;
-    @include breakpoint(small only) {
-      font-weight: bold;
-    }
-  }
 }
 
 
@@ -91,7 +68,7 @@ body {
 
   // Highlights
   .highlight-1 {
-    font-size: 1.2em;
+    font-size: 2rem;
     font-weight: bold;
     color: $dark-grey;
     span {
@@ -101,8 +78,13 @@ body {
   }
 
   .notice {
+    background: transparent;
+    border-radius: 1rem;
     border: 1px solid $light-grey;
-    background: $lighter-grey;
-    padding: 1rem;
+    padding: 2rem;
+    p {
+      line-height: 120%;
+      margin-bottom: 0.5rem;
+    }
   }
 }

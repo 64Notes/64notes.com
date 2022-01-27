@@ -20,20 +20,18 @@ seo_description: "Blog about product management, design, startups, and career by
       </h1>
 
       <p class="[ subheader-1 ][ cell small-12 medium-9 ]">
-        Written by
-        <a href="https://www.kingsidharth.com?ref=kingsidharth" onclick="return mixpanel.track('kingsidharth.com')">@kingsidharth</a>,
-        who is mostly found solving problems at <a href="https://www.headout.com?referrer=kingsidharth">Headout</a>.
+        Blog & notepad of
+        <a href="https://www.kingsidharth.com?ref=kingsidharth">@kingsidharth</a>, mostly found solving problems at
+        <a href="https://www.growthschool.io?referrer=kingsidharth">GrowthSchool</a>. Otherwise,
+        <a href="https://www.kingsidharth.com/speaking/">speaking at colleges & events</a> or on
+        <a href="https://youtube.com/kingsidharthofficial">YouTube</a>.
       </p>
 
       <div class="cell small-12">
         <div class="[ grid-x grid-margin-x ]">
-          <p class="subheader-2 [ cell small-6 ]">
-            Otherwise found <a href="https://www.kingsidharth.com/speaking/?ref=kingsidharth">speaking at colleges & events</a> about
-            entrepreneurship, career, and design & product.
-          </p>
-          <div class="[ cell small-6 ]">
-            <h5>Feature In</h5>
-            <ul class="menu h4">
+          <div class="[ cell small-12 ]">
+            <h6>Feature On</h6>
+            <ul class="menu">
               <li>
                 <a href="https://www.bloomberg.com/news/articles/2015-04-27/the-best-and-worst-fonts-to-use-on-your-r-sum-" target="_blank" rel="nofollow">
                   Bloomberg
@@ -61,7 +59,7 @@ seo_description: "Blog about product management, design, startups, and career by
               </li>
             </ul>
           </div>
-        </div>
+        </div><!--.grid-x-->
 
 
         <div class="decor">
@@ -77,86 +75,11 @@ seo_description: "Blog about product management, design, startups, and career by
   </div><!-- #hero -->
 </div><!-- #hero_area -->
 
-<div id="start_here_area" class="grid-container">
-  <section id="start_here" class="grid-x grid-margin-x">
-    <h3 class="[ headline--section ][ cell small-12 ]">Start Here</h3>
-    <div class="cell small-12 large-6">
-      <p>
-        <strong>
-          For Designers, Product Managers, and Startup Folks:
-        </strong>
-      </p>
-      <ol class="">
-        <li>
-          <a href="https://www.youtube.com/watch?v=oS_e_PVXD8o">
-            Career Path as a Designer
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/watch?v=GRDwW0EfCEQ&list=PLbwADCh48-fV1GY7f6N1pnD-1DFDv1Koq">
-            Building a Design Career without a Degree
-          </a>
-        </li>
-        <li>
-          <a href="/design/inherited-design-redesign/">
-            Making Sense of Inherited Design
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/watch?v=KHKkF8efyMo">
-            Case Study: Headout Tickets
-          </a>
-        </li>
-        <li>
-          <a href="/design/online-payments-for-indian-businesses/">
-            Designing Online Payments for Indian Businesses
-          </a>
-        </li>
-        <li>
-          <a href="/design/instamojo-redesign-concerns/">
-            Case Study: Redesign without getting hate from the users
-          </a>
-        </li>
-      </ol>
-    </div>
-    <div class="cell small-12 large-6">
-      <p>
-        <strong>
-          For Students:
-        </strong>
-      </p>
-      <ol class="">
-        <li>
-          <a href="https://www.youtube.com/watch?v=8qmJvW5xKjo" target="_blank">
-            TEDx Talk: What to do with your life
-          </a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/watch?v=gmRlPl_Ljh8" target="_blank">
-            Building a Career using the Internet & Why your degree won't be enough
-          </a>
-        </li>
-        <li>
-          <a href="/to-college-or-not-to-college/">
-            To College or not to College
-          </a>
-        </li>
-        <li>
-          <a href="/mistakes-failures/">
-            Mistakes
-          </a>
-        </li>
-      </ol>
-    </div>
-    <p class="cell small-12">&nbsp;</p>
-  </section>
-</div>
-
 <div id="popular_posts_area" class="grid-container">
   <section id="popular_posts" class="grid-x grid-margin-x">
     <header class="cell small-12">
       <h3 class="headline--section">
-        Popular Notes
+        Popular
       </h3>
     </header>
 
@@ -168,7 +91,7 @@ seo_description: "Blog about product management, design, startups, and career by
           <div class="post__meta">
             <date>{{ post.date | date: "%b, %Y" }}</date>
           </div><!-- .post__meta -->
-          <div class="post__title">{{ post.title }}</div>
+          <h4 class="post__title h5">{{ post.title }}</h4>
         </a>
         </li>
       {% endfor %}
@@ -183,7 +106,7 @@ seo_description: "Blog about product management, design, startups, and career by
 <div id="recent_posts_area" class="grid-container">
   <div class="grid-x grid-margin-x" id="recent_posts">
     <h3 class="[ cell small-12 ][ headline--section ]">
-      Recent Notes
+      Recent
     </h3>
     <p class="[ cell small-12 ]">
     </p>
@@ -196,9 +119,9 @@ seo_description: "Blog about product management, design, startups, and career by
           <div class="post__meta">
             <date>{{ post.date | date: "%b, %Y" }}</date>
           </div><!-- .post__meta -->
-          <div class="post__title">
+          <h4 class="post__title h5">
             {{ post.title }}
-          </div><!-- .post__title -->
+          </h4><!-- .post__title -->
         </a>
       </li>
       {% endfor %}
@@ -207,7 +130,7 @@ seo_description: "Blog about product management, design, startups, and career by
   </div>
 </div><!-- #recent_posts_area -->
 
-
+{% comment %}
 <div id="speaking_area" class="grid-container">
   <section class="grid-x grid-margin-x" id="speaking">
     <header class="[ cell small-12 ]">
@@ -228,53 +151,4 @@ seo_description: "Blog about product management, design, startups, and career by
     </div>
   </section>
 </div><!-- #speaking_area -->
-
-<div id="podcast_area" class="grid-container">
-  <section class="grid-x grid-margin-x" id="podcast">
-    <header class="[ cell small-12 ]">
-      <h3 class="headline--section">
-        Podcast
-      </h3>
-    </header>
-    <div class="cell small-12" style="margin-bottom: 2rem;">
-      <p class="">
-        Conversations about design, product, startups, future careers, and life. I often have more than one guest. Check it out:
-      </p>
-      <ul class="posts-list cell small-12">
-        {% for post in site.categories.podcast limit:5 %}
-        <li class="post">
-          <a href="{{ post.url }}">
-            <div class="post__meta">
-              <date>{{ post.date | date: "%b, %Y" }}</date>
-            </div><!-- .post__meta -->
-            <div class="post__title">
-              {{ post.title }}
-            </div><!-- .post__title -->
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-      <p><a href="/podcast/">More &rarr;</a></p>
-
-    </div>
-  </section>
-</div><!-- #podcast_area -->
-
-<div id="newsletter_area" class="grid-container">
-  <section class="grid-x grid-margin-x" id="newsletter">
-    <header class="[ cell small-12 ]">
-      <h3 class="headline--section">
-        Tissue Notes the Newsletter
-      </h3>
-    </header>
-    <div class="cell small-12">
-    </div>
-    <div class="cell small-12" style="margin-bottom: 2rem;">
-      <p class="">
-        Tissue notes is my (almost) weekly newsletter where I share updates about projects, write-ups, podcast, and other things I am upto.
-        And one interesting concept, idea, or some food for thought:
-      </p>
-      <p><a href="/newsletter/">Subscribe &rarr;</a></p>
-    </div>
-  </section>
-</div><!-- #podcast_area -->
+{% endcomment %}

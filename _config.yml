@@ -33,7 +33,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      categories: "podcast"
+      category: "podcast"
 
 
 # Development Settings

@@ -41,16 +41,22 @@
 
   // Lists
   p, ul, ol {
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
   }
 
   li {
-    margin-bottom: 1em;
-    margin-left: 1em;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
   }
 
   .post__content {
     margin-top: 2rem;
+  }
+
+  .subtitle {
+    font-weight: normal;
+    font-size: 1.25rem;
+    margin-top: 1rem;
   }
 }
 
@@ -118,68 +124,8 @@
     }
   }
 
-  .talk__title {
-    margin-bottom: 0;
-    line-height: 1.2em;
-    margin-top: 0;
-
-    @include breakpoint(small only) {
-      font-size: 1.5rem;
-      line-height: 2rem;
-    }
-  }
-
-  .talk__meta {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    line-height: 1.2em;
-    font-size: 0.75rem;
-    color: $black;
-  }
 }
 
-.list--full {
-  .talk {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    margin-bottom: 0;
-    border-bottom: 1px solid $off-white;
-  }
-
-  .talk__title {
-    line-height: 1.5em;
-    @include breakpoint(small only) {
-      font-size: 1.5rem;
-    }
-  }
-
-  .talk__meta {
-    font-size: 1rem;
-    line-height: 1rem;
-
-    span {
-      color: $blue;
-    }
-
-    @include breakpoint(small only) {
-      line-height: 1.5rem;
-    }
-  }
-}
-
-// Special Modification for Talks
-.talk {
-  .talk__title {
-    color: $dark-grey;
-    font-weight: bold;
-    text-transform: none;
-  }
-
-  em {
-    font-style: normal;
-    color: $black;
-  }
-}
 
 
 /* Podcast */
@@ -194,6 +140,6 @@
 
 .podcast-list {
   li {
-    
+
   }
 }

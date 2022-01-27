@@ -131,8 +131,8 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $font-noto-sans;
-$header-font-weight: $global-weight-normal;
+$header-font-family: $serif;
+$header-font-weight: bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
 $header-color: inherit;
@@ -140,20 +140,20 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 1rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 32),
-    'h2': ('font-size': 24),
-    'h3': ('font-size': 24),
-    'h4': ('font-size': 16),
-    'h5': ('font-size': 12),
-    'h6': ('font-size': 8),
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 42),
+    'h3': ('font-size': 36),
+    'h4': ('font-size': 32),
+    'h5': ('font-size': 24),
+    'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 40),
-    'h2': ('font-size': 32),
-    'h3': ('font-size': 24),
-    'h4': ('font-size': 16),
-    'h5': ('font-size': 12),
-    'h6': ('font-size': 8),
+    'h1': ('font-size': 56),
+    'h2': ('font-size': 48),
+    'h3': ('font-size': 40),
+    'h4': ('font-size': 32),
+    'h5': ('font-size': 24),
+    'h6': ('font-size': 16),
   ),
 );
 $header-text-rendering: optimizeLegibility;
